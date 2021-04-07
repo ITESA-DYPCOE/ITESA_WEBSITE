@@ -1,0 +1,80 @@
+{
+	"technical-head": [
+		{
+			"name": "Kamlesh Patil",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617281642/ITESA-TEAM/KamleshPatil_focylu.jpg",
+			"linkedin": "https://www.linkedin.com/in/kamlesh-patil-53b151177/",
+			"email": "mailto:kpkamleshpatil333@gmail.com",
+			"github": "https://github.com/Neon-K9",
+			"description": "Technical Secretary",
+			"intro": "Android Developer"
+		}
+	],
+	"technical-secretary": [
+		{
+			"name": "Kunal Kumbhar",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617281635/ITESA-TEAM/KunalKumbhar_imjjso.jpg",
+			"linkedin": "https://www.linkedin.com/in/kunal-kumbhar-a14aa218b/",
+			"email": "mailto:kunalkumbhar19@gmail.com ",
+			"github": "https://github.com/mrfamouskk7/",
+			"description": "Technical Secretary",
+			"intro": "Competitve Programmer"
+		}
+	],
+	"members": [
+		{
+			"name": "Shubham Jadhav",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617700207/ITESA-TEAM/SJ_kypboi.jpg",
+			"linkedin": "https://www.linkedin.com/in/shubham-jadhav-77a588192",
+			"email": "mailto:shubhamsj077@gmail.com",
+			"github": "https://github.com/ShubhamSj07",
+			"description": "Technical Team member",
+			"intro": "Full-Stack Developer & Android Enthusiast"
+		},
+		{
+			"name": "Charudatta Choudhari",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617698637/ITESA-TEAM/Charu_gffaql.jpg",
+			"linkedin": "https://www.linkedin.com/in/charudutta-chaudhari-a980661a0/",
+			"email": "mailto:restrictedcharudutta@gmail.com",
+			"github": "https://github.com/restrictedCodex",
+			"description": "Technical Team member",
+			"intro": "UI/UX Designer"
+		},
+		{
+			"name": "Ramkrishna Allampallewar",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617452231/ITESA-TEAM/Ramkrishna_gxcuio.jpg",
+			"linkedin": "https://www.linkedin.com/in/ramkrishnaallampallewar-bb88741a7",
+			"email": "mailto:ram.allampallewar@gmail.com",
+			"github": "https://github.com/ram-18",
+			"description": "Technical Team member",
+			"intro": "Web Developer"
+		},
+		{
+			"name": "Astha Jain",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617281621/ITESA-TEAM/AsthaJain_glzt2d.jpg",
+			"linkedin": "https://www.linkedin.com/in/astha-jain-3151a71b3/",
+			"email": "mailto:asthajain0901@gmail.com",
+			"github": "https://github.com/ajain09",
+			"description": "Technical Team member",
+			"intro": "Competitve Programmer"
+		},
+		{
+			"name": "Nikhil Pawar",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617281768/ITESA-TEAM/NikhilPawar_ztdqqq.jpg",
+			"linkedin": "https://www.linkedin.com/in/nikhil-pawar-11b5591a9/",
+			"email": "mailto:nikhilpawar982001@gmail.com",
+			"github": "https://github.com/nikhilpawar9",
+			"description": "Technical Team member",
+			"intro": "Competitve Programmer"
+		},
+		{
+			"name": "Rasika Mahure",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617281653/ITESA-TEAM/RasikaMahure_ruf48n.jpg",
+			"linkedin": "https://www.linkedin.com/in/rasika-mahure-1537381aa/",
+			"email": "mailto:rasikamahure28@gmail.com",
+			"github": "https://github.com/Rasika-288",
+			"description": "Technical Team member",
+			"intro": "Competitve Programmer"
+		}
+	]
+}

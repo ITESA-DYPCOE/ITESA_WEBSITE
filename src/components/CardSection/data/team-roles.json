@@ -1,0 +1,63 @@
+{
+	"principal": [
+		{
+			"name": "Dr Vijay M. Wadhai",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617547454/ITESA-TEAM/College-Principal_yqdb8c.jpg",
+			"linkedin": "https://www.linkedin.com/in/vijaywadhai/",
+			"facebook": "https://www.facebook.com/vijay.wadhai.3",
+			"description": "Principal, DYPCOE, Akurdi, Pune"
+		}
+	],
+	"hod": [
+		{
+			"name": "Dr Preeti Patil",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617547530/ITESA-TEAM/IT-Hod_wgjcyg.jpg",
+			"linkedin": "https://www.linkedin.com/in/preetipatilindia/",
+			"facebook": "https://www.facebook.com/preeti.patil.india",
+			"description": "HOD, I.T Department, DYPCOE, Akurdi, Pune"
+		}
+	],
+	"co-ordinator": [
+		{
+			"name": "Mr Navnath Kale",
+			"profile_pic": "",
+			"linkedin": "https://www.linkedin.com/in/kunal-kumbhar-a14aa218b/",
+			"facebook": "mailto:kunalkumbhar19@gmail.com ",
+			"description": "Faculty Co-ordinator, ITESA, DYPCOE, Akurdi, Pune"
+		}
+	],
+	"members": [
+		{
+			"name": "Praful Mohanan",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617353529/ITESA-TEAM/PrafulMohanan_nzu9s3.jpg",
+			"linkedin": "https://www.linkedin.com/in/praful-mohanan-26615873/",
+			"email": "mailto:praful.mohanan@gmail.com",
+			"github": "https://github.com/Praful932",
+			"description": "President"
+		},
+		{
+			"name": "Akash Shrivastava",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617353534/ITESA-TEAM/AkashShrivastava_evmjnj.jpg",
+			"linkedin": "https://www.linkedin.com/in/akash136/",
+			"email": "mailto:akash.shrivastava136@gmail.com",
+			"github": "https://github.com/Akash1362000",
+			"description": "Vice-President"
+		},
+		{
+			"name": "Akanksha Tamboli",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617686870/ITESA-TEAM/Akanksha_Tamboli_lv5bnx.jpg",
+			"linkedin": "https://www.linkedin.com/in/akanksha195/",
+			"email": "mailto:akankshatamboli195@gmail.com",
+			"github": "https://github.com/akankshast",
+			"description": "Vice-President"
+		},
+		{
+			"name": "Chetan Shinde",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617614027/ITESA-TEAM/Chetan_Shinde_oyyksq.jpg",
+			"linkedin": "",
+			"email": "mailto:chetanshinde2230@gmail.com",
+			"github": "",
+			"description": "Treasurer"
+		}
+	]
+}

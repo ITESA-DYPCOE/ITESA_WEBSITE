@@ -1,0 +1,22 @@
+{
+	"cultural-head": [
+		{
+			"name": "Samiksha Naik",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617354137/ITESA-TEAM/Samiksha_hdisel.jpg",
+			"linkedin": "https://www.linkedin.com/in/samiksha-naik-9a5b531a9",
+			"email": "mailto:samikshanaik8888@gmail.com ",
+			"github": "https://github.com/samiksha8888989",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero"
+		}
+	],
+	"cultural-head0": [
+		{
+			"name": "Ipsita Jadhav",
+			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617354132/ITESA-TEAM/Ipsita_j2qmbq.jpg",
+			"linkedin": "https://www.linkedin.com/in/ipsita-jadhav-161255172/",
+			"email": "mailto:ipsitajadhav074@gmail.com",
+			"github": "asdfasdfs",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero"
+		}
+	]
+}

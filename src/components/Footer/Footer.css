@@ -1,0 +1,278 @@
+.footer {
+	display: flex;
+	flex-flow: row wrap;
+	padding: 30px 50px 30px 50px;
+	color: #c2d6d7;
+	background-color: #121f3a;
+	border-top: 1px solid #e5e5e5;
+}
+
+.footer-dark {
+	background: linear-gradient(-157deg, #293642 0%, #171717 64%);
+}
+.info {
+	font-size: 0.85rem;
+	padding: 5px 0px;
+	color: #88b2d4;
+}
+
+.footer > * {
+	flex: 1 100%;
+}
+
+.footer-addr {
+	margin-right: 1.25em;
+	margin-bottom: 2em;
+	font-size: 0.92rem;
+}
+
+.footer-logo {
+	font-weight: 600;
+	font-size: 1.7rem;
+	color: #fff;
+}
+
+.footer-addr h2 {
+	margin-top: 1.3em;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.title {
+	font-weight: 600;
+	font-size: 18px;
+	color: #fff;
+}
+
+.footer a {
+	font-style: normal;
+	color: #c2d6d7;
+}
+.footer a:hover {
+	color: yellow;
+}
+.footer ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.footer li {
+	line-height: 2em;
+}
+
+.footer a {
+	text-decoration: none;
+}
+
+.footer-nav {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.footer-nav > * {
+	flex: 1 1 50%;
+	margin-right: 1.25em;
+}
+.ul-links a {
+	color: #c2d6d7;
+	font-size: 0.92rem;
+}
+
+.ul-links a:hover {
+	color: yellow;
+}
+
+.fa-linkedin,
+.fa-slack,
+.fa-envelope,
+.fa-github,
+.fa-instagram,
+.fa-github-own,
+.fa-envelope-own,
+.fa-slack-own,
+.fa-linkedin-own,
+.fa-instagram-own {
+	padding: 5px;
+	color: white;
+}
+
+.fa-linkedin-own:hover {
+	color: #0088cc;
+	transform: scale(1.35);
+	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+	transition: all 0.4s ease-in-out;
+}
+
+.fa-slack-own:hover {
+	color: #e03381;
+	transform: scale(1.35);
+	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+	transition: all 0.4s ease-in-out;
+}
+
+.fa-envelope-own:hover {
+	color: #dfd36d;
+	transform: scale(1.35);
+	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+	transition: all 0.4s ease-in-out;
+}
+
+.fa-github-own:hover {
+	color: #7af7d8;
+	transform: scale(1.35);
+	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+	transition: all 0.4s ease-in-out;
+}
+
+.fa-instagram-own:hover {
+	color: #f7bd7a;
+	transform: scale(1.35);
+	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+	transition: all 0.4s ease-in-out;
+}
+
+.footer-dash {
+	text-align: center;
+	padding-top: 2px;
+	width: 90px;
+	height: 2px;
+	margin-top: -32px;
+	margin-bottom: 12px;
+	background: rgb(255, 0, 90);
+	background: 
+   /* gradient can be an image */ linear-gradient(
+		45deg,
+		rgba(255, 0, 90, 1) 0%,
+		purple 90%
+	);
+	background-size: 100% 5px;
+	/* if linear-gradient, we need to resize it */
+}
+
+.footer-dash-dark {
+	background: linear-gradient(45deg, #626d70 0%, #5c6c70 90%);
+	background-size: 100% 5px;
+}
+
+.footer-text {
+	padding-top: 10px;
+	margin-bottom: 0;
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 0.91rem;
+	background: #121f3a;
+}
+
+.footer-text-dark {
+	background: linear-gradient(-157deg, #20262c 0%, #171717 64%);
+}
+
+.item {
+	margin-bottom: 1.5rem;
+}
+
+/* Social Icons styles */
+:root {
+	--r: 12px;
+	/* corner radius */
+	--w: 4px;
+	/* width of the border */
+}
+
+.col .social li {
+	color: #ffffff00;
+}
+
+.col .social li a {
+	position: relative;
+	line-height: 50px;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 0px;
+	margin-right: 20px;
+	margin-left: 0px;
+	margin-bottom: 30px;
+	transition: 0.5s;
+	float: left;
+}
+.ul-links {
+	margin-bottom: 20px;
+}
+
+.creator-text,
+.creator {
+	width: 100%;
+	color: rgb(223, 255, 137);
+	padding: 8px;
+	font-weight: 300;
+	text-align: center;
+	font-size: 14px;
+	letter-spacing: 2px;
+	margin-bottom: 0px;
+	margin-top: -15px;
+	font-family: "Trebuchet MS";
+}
+
+.creator-text-dark {
+	background: linear-gradient(-157deg, #171717 0%, #171717 64%);
+}
+
+@media screen and (min-width: 40.375em) {
+	.footer-nav > * {
+		flex: 1;
+	}
+
+	.item-extra {
+		flex-grow: 2;
+	}
+
+	.footer-addr {
+		flex: 1 0px;
+	}
+
+	.footer-nav {
+		flex: 2 0px;
+	}
+
+	.validation-new {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 510px) {
+	.col .social li a {
+		position: relative;
+		line-height: 50px;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 0px;
+		margin-right: 20px;
+		margin-left: 0px;
+		margin-bottom: 30px;
+		transition: 0.5s;
+		float: left;
+	}
+	.title {
+		font-size: 1rem;
+	}
+	.ul-links a {
+		font-size: 0.86rem;
+	}
+	.item {
+		margin-bottom: 0.5rem;
+	}
+	.footer-logo {
+		font-size: 1.3rem;
+		letter-spacing: 1px;
+	}
+	a {
+		font-size: 0.78rem;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.creator-text-dark,
+	.footer-text-dark {
+		background: linear-gradient(-157deg, #171717 0%, #171717 64%);
+	}
+}

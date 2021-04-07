@@ -1,0 +1,223 @@
+.dash {
+	width: 250px;
+	height: 5px;
+	border-radius: 20px;
+	margin-bottom: 10px;
+}
+
+p {
+	font-size: 0.95rem;
+	padding: 5px 0px;
+	color: #88b2d4;
+}
+
+.dash-dark {
+	background: #2b5876;
+	background: linear-gradient(45deg, #334557 0%, #4acad3 84%);
+}
+
+.about {
+	background-color: hsl(210, 64%, 9%);
+	padding: 60px 60px 60px 60px;
+}
+
+.text-dark {
+	color: whitesmoke;
+}
+
+.about-light {
+	color: white;
+}
+
+.about-dark {
+	color: #69a9dd;
+}
+
+.team {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem 10px;
+	gap: 16px;
+	padding-bottom: 40px;
+	background: linear-gradient(40deg, #181819 0%, #28313a 64%);
+}
+
+#content {
+	padding-top: 30px;
+}
+
+#Mui-h6 {
+	font-size: 1.1rem;
+	font-family: "Poppins", sans-serif;
+}
+
+.row1,
+.row2 {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+
+.row1 > * {
+	flex: 49% 49%;
+}
+
+.cover {
+	object-fit: cover;
+	object-position: center;
+	width: 120px;
+	height: 120px;
+	border-radius: 100%;
+	margin-bottom: 20px;
+}
+
+.card-footer {
+	color: #f4f8b3;
+	padding: 5px;
+	text-decoration: none;
+	font-size: 1.6rem;
+}
+
+.card1 {
+	display: flex;
+	min-width: 345px;
+	max-width: 400px;
+	max-height: 400px;
+	background: white;
+	box-shadow: 0 0 16px 2px #00000029;
+	padding: 15px;
+	transition: 0.5s;
+	border-radius: 15px;
+}
+
+.card1 p {
+	padding: 0px;
+}
+
+#intro {
+	font-size: 0.7rem;
+	color: #4acad3;
+}
+
+.card1-dark {
+	background: #282c35;
+	-webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+		0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+	-moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+		0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+	box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+		0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+}
+
+.team-social {
+	display: flex;
+	justify-content: center;
+	visibility: visible;
+	margin-top: -14px;
+	border-radius: 5px;
+}
+
+.card1-dark:hover {
+	transform: translateY(-5px);
+	box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+		0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+
+	background: linear-gradient(117deg, #1b1b24 0%, #333e4b 64%);
+}
+
+.card1 .team-social {
+	visibility: visible;
+}
+
+.photo {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.dark {
+	background-color: #171717;
+	color: whitesmoke;
+}
+
+.fa-github,
+.fa-envelope,
+.fa-facebook,
+.fa-github {
+	padding: 5px;
+	color: white;
+}
+
+.fa-linkedin:hover {
+	color: #0088cc;
+	transform: scale(1.35);
+	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+	transition: all 0.6s ease-in-out;
+}
+
+.fa-envelope:hover {
+	color: #dfd36d;
+	transform: scale(1.35);
+	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+	transition: all 0.6s ease-in-out;
+}
+.fa-facebook:hover {
+	color: #6f6ddf;
+	transform: scale(1.35);
+	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+	transition: all 0.6s ease-in-out;
+}
+
+.fa-github:hover {
+	color: #7af7d8;
+	transform: scale(1.35);
+	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+	transition: all 0.6s ease-in-out;
+}
+
+#MuiTypography-h3 {
+	font-size: 2.5rem;
+	font-family: "Poppins", sans-serif;
+}
+
+#MuiTypography-h7 {
+	font-size: 1rem;
+	font-family: "Poppins", sans-serif;
+}
+
+@media screen and (max-width: 750px) {
+	#MuiTypography-h3 {
+		font-size: 1.6rem;
+	}
+
+	#Mui-h6 {
+		font-size: 0.9rem;
+	}
+
+	#MuiTypography-h7 {
+		font-size: 0.986rem;
+	}
+
+	.card1 {
+		min-width: 330px;
+		max-width: 300px;
+		max-height: 190px;
+	}
+
+	.team {
+		padding: 1rem 15px;
+	}
+
+	p {
+		font-size: 0.67rem;
+	}
+
+	#intro {
+		padding-top: 2px;
+		font-size: 0.6rem;
+	}
+}

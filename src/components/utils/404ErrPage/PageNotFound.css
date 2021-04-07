@@ -1,0 +1,51 @@
+.not-found {
+	background: linear-gradient(55deg, #111118 0%, #2b2e52 94%);
+}
+.error {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 90vh;
+	margin: -5% 10% 0 10%;
+}
+#err_btn {
+	background-color: #090929;
+	color: white;
+	font-size: 20px;
+	padding: 10px 60px;
+	border-radius: 5px;
+	margin: 10px 0px;
+	cursor: pointer;
+	border: 1px solid transparent;
+}
+#err_btn:hover {
+	background-color: #34345e;
+	color: #fff;
+}
+.error-logo {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+.error-content {
+	color: #fff;
+	text-align: center;
+	font-size: 1.2rem;
+	margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 750px) {
+	.error {
+		margin: 0 5% 0 5%;
+	}
+	#err_btn {
+		font-size: 1rem;
+		padding: 6px 40px;
+		margin: 6px 0px;
+	}
+	.error-content {
+		font-size: 1rem;
+	}
+}

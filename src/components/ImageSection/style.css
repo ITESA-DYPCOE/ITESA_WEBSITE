@@ -1,0 +1,23 @@
+.aboutus-img {
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
+}
+
+.about-section {
+	position: relative;
+}
+
+.about {
+	background: linear-gradient(270deg, #171717 0, #2a323b 64%);
+	padding: 0px;
+}
+
+@media screen and (max-width: 750px) {
+	.aboutus-img {
+		height: 250px;
+	}
+	.about {
+		padding: 0px;
+	}
+}
