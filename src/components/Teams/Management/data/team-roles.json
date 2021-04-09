@@ -1,12 +1,13 @@
 {
-	"cultural-head": [
+	"management-head": [
 		{
 			"name": "Neeraj Jawahirani",
 			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617614944/ITESA-TEAM/IMG_7792_xqdnwl.jpg",
 			"linkedin": "https://www.linkedin.com/in/neeraj-j-71841a12a",
 			"email": "mailto:neerajjawahirani@gmail.com ",
 			"github": "https://github.com/NeerajJ16",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero"
+			"description": "Management Team Head",
+			"intro": "Android Developer"
 		}
 	],
 	"members": [
@@ -16,7 +17,8 @@
 			"linkedin": "https://www.linkedin.com/in/ruhika-bulani-430493189/",
 			"email": "mailto:ruhika406@gmail.com ",
 			"github": "https://github.com/Ruhika1417",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero"
+			"description": "Management Team Member",
+			"intro": "Android Developer"
 		},
 		{
 			"name": "Ameya Kannurkar",
@@ -24,7 +26,8 @@
 			"linkedin": "https://www.linkedin.com/in/ameya-kannurkar-4033701a4",
 			"email": "mailto:ameyakannurkar@gmail.com",
 			"github": "https://github.com/9421821376",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero"
+			"description": "Management Team Member",
+			"intro": "Android Developer"
 		},
 		{
 			"name": "Sharli Salonke",
@@ -32,7 +35,8 @@
 			"linkedin": "https://www.linkedin.com/in/sharli-salokhe-b70b451b2",
 			"email": "mailto:sharlisalokhe@gmail.com",
 			"github": "https://github.com/sharlisalokhe",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero"
+			"description": "Management Team Member",
+			"intro": "Android Developer"
 		}
 	]
 }

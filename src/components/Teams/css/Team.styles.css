@@ -45,10 +45,16 @@ p {
 
 #content {
 	padding-top: 30px;
+	font-family: "Poppins", sans-serif;
 }
 
 #Mui-h6 {
 	font-size: 1.1rem;
+	font-family: "Poppins", sans-serif;
+}
+
+#description {
+	font-size: 0.85rem;
 	font-family: "Poppins", sans-serif;
 }
 
@@ -100,6 +106,7 @@ p {
 #intro {
 	font-size: 0.7rem;
 	color: #4acad3;
+	font-family: "Poppins", sans-serif;
 }
 
 .card1-dark {
@@ -190,6 +197,13 @@ p {
 }
 
 @media screen and (max-width: 750px) {
+	.card1 {
+		padding: 15px 5px;
+	}
+
+	#content {
+		padding: 30px 10px;
+	}
 	#MuiTypography-h3 {
 		font-size: 1.6rem;
 	}
@@ -198,8 +212,8 @@ p {
 		font-size: 0.9rem;
 	}
 
-	#MuiTypography-h7 {
-		font-size: 0.986rem;
+	#description {
+		font-size: 0.67rem;
 	}
 
 	.card1 {

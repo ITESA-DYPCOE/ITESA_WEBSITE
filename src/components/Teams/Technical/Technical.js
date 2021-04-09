@@ -25,11 +25,7 @@ export const Technical = () => {
 		<div className="dark">
 			<div className="about-dark"></div>
 			<div className="team">
-				<Typography
-					variant="h3"
-					className="about-dark"
-					id="MuiTypography-h3"
-				>
+				<Typography variant="h3" className="about-dark" id="MuiTypography-h3">
 					Technical Team
 				</Typography>
 				<div className="dash dash-dark"></div>
@@ -73,22 +69,15 @@ export const Technical = () => {
 											</div>
 										</div>
 										<div className={classes.details}>
-											<CardContent
-												className={classes.content}
-											>
-												<Typography
-													component="h6"
-													variant="h6"
-												>
+											<CardContent className={classes.content} id="content">
+												<Typography component="h6" variant="h6" id="Mui-h6">
 													{roleObject.name}
 												</Typography>
 												<div>
-													<p>
-														{roleObject.description}
-													</p>
+													<p id="description">{roleObject.description}</p>
 												</div>
 												<div>
-													<p>{roleObject.intro}</p>
+													<p id="intro">{roleObject.intro}</p>
 												</div>
 												<br />
 											</CardContent>
@@ -140,25 +129,15 @@ export const Technical = () => {
 											</div>
 										</div>
 										<div className={classes.details}>
-											<CardContent
-												className={classes.content}
-											>
-												<Typography
-													component="h6"
-													variant="h6"
-													id="Mui-h6"
-												>
+											<CardContent className={classes.content} id="content">
+												<Typography component="h6" variant="h6" id="Mui-h6">
 													{roleObject.name}
 												</Typography>
-												<div>
-													<p>
-														{roleObject.description}
-													</p>
+												<div id="description">
+													<p>{roleObject.description}</p>
 												</div>
 												<div>
-													<p id="intro">
-														{roleObject.intro}
-													</p>
+													<p id="intro">{roleObject.intro}</p>
 												</div>
 												<br />
 											</CardContent>

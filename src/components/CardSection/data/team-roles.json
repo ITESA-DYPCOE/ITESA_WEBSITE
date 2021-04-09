@@ -33,7 +33,8 @@
 			"linkedin": "https://www.linkedin.com/in/praful-mohanan-26615873/",
 			"email": "mailto:praful.mohanan@gmail.com",
 			"github": "https://github.com/Praful932",
-			"description": "President"
+			"description": "President",
+			"intro": "Android Developer"
 		},
 		{
 			"name": "Akash Shrivastava",
@@ -41,7 +42,8 @@
 			"linkedin": "https://www.linkedin.com/in/akash136/",
 			"email": "mailto:akash.shrivastava136@gmail.com",
 			"github": "https://github.com/Akash1362000",
-			"description": "Vice-President"
+			"description": "Vice-President",
+			"intro": "Android Developer"
 		},
 		{
 			"name": "Akanksha Tamboli",
@@ -49,7 +51,8 @@
 			"linkedin": "https://www.linkedin.com/in/akanksha195/",
 			"email": "mailto:akankshatamboli195@gmail.com",
 			"github": "https://github.com/akankshast",
-			"description": "Vice-President"
+			"description": "Vice-President",
+			"intro": "Android Developer"
 		},
 		{
 			"name": "Chetan Shinde",
@@ -57,7 +60,8 @@
 			"linkedin": "",
 			"email": "mailto:chetanshinde2230@gmail.com",
 			"github": "",
-			"description": "Treasurer"
+			"description": "Treasurer",
+			"intro": "Android Developer"
 		}
 	]
 }

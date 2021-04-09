@@ -26,11 +26,7 @@ export const Management = () => {
 		<div className="dark">
 			<div className="about-dark"></div>
 			<div className="team">
-				<Typography
-					variant="h3"
-					id="MuiTypography-h3"
-					className="about-dark "
-				>
+				<Typography variant="h3" id="MuiTypography-h3" className="about-dark ">
 					Management Team
 				</Typography>
 				<div className="dash" style={styles}></div>
@@ -74,22 +70,15 @@ export const Management = () => {
 											</div>
 										</div>
 										<div className={classes.details}>
-											<CardContent
-												className={classes.content}
-											>
-												<Typography
-													component="h6"
-													variant="h6"
-												>
+											<CardContent className={classes.content} id="content">
+												<Typography component="h6" variant="h6" id="Mui-h6">
 													{roleObject.name}
 												</Typography>
 												<div>
-													<p>
-														{roleObject.description}
-													</p>
+													<p id="description">{roleObject.description}</p>
 												</div>
 												<div>
-													<p>{roleObject.intro}</p>
+													<p id="intro">{roleObject.intro}</p>
 												</div>
 												<br />
 											</CardContent>
@@ -141,22 +130,15 @@ export const Management = () => {
 											</div>
 										</div>
 										<div className={classes.details}>
-											<CardContent
-												className={classes.content}
-											>
-												<Typography
-													component="h7"
-													variant="h7"
-												>
+											<CardContent className={classes.content} id="content">
+												<Typography component="h6" variant="h6" id="Mui-h6">
 													{roleObject.name}
 												</Typography>
 												<div>
-													<p>
-														{roleObject.description}
-													</p>
+													<p id="description">{roleObject.description}</p>
 												</div>
 												<div>
-													<p>{roleObject.intro}</p>
+													<p id="intro">{roleObject.intro}</p>
 												</div>
 												<br />
 											</CardContent>
