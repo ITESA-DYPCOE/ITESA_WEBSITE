@@ -44,6 +44,10 @@
 	text-align: center;
 }
 
+.hero-container p i {
+	font-weight: 600;
+}
+
 @media screen and (max-width: 960px) {
 	#hero_txt {
 		font-size: 1.7rem;
@@ -58,21 +62,33 @@
 		margin-top: 1px;
 		font-family: "Trebuchet MS", "Lucida Sans", Arial, sans-serif;
 	}
+
 	.hero-container p {
 		font-size: 1.7rem;
 	}
+
+	.hero-container p i {
+		font-weight: 600;
+	}
 }
+
 @media screen and (max-width: 500px) {
 	.hero-container {
 		height: 79vh;
 	}
+
 	#hero_txt {
 		font-size: 1.1rem;
 		margin-top: 1px;
 		padding: 15px 10px;
 		font-family: "Trebuchet MS", "Lucida Sans", Arial, sans-serif;
 	}
+
 	.hero-container p {
 		font-size: 1.3rem;
+	}
+
+	.hero-container p i {
+		font-weight: 570;
 	}
 }

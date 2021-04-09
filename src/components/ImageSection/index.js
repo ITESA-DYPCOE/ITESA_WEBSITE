@@ -18,7 +18,7 @@ const ImageSection = () => {
 					<Parallax
 						bgImage={img}
 						className="aboutus-img"
-						strength={900}
+						strength={400}
 						id="parallax-effect"
 					></Parallax>
 				</div>
