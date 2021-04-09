@@ -15,6 +15,7 @@
 	color: #ff2929;
 	margin-top: -1%;
 	margin-bottom: 13px;
+	font-size: 0.85rem;
 }
 
 .card-heading {
@@ -305,6 +306,10 @@
 		align-items: center;
 		font-size: x-small;
 		color: black;
+	}
+
+	.validation {
+		font-size: 0.6rem;
 	}
 }
 .text-xs-center {
