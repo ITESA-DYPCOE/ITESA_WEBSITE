@@ -1,6 +1,7 @@
 .not-found {
-	background: linear-gradient(55deg, #111118 0%, #2b2e52 94%);
+	background: linear-gradient(55deg, #32373d 0%, #1e2124 54%);
 }
+
 .error {
 	display: flex;
 	flex-direction: column;
@@ -9,8 +10,9 @@
 	min-height: 90vh;
 	margin: -5% 10% 0 10%;
 }
+
 #err_btn {
-	background-color: #090929;
+	background-color: #1e2124;
 	color: white;
 	font-size: 20px;
 	padding: 10px 60px;
@@ -18,11 +20,14 @@
 	margin: 10px 0px;
 	cursor: pointer;
 	border: 1px solid transparent;
+	font-family: "Nunito", sans-serif;
 }
+
 #err_btn:hover {
-	background-color: #34345e;
+	background-color: #323a42;
 	color: #fff;
 }
+
 .error-logo {
 	width: 100%;
 	height: auto;
@@ -34,17 +39,23 @@
 	text-align: center;
 	font-size: 1.2rem;
 	margin-bottom: 1.5rem;
+	font-family: "Nunito", sans-serif;
+	font-weight: 100;
+	letter-spacing: 1px;
 }
 
 @media screen and (max-width: 750px) {
 	.error {
+		min-height: 60vh;
 		margin: 0 5% 0 5%;
 	}
+
 	#err_btn {
 		font-size: 1rem;
 		padding: 6px 40px;
 		margin: 6px 0px;
 	}
+
 	.error-content {
 		font-size: 1rem;
 	}
