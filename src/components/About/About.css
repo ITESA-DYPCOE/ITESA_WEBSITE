@@ -1,0 +1,149 @@
+.parent {
+	display: flex;
+	padding: 0 0;
+}
+
+.boxie {
+	width: 100%;
+	height: 160px;
+	background-color: #22262a;
+	opacity: 0.95;
+	padding: 1rem;
+}
+
+.wave {
+	width: 100%;
+	height: 495px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	opacity: 0.75;
+	border-radius: 5px;
+}
+
+.section {
+	padding: 0;
+}
+
+.section-light {
+	background-color: #fff;
+}
+
+.section-dark {
+	background-color: #1e2124;
+}
+
+.boxie-child {
+	flex: 1;
+}
+
+.boxie-child1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	color: #fff;
+}
+
+.boxie-child2 {
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 250px;
+}
+
+.image {
+	max-width: 100%;
+}
+
+.card {
+	width: 95%;
+	height: auto;
+	margin: 15% auto;
+	border-radius: 10px;
+}
+
+.card-light {
+	background-color: #e7e7e7;
+	box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+}
+
+.card-dark {
+	color: whitesmoke;
+	background-color: #1e2124;
+}
+
+.box-heading {
+	padding: 20px 0;
+	margin-bottom: 5px;
+	text-transform: capitalize;
+	text-align: center !important;
+	font-size: 2.5rem;
+	letter-spacing: 2px;
+	font-family: "Nunito", sans-serif;
+}
+
+.motive {
+	text-align: center;
+	color: #f8fcff;
+	font-size: 1.4rem;
+	padding-bottom: 10px;
+	/* font-family: "Nunito", sans-serif;
+	letter-spacing: 1.3px; */
+}
+
+.box-heading-light {
+	color: var(--secondary-color);
+}
+
+.box-sub-heading {
+	font-family: "Nunito", sans-serif;
+	font-size: 2.4rem;
+	text-align: center;
+}
+
+.box-heading-dark {
+	color: #fff;
+}
+
+@media screen and (max-width: 880px) {
+	.parent {
+		display: block;
+		width: 100%;
+	}
+
+	.card {
+		width: 100%;
+		margin: 1% auto;
+	}
+
+	.boxie {
+		width: 100%;
+		height: 120px;
+		background-color: #22262a;
+		opacity: 0.85;
+		padding: 0;
+	}
+
+	.box-heading {
+		font-size: 1.25rem;
+		padding: 0;
+	}
+
+	.motive {
+		font-size: 0.85rem;
+	}
+
+	.box-sub-heading {
+		padding-top: 1rem;
+		font-size: 1.25rem;
+	}
+
+	.boxie-child1 {
+		padding: 0;
+	}
+}
+@media screen and (max-width: 1296px) {
+	.wave {
+		display: none;
+	}
+}
