@@ -1,14 +1,13 @@
 import React from "react";
 import "../../../App.css";
-import { Card } from "../../CardSection/Card";
 
-//components
-import HeroSection from "../../HeroSection/HeroSection";
+import { Card } from "../../CardSection/Card";
+import { About } from "../../About/About";
 
 const Home = () => {
 	return (
 		<>
-			<HeroSection />
+			<About />
 			<Card />
 		</>
 	);
