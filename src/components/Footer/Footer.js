@@ -14,15 +14,15 @@ const Footer = () => {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<i className="fas fa-map-marker-alt"></i> D Y Patil
-						College Of Engineering, Akurdi, Pune
+						<i className="fas fa-map-marker-alt"></i> D Y Patil College Of
+						Engineering, Akurdi, Pune
 						<br />
 					</a>
 					<div className="info">
-						ITESA is a community of students from D.Y Patil College
-						of Engineering, Akurdi – Information Technology
-						Department with diverse fields including but not limited
-						to Technical, Cultural, Management, etc.
+						ITESA is a community of students from D.Y Patil College of
+						Engineering, Akurdi – Information Technology Department with diverse
+						fields including but not limited to Technical, Cultural, Management,
+						etc.
 					</div>
 				</div>
 				<ul className="footer-nav">
@@ -34,9 +34,7 @@ const Footer = () => {
 								<Link to="/technical-team">Technical Team</Link>
 							</li>
 							<li>
-								<Link to="/management-team">
-									Management Team
-								</Link>
+								<Link to="/management-team">Management Team</Link>
 							</li>
 
 							<li>
