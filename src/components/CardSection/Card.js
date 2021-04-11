@@ -89,7 +89,7 @@ export const Card = () => {
 							return null;
 						})}
 					</div>
-					<Title coreteaminfo="Meet Our Core Team" department="" />
+					<Title coreteaminfo="Meet Our Core Team" />
 					<div className="row2">
 						{Object.keys(teamData).map(role => {
 							if (role === "members") {

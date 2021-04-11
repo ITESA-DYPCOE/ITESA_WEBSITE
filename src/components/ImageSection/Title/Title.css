@@ -1,24 +1,19 @@
 .title-color {
 	color: var(--primary-color);
 }
-.subtitle-color {
-	color: #94e8fd;
-}
-.box {
+
+.boxy {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 0.78em 25px;
-	gap: 16px;
+	padding: 1em 25px;
 	background: linear-gradient(157deg, #232930 0%, #262e37 64%);
+	border-radius: 6px;
 }
 
 @media screen and (max-width: 750px) {
 	#MuiTypography-h5 {
 		font-size: 1rem;
 		text-align: center;
-	}
-	#MuiTypography-h6 {
-		font-size: 0.7rem;
 	}
 }
