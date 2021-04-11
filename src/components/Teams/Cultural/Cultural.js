@@ -79,7 +79,7 @@ export const Cultural = () => {
 													{roleObject.name}
 												</Typography>
 												<div>
-													<p>{roleObject.description}</p>
+													<p id="description">{roleObject.description}</p>
 												</div>
 												<div>
 													<p id="intro">{roleObject.intro}</p>

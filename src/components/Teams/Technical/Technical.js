@@ -133,8 +133,8 @@ export const Technical = () => {
 												<Typography component="h6" variant="h6" id="Mui-h6">
 													{roleObject.name}
 												</Typography>
-												<div id="description">
-													<p>{roleObject.description}</p>
+												<div>
+													<p id="description">{roleObject.description}</p>
 												</div>
 												<div>
 													<p id="intro">{roleObject.intro}</p>
