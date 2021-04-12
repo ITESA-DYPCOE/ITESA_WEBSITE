@@ -68,7 +68,7 @@ export const Card = () => {
 														rel="noreferrer"
 														className="card-footer"
 													>
-														<i class="fab fa-facebook"></i>
+														<i className="fab fa-facebook"></i>
 													</a>
 												</div>
 											</div>

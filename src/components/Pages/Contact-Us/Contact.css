@@ -311,6 +311,9 @@
 	.validation {
 		font-size: 0.6rem;
 	}
+	.toast {
+		display: none;
+	}
 }
 .text-xs-center {
 	text-align: center;

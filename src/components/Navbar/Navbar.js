@@ -86,7 +86,7 @@ const Navbar = () => {
 								className="nav-links"
 								onClick={closeMobileMenu}
 							>
-								Events
+								Events <span className="badge badge-warning">New</span>
 							</NavLink>
 						</li>
 						<li className="nav-item active">
