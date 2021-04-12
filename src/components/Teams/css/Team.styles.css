@@ -89,7 +89,7 @@ p {
 
 .card1 {
 	display: flex;
-	min-width: 345px;
+	min-width: 350px;
 	max-width: 400px;
 	max-height: 400px;
 	background: white;

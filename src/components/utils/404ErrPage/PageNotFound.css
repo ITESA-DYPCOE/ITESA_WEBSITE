@@ -12,7 +12,7 @@
 }
 
 #err_btn {
-	background-color: #1e2124;
+	background-color: #323a42;
 	color: white;
 	font-size: 20px;
 	padding: 10px 60px;
@@ -24,7 +24,7 @@
 }
 
 #err_btn:hover {
-	background-color: #323a42;
+	background-color: #2e343b;
 	color: #fff;
 }
 

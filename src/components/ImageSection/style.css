@@ -2,10 +2,12 @@
 	width: 100%;
 	height: 400px;
 	object-fit: cover;
+	box-shadow: 0px 3px 55px rgba(72, 127, 255, 0.4);
 }
 
 .about-section {
 	position: relative;
+	height: 400px;
 }
 
 .about {
@@ -14,8 +16,10 @@
 }
 
 @media screen and (max-width: 750px) {
+	.about-section,
 	.aboutus-img {
 		height: 250px;
+		box-shadow: 0px 3px 38px rgba(72, 127, 255, 0.3);
 	}
 	.about {
 		padding: 0px;

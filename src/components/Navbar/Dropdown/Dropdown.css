@@ -7,7 +7,7 @@
 	display: none;
 	border-radius: 0.5rem;
 	position: absolute;
-	background-color: #212930;
+	background-color: #343a40;
 	min-width: 150px;
 	z-index: 1;
 }
@@ -22,7 +22,7 @@
 
 .dropdown-content a:hover {
 	border-radius: 0.27rem;
-	background-color: #2f3844;
+	background-color: #22262a;
 	color: #fff;
 }
 
