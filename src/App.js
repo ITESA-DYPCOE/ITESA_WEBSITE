@@ -18,6 +18,7 @@ import Contact from "./components/Pages/Contact-Us/Contact";
 
 //utils
 import PageNotFound from "./components/utils/404ErrPage/PageNotFound";
+import { ScrollToTop } from "./components/utils/ScrollToTop";
 
 const App = () => {
 	return (
@@ -32,6 +33,7 @@ const App = () => {
 					<Route path="/contact-us" component={Contact} />
 					<Route path="*" component={PageNotFound} />
 				</Switch>
+				<ScrollToTop />
 				<Footer />
 			</Router>
 		</>
