@@ -96,7 +96,7 @@
 	letter-spacing: 1.3px; */
 }
 
-@keyframes fontbulger0 {
+@keyframes imgAnimate {
   0% {
     transform: translate3d(-20%, 0, 0);
   }
@@ -106,10 +106,10 @@
 }
 
 .login-image {
-  animation: fontbulger0 0.8s ease-in-out;
+  animation: imgAnimate 0.8s ease-in-out;
 }
 
-@keyframes fontbulger {
+@keyframes titleAnimate {
   0% {
     font-size: 2.5rem;
     transform: translate3d(10%, 0, 0);
@@ -120,7 +120,7 @@
   }
 }
 
-@keyframes fontbulger2 {
+@keyframes motiveAnimate {
   0% {
     font-size: 1.4rem;
     transform: translate3d(0, 50%, 0);
@@ -132,11 +132,11 @@
 }
 
 .box-heading {
-  animation: fontbulger 0.8s ease-in-out;
+  animation: titleAnimate 0.8s ease-in-out;
 }
 
 .motive {
-  animation: fontbulger2 1s ease-in-out;
+  animation: motiveAnimate 1s ease-in-out;
 }
 
 .box-heading-light {
@@ -194,7 +194,20 @@
     padding: 0;
   }
 
-  @keyframes fontbulger {
+  @keyframes imgAnimate {
+    0% {
+      transform: translate3d(20%, 0, 0);
+    }
+    100% {
+      transform: translateZ(0);
+    }
+  }
+
+  .login-image {
+    animation: imgAnimate 0.8s ease-in-out;
+  }
+
+  @keyframes titleAnimate {
     0% {
       font-size: 1.25rem;
       transform: translate3d(-10%, 0, 0);
@@ -206,10 +219,10 @@
   }
 
   .box-heading {
-    animation: fontbulger 0.8s ease-in-out;
+    animation: titleAnimate 0.8s ease-in-out;
   }
 
-  @keyframes fontbulger2 {
+  @keyframes motiveAnimate {
     0% {
       font-size: 0.85rem;
       transform: translate3d(0, 50%, 0);
@@ -220,7 +233,7 @@
     }
   }
   .motive {
-    animation: fontbulger2 1s ease-in-out;
+    animation: motiveAnimate 1s ease-in-out;
   }
 }
 @media screen and (max-width: 1296px) {
