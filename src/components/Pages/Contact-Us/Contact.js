@@ -63,10 +63,12 @@ const ContactUs = () => {
 		setFormErrors(errors);
 	};
 
+	const URL = process.env.REACT_APP_BACKEND_URL
+
 	const fetchApi = async () => {
 		const { name, email, subject, message } = formData;
 
-		const res = await fetch("/submit-query", {
+		const res = await fetch(`${URL}/submit-query`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
