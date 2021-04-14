@@ -67,7 +67,6 @@ const ContactUs = () => {
 
 	const fetchApi = async () => {
 		const { name, email, subject, message } = formData;
-
 		const res = await fetch(`${URL}/submit-query`, {
 			method: "POST",
 			headers: {
