@@ -38,7 +38,7 @@ export function About() {
 					<h1 className="box-sub-heading box-heading-dark">
 						D Y Patil College Of Engineering, Akurdi, Pune
 					</h1>
-					<p className="motive">Department of Information Technology</p>
+					<p className="boxie-info">Department of Information Technology</p>
 				</div>
 			</div>
 		</>
