@@ -7,7 +7,7 @@
 			"email": "mailto:kpkamleshpatil333@gmail.com",
 			"github": "https://github.com/Neon-K9",
 			"description": "Technical Secretary",
-			"intro": "Android Developer"
+			"intro": "-"
 		}
 	],
 	"technical-secretary": [
@@ -29,7 +29,7 @@
 			"email": "mailto:shubhamsj077@gmail.com",
 			"github": "https://github.com/ShubhamSj07",
 			"description": "Technical Team member",
-			"intro": "Full-Stack Developer & Android Enthusiast"
+			"intro": "Full-Stack Developer, Open Source & Android Enthusiast"
 		},
 		{
 			"name": "Charudatta Choudhari",
@@ -38,7 +38,7 @@
 			"email": "mailto:restrictedcharudutta@gmail.com",
 			"github": "https://github.com/restrictedCodex",
 			"description": "Technical Team member",
-			"intro": "UI/UX Designer"
+			"intro": "-"
 		},
 		{
 			"name": "Ramkrishna Allampallewar",
@@ -56,7 +56,7 @@
 			"email": "mailto:asthajain0901@gmail.com",
 			"github": "https://github.com/ajain09",
 			"description": "Technical Team member",
-			"intro": "Competitve Programmer"
+			"intro": "-"
 		},
 		{
 			"name": "Nikhil Pawar",
@@ -65,7 +65,7 @@
 			"email": "mailto:nikhilpawar982001@gmail.com",
 			"github": "https://github.com/nikhilpawar9",
 			"description": "Technical Team member",
-			"intro": "Competitve Programmer"
+			"intro": "-"
 		},
 		{
 			"name": "Rasika Mahure",
@@ -74,7 +74,7 @@
 			"email": "mailto:rasikamahure28@gmail.com",
 			"github": "https://github.com/Rasika-288",
 			"description": "Technical Team member",
-			"intro": "Competitve Programmer"
+			"intro": "Web Developer"
 		}
 	]
 }

@@ -34,7 +34,7 @@
 			"email": "mailto:praful.mohanan@gmail.com",
 			"github": "https://github.com/Praful932",
 			"description": "President",
-			"intro": "Android Developer"
+			"intro": "ML Practitioner"
 		},
 		{
 			"name": "Akash Shrivastava",
@@ -43,7 +43,7 @@
 			"email": "mailto:akash.shrivastava136@gmail.com",
 			"github": "https://github.com/Akash1362000",
 			"description": "Vice-President",
-			"intro": "Android Developer"
+			"intro": "-"
 		},
 		{
 			"name": "Akanksha Tamboli",
@@ -52,7 +52,7 @@
 			"email": "mailto:akankshatamboli195@gmail.com",
 			"github": "https://github.com/akankshast",
 			"description": "Vice-President",
-			"intro": "Android Developer"
+			"intro": "-"
 		},
 		{
 			"name": "Chetan Shinde",
@@ -61,7 +61,7 @@
 			"email": "mailto:chetanshinde2230@gmail.com",
 			"github": "",
 			"description": "Treasurer",
-			"intro": "Android Developer"
+			"intro": "-"
 		}
 	]
 }
