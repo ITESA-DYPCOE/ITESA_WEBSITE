@@ -10,13 +10,25 @@ import logo from "../utils/Logo/logo.png";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
+  const [navbarColor, setNavbarColor] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
+  const changeNavbarColor = () => {
+    // console.log(window.screenY);
+    if (window.scrollY >= 80) {
+      setNavbarColor(true);
+    } else {
+      setNavbarColor(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeNavbarColor);
+
   return (
     <>
-      <nav className="navbar">
+      <nav className={navbarColor ? "navbar active-color" : "navbar"}>
         <div className="navbar-container">
           <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
             <div className="navbar-brand">
