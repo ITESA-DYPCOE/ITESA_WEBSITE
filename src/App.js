@@ -15,6 +15,7 @@ import { Cultural } from "./components/Teams/Cultural/Cultural";
 //pages
 import Home from "./components/Pages/Home/Home";
 import Contact from "./components/Pages/Contact-Us/Contact";
+import {Events} from "./components/Pages/Events/Events";
 
 //utils
 import PageNotFound from "./components/utils/404ErrPage/PageNotFound";
@@ -30,6 +31,7 @@ const App = () => {
 					<Route path="/technical-team" component={Technical} />
 					<Route path="/management-team" component={Management} />
 					<Route path="/cultural-team" component={Cultural} />
+					<Route path="/events" component={Events} />
 					<Route path="/contact-us" component={Contact} />
 					<Route path="*" component={PageNotFound} />
 				</Switch>

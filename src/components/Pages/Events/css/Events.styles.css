@@ -1,0 +1,224 @@
+.dash {
+  width: 250px;
+  height: 5px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.about-dark {
+  text-align: center;
+}
+
+.events-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 10px;
+  gap: 16px;
+  padding-bottom: 40px;
+  background: #1e2124;
+}
+
+.row1,
+.row2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.row1 > * {
+  flex: 50% 50%;
+  padding-right: 1rem;
+}
+
+.dark {
+  background-color: #1e2124;
+  color: whitesmoke;
+}
+
+.fa-instagram,
+.fa-facebook,
+.fa-github {
+  padding: 5px;
+  color: white;
+}
+
+.fa-linkedin:hover {
+  color: #0088cc;
+  transform: scale(1.35);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  transition: all 0.6s ease-in-out;
+}
+
+.fa-instagram:hover {
+  color: #dfd36d;
+  transform: scale(1.35);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  transition: all 0.6s ease-in-out;
+}
+.fa-facebook:hover {
+  color: #6f6ddf;
+  transform: scale(1.35);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  transition: all 0.6s ease-in-out;
+}
+
+.fa-github:hover {
+  color: #7af7d8;
+  transform: scale(1.35);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  transition: all 0.6s ease-in-out;
+}
+
+.social-linkss {
+  display: flex;
+  justify-content: center;
+  visibility: visible;
+  border-radius: 5px;
+}
+
+.social-footer {
+  color: #f4f8b3;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+
+.event-link {
+  display: flex;
+  justify-content: center;
+  visibility: visible;
+  color: #f8b3ca;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.event-link:hover {
+  color: aquamarine;
+}
+
+.info-check {
+  display: flex;
+  justify-content: center;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.event-title {
+  padding-top: 1.2rem;
+  text-align: center;
+  color: #fac87b;
+  font-size: 1.6rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.event-date {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.event-info {
+  color: #fac87b;
+  font-size: 0.8em;
+  text-align: center;
+  padding: 1rem;
+}
+
+#img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.container {
+  display: inline-block;
+  margin: 3%;
+}
+
+.container:hover .flipper {
+  transition: all 0.6s ease-in;
+  transform: rotateY(180deg);
+}
+
+.container,
+.front,
+.back {
+  width: 330px;
+  height: 330px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 330px;
+  height: 330px;
+  box-shadow: 0px 3px 85px rgba(72, 127, 255, 0.4);
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 750px) {
+  #link-icon {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    height: auto;
+  }
+
+  #img {
+    width: 100%;
+    border-radius: 4px;
+    max-height: 280px;
+  }
+
+  .event-title {
+    padding-top: 0.8rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  .container,
+  .front,
+  .back {
+    width: 280px;
+    height: 280px;
+    border-radius: 10px;
+  }
+
+  .front,
+  .back {
+    width: 280px;
+    height: 280px;
+  }
+
+  .event-date {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .event-info {
+    color: #fac87b;
+    font-size: 0.65rem;
+    text-align: center;
+  }
+}
