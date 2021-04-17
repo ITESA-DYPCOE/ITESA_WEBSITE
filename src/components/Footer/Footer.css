@@ -1,85 +1,85 @@
 .footer {
-	display: flex;
-	flex-flow: row wrap;
-	padding: 30px 50px 30px 50px;
-	color: #c2d6d7;
-	background-color: #1e2124;
-	border-top: 1px solid #e5e5e5;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 30px 50px 30px 50px;
+  color: #c2d6d7;
+  background-color: #1e2124;
+  border-top: 1px solid #e5e5e5;
 }
 
 .footer-dark {
-	background: linear-gradient(-157deg, #323a42 0%, #1e2124 64%);
-	box-shadow: 0px -4px 3px rgba(72, 127, 255, 0.4);
+  background: linear-gradient(-157deg, #323a42 0%, #1e2124 64%);
+  box-shadow: 0px -4px 3px rgba(72, 127, 255, 0.4);
 }
 .info {
-	font-size: 0.85rem;
-	padding: 5px 0px;
-	color: #88b2d4;
+  font-size: 0.85rem;
+  padding: 5px 0px;
+  color: #88b2d4;
 }
 
 .footer > * {
-	flex: 1 100%;
+  flex: 1 100%;
 }
 
 .footer-addr {
-	margin-right: 1.25em;
-	margin-bottom: 2em;
-	font-size: 0.92rem;
+  margin-right: 1.25em;
+  margin-bottom: 2em;
+  font-size: 0.92rem;
 }
 
 .footer-logo {
-	font-weight: 600;
-	font-size: 1.7rem;
-	color: #fff;
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: #fff;
 }
 
 .footer-addr h2 {
-	margin-top: 1.3em;
-	font-size: 15px;
-	font-weight: 400;
+  margin-top: 1.3em;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .title {
-	font-weight: 600;
-	font-size: 18px;
-	color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
 }
 
 .footer a {
-	font-style: normal;
-	color: #c2d6d7;
+  font-style: normal;
+  color: #c2d6d7;
 }
 .footer a:hover {
-	color: yellow;
+  color: yellow;
 }
 .footer ul {
-	list-style: none;
-	padding-left: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 .footer li {
-	line-height: 2em;
+  line-height: 2em;
 }
 
 .footer a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .footer-nav {
-	display: flex;
-	flex-flow: row wrap;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .footer-nav > * {
-	margin-right: 1.25em;
+  margin-right: 1.25em;
 }
 .ul-links a {
-	color: #c2d6d7;
-	font-size: 0.92rem;
+  color: #c2d6d7;
+  font-size: 0.92rem;
 }
 
 .ul-links a:hover {
-	color: yellow;
+  color: yellow;
 }
 
 .fa-linkedin,
@@ -92,201 +92,205 @@
 .fa-slack-own,
 .fa-linkedin-own,
 .fa-instagram-own {
-	padding: 5px;
-	color: white;
+  padding: 5px;
+  color: white;
 }
 
 .fa-linkedin-own:hover {
-	color: #0088cc;
-	transform: scale(1.35);
-	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
-	transition: all 0.4s ease-in-out;
+  color: #0088cc;
+  transform: scale(1.35);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  transition: all 0.4s ease-in-out;
 }
 
 .fa-slack-own:hover {
-	color: #e03381;
-	transform: scale(1.35);
-	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
-	transition: all 0.4s ease-in-out;
+  color: #e03381;
+  transform: scale(1.35);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  transition: all 0.4s ease-in-out;
 }
 
 .fa-envelope-own:hover {
-	color: #dfd36d;
-	transform: scale(1.35);
-	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
-	transition: all 0.4s ease-in-out;
+  color: #dfd36d;
+  transform: scale(1.35);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  transition: all 0.4s ease-in-out;
 }
 
 .fa-github-own:hover {
-	color: #7af7d8;
-	transform: scale(1.35);
-	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
-	transition: all 0.4s ease-in-out;
+  color: #7af7d8;
+  transform: scale(1.35);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  transition: all 0.4s ease-in-out;
 }
 
 .fa-instagram-own:hover {
-	color: #f7bd7a;
-	transform: scale(1.35);
-	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
-	transition: all 0.4s ease-in-out;
+  color: #f7bd7a;
+  transform: scale(1.35);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  transition: all 0.4s ease-in-out;
 }
 
 .footer-dash {
-	text-align: center;
-	padding-top: 2px;
-	width: 90px;
-	height: 2px;
-	margin-top: -32px;
-	margin-bottom: 12px;
-	background: rgb(255, 0, 90);
-	background: 
+  text-align: center;
+  padding-top: 2px;
+  width: 90px;
+  height: 2px;
+  margin-top: -32px;
+  margin-bottom: 12px;
+  background: rgb(255, 0, 90);
+  background: 
    /* gradient can be an image */ linear-gradient(
-		45deg,
-		rgba(255, 0, 90, 1) 0%,
-		purple 90%
-	);
-	background-size: 100% 5px;
-	/* if linear-gradient, we need to resize it */
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    purple 90%
+  );
+  background-size: 100% 5px;
+  /* if linear-gradient, we need to resize it */
 }
 
 .footer-dash-dark {
-	background: linear-gradient(45deg, #626d70 0%, #5c6c70 90%);
-	background-size: 100% 5px;
+  background: linear-gradient(45deg, #626d70 0%, #5c6c70 90%);
+  background-size: 100% 5px;
 }
 
 .footer-text {
-	padding-top: 10px;
-	margin-bottom: 0;
-	text-align: center;
-	letter-spacing: 1px;
-	font-size: 0.91rem;
-	background: #121f3a;
+  padding-top: 10px;
+  margin-bottom: 0;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 0.91rem;
+  background: #121f3a;
 }
 
 .footer-text-dark {
-	background: linear-gradient(-157deg, #2a3036 0%, #1e2124 64%);
+  background: linear-gradient(-157deg, #2a3036 0%, #1e2124 64%);
 }
 
 .item {
-	margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Social Icons styles */
 :root {
-	--r: 12px;
-	/* corner radius */
-	--w: 4px;
-	/* width of the border */
+  --r: 12px;
+  /* corner radius */
+  --w: 4px;
+  /* width of the border */
 }
 
 .col .social li {
-	color: #ffffff00;
+  color: #ffffff00;
 }
 
 .col .social li a {
-	position: relative;
-	line-height: 50px;
-	font-size: 20px;
-	text-align: center;
-	margin-top: 0px;
-	margin-right: 20px;
-	margin-left: 0px;
-	margin-bottom: 30px;
-	transition: 0.5s;
-	float: left;
+  position: relative;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 0px;
+  margin-right: 20px;
+  margin-left: 0px;
+  margin-bottom: 30px;
+  transition: 0.5s;
+  float: left;
 }
 .ul-links {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .creator-text,
 .creator {
-	width: 100%;
-	color: rgb(223, 255, 137);
-	padding: 8px;
-	font-weight: 900;
-	text-align: center;
-	font-size: 14px;
-	letter-spacing: 2px;
-	margin-bottom: 0px;
-	margin-top: -15px;
-	font-family: "Nunito", sans-serif;
+  width: 100%;
+  color: rgb(223, 255, 137);
+  padding: 8px;
+  font-weight: 900;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 0px;
+  margin-top: -15px;
+  font-family: "Nunito", sans-serif;
 }
 
 .creator-text-dark {
-	background: #1e2124;
+  background: #1e2124;
 }
 
 @media screen and (min-width: 40.375em) {
-	.footer-nav > * {
-		flex: 1;
-	}
+  .footer-nav > * {
+    flex: 1;
+  }
 
-	.item-extra {
-		flex-grow: 2;
-	}
+  .item-extra {
+    flex-grow: 2;
+  }
 
-	.footer-addr {
-		flex: 1 0px;
-	}
+  .footer-addr {
+    flex: 1 0px;
+  }
 
-	.footer-nav {
-		flex: 2 0px;
-	}
+  .footer-nav {
+    flex: 2 0px;
+  }
 
-	.validation-new {
-		display: none;
-	}
+  .validation-new {
+    display: none;
+  }
 
-	a {
-		font-size: 0.73rem;
-	}
+  a {
+    font-size: 0.73rem;
+    padding-left: 0.5em;
+    color: #fac87b;
+  }
 
-	.info {
-		font-size: 0.78rem;
-	}
+  .info {
+    font-size: 0.78rem;
+  }
 }
 
 @media screen and (max-width: 510px) {
-	.footer {
-		padding: 30px 10px 20px 35px;
-	}
+  .footer {
+    padding: 30px 10px 20px 35px;
+  }
 
-	.col .social li a {
-		position: relative;
-		line-height: 50px;
-		font-size: 20px;
-		text-align: center;
-		margin-top: 0px;
-		margin-right: 20px;
-		margin-left: 0px;
-		margin-bottom: 30px;
-		transition: 0.5s;
-		float: left;
-	}
-	.title {
-		font-size: 1rem;
-	}
-	.ul-links a {
-		font-size: 0.86rem;
-	}
-	.item {
-		margin-bottom: 0.5rem;
-	}
-	.footer-logo {
-		font-size: 1.3rem;
-		letter-spacing: 1px;
-	}
-	a {
-		font-size: 0.78rem;
-	}
-	.info {
-		font-size: 0.78rem;
-	}
+  .col .social li a {
+    position: relative;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 0px;
+    margin-right: 20px;
+    margin-left: 0px;
+    margin-bottom: 30px;
+    transition: 0.5s;
+    float: left;
+  }
+  .title {
+    font-size: 1rem;
+  }
+  .ul-links a {
+    font-size: 0.86rem;
+  }
+  .item {
+    margin-bottom: 0.5rem;
+  }
+  .footer-logo {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+  a {
+    font-size: 0.78rem;
+    padding-left: 0.5em;
+    color: #fac87b;
+  }
+  .info {
+    font-size: 0.78rem;
+  }
 }
 
 @media screen and (max-width: 1000px) {
-	.footer-text-dark {
-		background: linear-gradient(-157deg, #1e2124 0%, #1e2124 64%);
-	}
+  .footer-text-dark {
+    background: linear-gradient(-157deg, #1e2124 0%, #1e2124 64%);
+  }
 }
