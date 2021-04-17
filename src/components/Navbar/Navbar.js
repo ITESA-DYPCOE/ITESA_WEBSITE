@@ -6,7 +6,7 @@ import "../Navbar/Dropdown/Dropdown.css";
 
 import Button from "../utils/Button/Button";
 
-import logo from "../utils/Logo/logo.png";
+import logo from "../utils/Logo/DARK_MODE-LOGO.png";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -35,9 +35,10 @@ const Navbar = () => {
               <img
                 style={{
                   borderRadius: "0.3em",
-                  height: "2.5rem",
-                  width: "5em",
+                  height: "2.3rem",
+                  width: "6.5em",
                   position: "relative",
+                  marginTop: "6px",
                 }}
                 src={logo}
                 alt="ITSEA"

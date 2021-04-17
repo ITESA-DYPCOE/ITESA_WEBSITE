@@ -42,7 +42,6 @@
   margin-left: 1px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 2rem;
   display: flex;
   align-items: center;
 }
@@ -58,7 +57,7 @@
   grid-gap: 10px;
   list-style: none;
   text-align: center;
-  width: 87vw;
+  width: 85vw;
   justify-content: end;
 }
 
@@ -180,7 +179,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(35%, 40%);
+    transform: translate(20%, 30%);
   }
 
   .menu-icon {
@@ -197,12 +196,12 @@
   .fa-bars {
     transition: all ease 0.2s;
     color: var(--primary-color);
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
   .fa-times {
     transition: all ease 0.2s;
     color: var(--primary-color);
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   .active-links {
     color: #15cdfc;
