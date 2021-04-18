@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 
 import "./Footer.css";
 
+const styles = {
+  textDecoration: "none",
+  paddingLeft: "0.5em",
+  color: "#fac87b",
+};
+
 const Footer = () => {
   return (
     <React.Fragment>
@@ -126,7 +132,7 @@ const Footer = () => {
             href="https://www.linkedin.com/in/shubham-jadhav-77a588192"
             target="_blank"
             rel="noreferrer"
-            style={{ textDecoration: "none" }}
+            style={styles}
           >
             SJ &
           </a>
@@ -134,7 +140,7 @@ const Footer = () => {
             href="https://www.linkedin.com/in/charudutta-chaudhari-a980661a0/"
             target="_blank"
             rel="noreferrer"
-            style={{ textDecoration: "none" }}
+            style={styles}
           >
             Charu
           </a>
