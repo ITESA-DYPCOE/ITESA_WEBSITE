@@ -116,15 +116,17 @@
 }
 
 .event-date {
-  font-size: 1rem;
+  font-size: 1em;
   text-align: center;
+  color: #7baefa;
+  padding-top: 0.7rem;
 }
 
 .event-info {
   color: #fac87b;
-  font-size: 0.8em;
+  font-size: 1em;
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 
 #img {
@@ -218,7 +220,8 @@
   }
   .event-info {
     color: #fac87b;
-    font-size: 0.65rem;
+    font-size: 0.95rem;
     text-align: center;
+    padding-bottom: 2rem;
   }
 }

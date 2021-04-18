@@ -25,6 +25,14 @@ const EventCard = props => {
                     Register Here <i class="fas fa-link" id="link-icon"></i>
                   </>
                 ) : (
+                    <>
+                      Event Closed <i class="fas fa-times" id="link-icon"></i>
+                    </>
+                  ) && props.open === "noEvents" ? (
+                  <>
+                    Stay tuned <i class="fas fa-globe" id="link-icon"></i>
+                  </>
+                ) : (
                   <>
                     Event Closed <i class="fas fa-times" id="link-icon"></i>
                   </>
