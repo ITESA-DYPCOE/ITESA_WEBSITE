@@ -23,7 +23,7 @@ export const Events = () => {
         <div className="dash dash-dark" style={styles}></div>
         <div className="row1">
           <EventCard
-            img="https://res.cloudinary.com/sjdev/image/upload/v1618754595/ITESA-TEAM/Events-Images/No-Events_zpaqyg.png"
+            img="https://res.cloudinary.com/sjdev/image/upload/v1618986767/ITESA-TEAM/Events-Images/No-Events_bxmaqs.png"
             eventTitle="No Events for now"
             eventDate=""
             eventInfo="More exiciting events on the way.."
@@ -72,11 +72,13 @@ export const Events = () => {
             linkedinLink="https://www.linkedin.com/posts/itesa-dyp_itesa-dypcoe-coding-activity-6765529302474874880-Ein3"
             instagramLink="https://www.instagram.com/p/CLYUtKkJd4V/?utm_source=ig_web_copy_link"
           />
+        </div>
+        <div className="row1">
           <EventCard
             img="https://res.cloudinary.com/sjdev/image/upload/v1618480590/ITESA-TEAM/Events-Images/image4_wzdusa.jpg"
-            eventTitle="Event 01"
+            eventTitle="Tantrotsav"
             eventDate="13/06/2001"
-            eventInfo="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            eventInfo="This is a college wide event, in which our technical team conducts one or more events. The events are mostly realted to the technical fields, such as a coding compeition."
             eventLink="https://www.linkedin.com/company/itesa-dyp/mycompany/"
             open="false"
             linkedinLink="https://www.linkedin.com/company/itesa-dyp/mycompany/"
@@ -84,9 +86,9 @@ export const Events = () => {
           />
           <EventCard
             img="https://res.cloudinary.com/sjdev/image/upload/v1618480584/ITESA-TEAM/Events-Images/image2_kmigrr.jpg"
-            eventTitle="Event 02"
+            eventTitle="Literacy campaign"
             eventDate="13/06/2001"
-            eventInfo="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            eventInfo="This is another flagship event conducted by the department every year, here we students go from our college to primary school and teach students between 4th to 10th about how a computer works and its internal components"
             eventLink="https://www.linkedin.com/company/itesa-dyp/mycompany/"
             open="false"
             linkedinLink="https://www.linkedin.com/company/itesa-dyp/mycompany/"
@@ -94,9 +96,9 @@ export const Events = () => {
           />
           <EventCard
             img="https://res.cloudinary.com/sjdev/image/upload/v1618480582/ITESA-TEAM/Events-Images/image3_rmi7fx.jpg"
-            eventTitle="Event 03"
+            eventTitle="Gadget Gyan"
             eventDate="13/06/2001"
-            eventInfo="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            eventInfo="In this event the students of our department taught high school students the mechanism of how a computer works and a detailed explaination of each hardware components.This is one of the oldest events of our college."
             eventLink="https://www.linkedin.com/company/itesa-dyp/mycompany/"
             open="false"
             linkedinLink="https://www.linkedin.com/company/itesa-dyp/mycompany/"

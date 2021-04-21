@@ -124,9 +124,9 @@
 
 .event-info {
   color: #fac87b;
-  font-size: 1em;
+  font-size: 0.75em;
   text-align: center;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.5rem;
 }
 
 #img {
@@ -220,8 +220,8 @@
   }
   .event-info {
     color: #fac87b;
-    font-size: 0.95rem;
+    font-size: 0.65rem;
     text-align: center;
-    padding-bottom: 2rem;
+    padding: 0.1rem 2rem;
   }
 }
