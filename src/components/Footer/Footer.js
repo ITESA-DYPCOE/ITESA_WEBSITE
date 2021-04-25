@@ -125,27 +125,16 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="creator-text creator-text-dark">
-        <h5 className="creator">
-          Developed with ❤️ by
-          <a
-            href="https://www.linkedin.com/in/shubham-jadhav-77a588192"
-            target="_blank"
-            rel="noreferrer"
-            style={styles}
-          >
-            SJ &
-          </a>
-          <a
-            href="https://www.linkedin.com/in/charudutta-chaudhari-a980661a0/"
-            target="_blank"
-            rel="noreferrer"
-            style={styles}
-          >
-            Charu
-          </a>
-        </h5>
-      </div>
+      <a
+        href="https://www.linkedin.com/in/shubham-jadhav-77a588192"
+        target="_blank"
+        rel="noreferrer"
+        style={{ textDecoration: "none" }}
+      >
+        <div className="creator-text creator-text-dark">
+          <h5 className="creator">Developed with ❤️ by SJ</h5>
+        </div>
+      </a>
     </React.Fragment>
   );
 };
