@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 import "./Footer.css";
 
-const styles = {
-  textDecoration: "none",
-  paddingLeft: "0.5em",
-  color: "#fac87b",
-};
+// const styles = {
+//   textDecoration: "none",
+//   paddingLeft: "0.5em",
+//   color: "#fac87b",
+// };
 
 const Footer = () => {
   return (
