@@ -13,5 +13,4 @@
 4. Run `npm start` to run the development-server.
 5. Navigate to [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The website is live in test-mode [https://testmode-itesa.web.app/](https://testmode-itesa.web.app/)
-The website is live at [https://itesa-dypcoe.netlify.app/](https://itesa-dypcoe.netlify.app/)
+The website is live at [https://itesa-dypcoeakurdi.netlify.app/](https://itesa-dypcoeakurdi.netlify.app/)
