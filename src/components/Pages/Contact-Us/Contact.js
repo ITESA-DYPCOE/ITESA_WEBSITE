@@ -67,6 +67,9 @@ const ContactUs = () => {
   };
 
   const URL = process.env.REACT_APP_BACKEND_URL;
+  const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
+  const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
+  const USER_ID = process.env.REACT_APP_USER_ID;
 
   const fetchApi = async e => {
     const { name, email, subject, message } = formData;
@@ -89,12 +92,7 @@ const ContactUs = () => {
       toast.error("Gotcha Error!");
     } else {
       emailjs
-        .sendForm(
-          "service_7ar1tzo",
-          "template_zkaj859",
-          e.target,
-          "user_Mr8rF2Ytv64BLjAdwm0Wx"
-        )
+        .sendForm(`${SERVICE_ID}`, `${TEMPLATE_ID}`, e.target, `${USER_ID}`)
         .then(
           result => {
             console.log(result.text);
