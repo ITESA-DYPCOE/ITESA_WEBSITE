@@ -198,11 +198,13 @@
     color: var(--primary-color);
     font-size: 2rem;
   }
+
   .fa-times {
     transition: all ease 0.2s;
     color: var(--primary-color);
     font-size: 2.2rem;
   }
+
   .active-links {
     color: #15cdfc;
     background: none;

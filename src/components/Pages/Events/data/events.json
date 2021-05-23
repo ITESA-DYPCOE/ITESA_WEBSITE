@@ -1,0 +1,84 @@
+{
+  "latest": [
+    {
+      "id": 1,
+      "img": "https://res.cloudinary.com/sjdev/image/upload/v1621754342/ITESA-TEAM/Events-Images/175_cqqjcp.jpg",
+      "title": "Buckle up your seats",
+      "date": "",
+      "info": "More exiciting events on the way..",
+      "link": "",
+      "open": "noEvents",
+      "linkedin": "https://www.linkedin.com/company/itesa-dyp/",
+      "instagram": "https://www.instagram.com/itesa.dyp/"
+    }
+  ],
+
+  "past": [
+    {
+      "id": 2,
+      "img": "https://res.cloudinary.com/sjdev/image/upload/v1618483993/ITESA-TEAM/Events-Images/itesa-picturesque_qsowrg.jpg",
+      "title": "Picturesque 2021 📸",
+      "date": "7 March 20201",
+      "info": "Photography contest",
+      "link": "https://www.linkedin.com/company/itesa-dyp/mycompany/",
+      "open": "false",
+      "linkedin": "https://www.linkedin.com/posts/,itesa-dyp_itesa-dypcoe-photography-activity-6773164635530006528-xtS4",
+      "instagram": "https://www.instagram.com/p/CMRD1JApDx9/?utm_source:ig_web_copy_link"
+    },
+    {
+      "id": 3,
+      "img": "https://res.cloudinary.com/sjdev/image/upload/v1618483292/ITESA-TEAM/Events-Images/itesa-cp_wtehws.png",
+      "title": "Info Session ☑️",
+      "date": "6 Feb 2021",
+      "info": "Intro to Coding Platforms & LinkedIn ",
+      "link": "https://www.linkedin.com/company/itesa-dyp/mycompany/",
+      "open": "false",
+      "linkedin": "https://www.linkedin.com/company/itesa-dyp/mycompany/",
+      "instagram": "https://www.instagram.com/p/CK5veJkpjF5/?utm_source:ig_web_copy_link"
+    },
+    {
+      "id": 4,
+      "img": "https://res.cloudinary.com/sjdev/image/upload/v1618483411/ITESA-TEAM/Events-Images/itesa-codestorm_w7bijc.png",
+      "title": "CodeStorm 2021 💻🔥",
+      "date": "6 Feb 2021",
+      "info": "The Sherlock based coding competiton on HackerRank",
+      "link": "https://www.linkedin.com/company/itesa-dyp/mycompany/",
+      "open": "false",
+      "linkedin": "https://www.linkedin.com/posts/itesa-dyp_itesa-dypcoe-coding-activity-6765529302474874880-Ein3",
+      "instagram": "https://www.instagram.com/p/CLYUtKkJd4V/?utm_source:ig_web_copy_link"
+    },
+    {
+      "id": 5,
+      "img": "https://res.cloudinary.com/sjdev/image/upload/v1618480590/ITESA-TEAM/Events-Images/image4_wzdusa.jpg",
+      "title": "Tantrotsav",
+      "date": "13 June 2001",
+      "info": "This is a college wide event, in which our technical team conducts one or more events. The events are mostly realted to the technical fields, such as a coding compeition.",
+      "link": "https://www.linkedin.com/company/itesa-dyp/mycompany/",
+      "open": "false",
+      "linkedin": "https://www.linkedin.com/company/itesa-dyp/mycompany/",
+      "instagram": "https://www.instagram.com/itesa.dyp/"
+    },
+    {
+      "id": 6,
+      "img": "https://res.cloudinary.com/sjdev/image/upload/v1618480584/ITESA-TEAM/Events-Images/image2_kmigrr.jpg",
+      "title": "Literacy campaign",
+      "date": "13 June 2001",
+      "info": "This is another flagship event conducted by the department every year, here we students go from our college to primary school and teach students between 4th to 10th about how a computer works and its internal components",
+      "link": "https://www.linkedin.com/company/itesa-dyp/mycompany/",
+      "open": "false",
+      "linkedin": "https://www.linkedin.com/company/itesa-dyp/mycompany/",
+      "instagram": "https://www.instagram.com/itesa.dyp/"
+    },
+    {
+      "id": 7,
+      "img": "https://res.cloudinary.com/sjdev/image/upload/v1618480582/ITESA-TEAM/Events-Images/image3_rmi7fx.jpg",
+      "title": "Gadget Gyan",
+      "date": "13 June 2001",
+      "info": "In this event the students of our department taught high school students the mechanism of how a computer works and a detailed explaination of each hardware components.This is one of the oldest events of our college.",
+      "link": "https://www.linkedin.com/company/itesa-dyp/mycompany/",
+      "open": "false",
+      "linkedin": "https://www.linkedin.com/company/itesa-dyp/mycompany/",
+      "instagram": "https://www.instagram.com/itesa.dyp/"
+    }
+  ]
+}

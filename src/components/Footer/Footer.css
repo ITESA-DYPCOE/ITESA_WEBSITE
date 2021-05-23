@@ -202,11 +202,11 @@
 .creator-text,
 .creator {
   width: 100%;
-  color: rgb(223, 255, 137);
+  color: #dcceff;
   padding: 8px;
   font-weight: 900;
   text-align: center;
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: 2px;
   margin-bottom: 0px;
   margin-top: -15px;
@@ -282,6 +282,9 @@
   }
   .info {
     font-size: 0.78rem;
+  }
+  .creator {
+    font-size: 13px;
   }
 }
 

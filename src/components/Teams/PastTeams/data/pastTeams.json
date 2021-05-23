@@ -1,0 +1,86 @@
+{
+  "heads": [
+    {
+      "name": "Praful Mohanan",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617699845/ITESA-TEAM/Praful_Mohanan_smw18t.jpg",
+      "linkedin": "https://www.linkedin.com/in/praful-mohanan-26615873/",
+      "email": "mailto:praful.mohanan@gmail.com",
+      "github": "https://github.com/Praful932",
+      "description": "President",
+      "intro": "ML Practitioner"
+    },
+    {
+      "name": "Akash Shrivastava",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617353534/ITESA-TEAM/AkashShrivastava_evmjnj.jpg",
+      "linkedin": "https://www.linkedin.com/in/akash136/",
+      "email": "mailto:akash.shrivastava136@gmail.com",
+      "github": "https://github.com/Akash1362000",
+      "description": "Vice-President",
+      "intro": "Django Developer"
+    },
+    {
+      "name": "Akanksha Tamboli",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617687192/ITESA-TEAM/Akanksha_Tamboli_qhkyen.jpg",
+      "linkedin": "https://www.linkedin.com/in/akanksha195/",
+      "email": "mailto:akankshatamboli195@gmail.com",
+      "github": "https://github.com/akankshast",
+      "description": "Vice-President",
+      "intro": "Web Developer"
+    },
+    {
+      "name": "Chetan Shinde",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617700990/ITESA-TEAM/Chetan_Shinde_1_niyxdm.jpg",
+      "linkedin": "",
+      "email": "mailto:chetanshinde2230@gmail.com",
+      "github": "",
+      "description": "Treasurer",
+      "intro": "App Developer | Java Developer"
+    },
+    {
+      "name": "Kamlesh Patil",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617281642/ITESA-TEAM/KamleshPatil_focylu.jpg",
+      "linkedin": "https://www.linkedin.com/in/kamlesh-patil-53b151177/",
+      "email": "mailto:kpkamleshpatil333@gmail.com",
+      "github": "https://github.com/Neon-K9",
+      "description": "Technical Secretary",
+      "intro": "Web & Mobile Developer | Blockchain Enthusiast"
+    },
+    {
+      "name": "Kunal Kumbhar",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617706036/ITESA-TEAM/Kunal_Kumbhar_xayksb.jpg",
+      "linkedin": "https://www.linkedin.com/in/kunal-kumbhar-a14aa218b/",
+      "email": "mailto:kunalkumbhar19@gmail.com ",
+      "github": "https://github.com/mrfamouskk7/",
+      "description": "Technical Secretary",
+      "intro": "Competitve Programmer"
+    },
+    {
+      "name": "Neeraj Jawahirani",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617699384/ITESA-TEAM/IMG_7792_dcyxvm.jpg",
+      "linkedin": "https://www.linkedin.com/in/neeraj-j-71841a12a",
+      "email": "mailto:neerajjawahirani@gmail.com ",
+      "github": "https://github.com/NeerajJ16",
+      "description": "Management Team Head",
+      "intro": "Web, Software | App Developer"
+    },
+    {
+      "name": "Samiksha Naik",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617699766/ITESA-TEAM/Samiksha_pfib0x.jpg",
+      "linkedin": "https://www.linkedin.com/in/samiksha-naik-9a5b531a9",
+      "email": "mailto:samikshanaik8888@gmail.com ",
+      "github": "https://github.com/samiksha8888989",
+      "description": "Cultural Head",
+      "intro": "Web Developer "
+    },
+    {
+      "name": "Ipsita Jadhav",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617699608/ITESA-TEAM/Ipsita_Jadhav_icmnom.jpg",
+      "linkedin": "https://www.linkedin.com/in/ipsita-jadhav-161255172/",
+      "email": "mailto:ipsitajadhav074@gmail.com",
+      "github": "asdfasdfs",
+      "description": "Cultural Head",
+      "intro": "App Developer | Web Developer"
+    }
+  ],
+  "members": []
+}

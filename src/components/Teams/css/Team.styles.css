@@ -1,238 +1,248 @@
 .dash {
-	width: 250px;
-	height: 5px;
-	border-radius: 20px;
-	margin-bottom: 10px;
+  width: 250px;
+  height: 5px;
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
 
 p {
-	font-size: 0.95rem;
-	padding: 5px 0px;
-	color: #88b2d4;
+  font-size: 0.95rem;
+  padding: 5px 0px;
+  color: #88b2d4;
 }
 
 .dash-dark {
-	background: #2b5876;
-	background: linear-gradient(45deg, #334557 0%, #4acad3 84%);
+  background: #2b5876;
+  background: linear-gradient(45deg, #334557 0%, #4acad3 84%);
 }
 
 .about {
-	background-color: hsl(210, 64%, 9%);
-	padding: 60px 60px 60px 60px;
+  background-color: hsl(210, 64%, 9%);
+  padding: 60px 60px 60px 60px;
 }
 
 .text-dark {
-	color: whitesmoke;
+  color: whitesmoke;
 }
 
 .about-light {
-	color: white;
+  color: white;
 }
 
 .about-dark {
-	color: #69a9dd;
+  color: #69a9dd;
 }
 
 .team {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 2rem 10px;
-	gap: 16px;
-	padding-bottom: 40px;
-	background: #1e2124;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 10px;
+  gap: 16px;
+  padding-bottom: 40px;
+  background: #1e2124;
 }
 
 #content {
-	padding-top: 30px;
-	font-family: "Nunito";
+  padding-top: 30px;
+  font-family: "Nunito";
 }
 
 #Mui-h6 {
-	font-size: 1.1rem;
-	font-family: "Nunito";
+  font-size: 1.1rem;
+  font-family: "Nunito";
 }
 
 #description {
-	font-size: 0.85rem;
-	font-family: "Nunito";
+  font-size: 0.85rem;
+  font-family: "Nunito";
 }
 
 .row1,
 .row2 {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 16px;
-	justify-content: center;
-	margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .row1 > * {
-	flex: 49% 49%;
+  flex: 49% 49%;
 }
 
 .cover {
-	object-fit: cover;
-	object-position: center;
-	width: 120px;
-	height: 120px;
-	border-radius: 100%;
-	margin-bottom: 20px;
+  object-fit: cover;
+  object-position: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  margin-bottom: 20px;
 }
 
 .card-footer {
-	color: #f4f8b3;
-	padding: 5px;
-	text-decoration: none;
-	font-size: 1.6rem;
+  color: #f4f8b3;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 1.6rem;
 }
 
 .card1 {
-	display: flex;
-	min-width: 350px;
-	max-width: 400px;
-	max-height: 400px;
-	background: white;
-	box-shadow: 0 0 16px 2px #00000029;
-	padding: 15px;
-	transition: 0.5s;
-	border-radius: 15px;
+  display: flex;
+  min-width: 350px;
+  max-width: 400px;
+  max-height: 400px;
+  background: white;
+  box-shadow: 0 0 16px 2px #00000029;
+  padding: 15px;
+  transition: 0.5s;
+  border-radius: 15px;
 }
 
 .card1 p {
-	padding: 0px;
+  padding: 0px;
 }
 
 #intro {
-	font-size: 0.7rem;
-	color: #4acad3;
-	font-family: "Nunito", sans-serif;
+  font-size: 0.7rem;
+  color: #4acad3;
+  font-family: "Nunito", sans-serif;
 }
 
 .card1-dark {
-	background: #1e2124;
-	-webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
-		0px -8px 16px 0px rgba(72, 127, 255, 0.1);
-	-moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
-		0px -8px 16px 0px rgba(72, 127, 255, 0.1);
-	box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
-		0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  background: #1e2124;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
 }
 
 .team-social {
-	display: flex;
-	justify-content: center;
-	visibility: visible;
-	margin-top: -14px;
-	border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  visibility: visible;
+  margin-top: -14px;
+  border-radius: 5px;
 }
 
 .card1-dark:hover {
-	transform: translateY(-5px);
-	box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
-		0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
 
-	background: linear-gradient(117deg, #1e2124 0%, #333b41 64%);
+  background: linear-gradient(117deg, #1e2124 0%, #333b41 64%);
 }
 
 .card1 .team-social {
-	visibility: visible;
+  visibility: visible;
 }
 
 .photo {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .dark {
-	background-color: #1e2124;
-	color: whitesmoke;
+  background-color: #1e2124;
+  color: whitesmoke;
 }
 
 .fa-github,
 .fa-envelope,
 .fa-facebook,
 .fa-github {
-	padding: 5px;
-	color: white;
+  padding: 5px;
+  color: white;
 }
 
 .fa-linkedin:hover {
-	color: #0088cc;
-	transform: scale(1.35);
-	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
-	transition: all 0.6s ease-in-out;
+  color: #0088cc;
+  transform: scale(1.35);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  transition: all 0.6s ease-in-out;
 }
 
 .fa-envelope:hover {
-	color: #dfd36d;
-	transform: scale(1.35);
-	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
-	transition: all 0.6s ease-in-out;
+  color: #dfd36d;
+  transform: scale(1.35);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  transition: all 0.6s ease-in-out;
 }
 .fa-facebook:hover {
-	color: #6f6ddf;
-	transform: scale(1.35);
-	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
-	transition: all 0.6s ease-in-out;
+  color: #6f6ddf;
+  transform: scale(1.35);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  transition: all 0.6s ease-in-out;
 }
 
 .fa-github:hover {
-	color: #7af7d8;
-	transform: scale(1.35);
-	transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
-	transition: all 0.6s ease-in-out;
+  color: #7af7d8;
+  transform: scale(1.35);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  transition: all 0.6s ease-in-out;
 }
 
 #MuiTypography-h3 {
-	font-size: 2.5rem;
-	font-family: "Nunito", sans-serif;
+  font-size: 2.5rem;
+  font-family: "Nunito", sans-serif;
+}
+
+#pastTeamTitle {
+  font-size: 2.3rem;
+  font-family: "Nunito", sans-serif;
 }
 
 #MuiTypography-h7 {
-	font-size: 1rem;
-	font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
 }
 
 @media screen and (max-width: 750px) {
-	.card1 {
-		padding: 15px 5px;
-	}
+  .card1 {
+    padding: 15px 5px;
+  }
 
-	#content {
-		padding: 30px 10px;
-	}
-	#MuiTypography-h3 {
-		font-size: 1.8rem;
-		letter-spacing: 1px;
-	}
+  #content {
+    padding: 30px 10px;
+  }
 
-	#Mui-h6 {
-		font-size: 1rem;
-	}
+  #MuiTypography-h3 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
 
-	#description {
-		font-size: 0.8rem;
-	}
+  #pastTeamTitle {
+    font-size: 1.5rem;
+  }
 
-	.card1 {
-		min-width: 315px;
-		max-width: 300px;
-		max-height: 190px;
-	}
+  #Mui-h6 {
+    font-size: 1rem;
+  }
 
-	.team {
-		padding: 1rem 15px;
-	}
+  #description {
+    font-size: 0.8rem;
+  }
 
-	p {
-		font-size: 0.67rem;
-	}
+  .card1 {
+    min-width: 315px;
+    max-width: 300px;
+    max-height: 190px;
+  }
 
-	#intro {
-		padding-top: 2px;
-		font-size: 0.65rem;
-	}
+  .team {
+    padding: 1rem 15px;
+  }
+
+  p {
+    font-size: 0.67rem;
+  }
+
+  #intro {
+    padding-top: 2px;
+    font-size: 0.65rem;
+  }
 }

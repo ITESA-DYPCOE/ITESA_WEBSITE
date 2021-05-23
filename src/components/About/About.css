@@ -11,6 +11,37 @@
   padding: 1rem;
 }
 
+.taglineDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #1e2124;
+  padding: 25px;
+}
+
+#tagline {
+  color: #f4efffe8;
+  font-size: 1.6rem;
+  font-family: "Nunito", sans-serif;
+  padding: 15px;
+  text-align: left;
+}
+
+.tagline-icons {
+  display: flex;
+  justify-content: space-between;
+  color: #dcceff;
+  padding: 25px;
+  font-size: 3.5rem;
+  margin: 5px;
+}
+
+.tagline-icons:hover {
+  color: #c7b0ffef;
+  cursor: pointer;
+}
+
 .wave {
   width: 100%;
   height: 495px;
@@ -180,6 +211,23 @@
 
   .motive {
     font-size: 0.85rem;
+  }
+
+  #tagline {
+    font-size: 1rem;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .taglineDiv {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .tagline-icons {
+    padding: 15px;
+    font-size: 2.3rem;
+    margin: 2px;
   }
 
   .boxie-info {

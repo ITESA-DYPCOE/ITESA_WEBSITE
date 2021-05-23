@@ -10,6 +10,10 @@ import "./Footer.css";
 // };
 
 const Footer = () => {
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <React.Fragment>
       <footer className="footer footer-dark">
@@ -35,7 +39,7 @@ const Footer = () => {
           <li className="item">
             <h2 className="title">Navigation</h2>
 
-            <ul className="ul-links">
+            <ul className="ul-links" onClick={scrollTop}>
               <li>
                 <Link to="/technical-team">Technical Team</Link>
               </li>
@@ -56,9 +60,12 @@ const Footer = () => {
           <li className="item">
             <h2 className="title">Other</h2>
 
-            <ul className="ul-links">
+            <ul className="ul-links" onClick={scrollTop}>
               <li>
                 <Link to="/events">Events</Link>
+              </li>
+              <li>
+                <Link to="/past-teams">Past Teams</Link>
               </li>
             </ul>
           </li>
@@ -132,7 +139,7 @@ const Footer = () => {
         style={{ textDecoration: "none" }}
       >
         <div className="creator-text creator-text-dark">
-          <h5 className="creator">Developed with ❤️ by SJ</h5>
+          <h5 className="creator">Developed with ❤️ by Shubham Jadhav</h5>
         </div>
       </a>
     </React.Fragment>

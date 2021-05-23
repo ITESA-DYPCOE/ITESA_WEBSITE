@@ -15,6 +15,10 @@ const Navbar = () => {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const changeNavbarColor = () => {
     // console.log(window.screenY);
     if (window.scrollY >= 80) {
@@ -36,19 +40,23 @@ const Navbar = () => {
                 style={{
                   borderRadius: "0.3em",
                   height: "2.3rem",
-                  width: "6.5em",
+                  width: "7em",
                   position: "relative",
                   marginTop: "6px",
                 }}
                 src={logo}
                 alt="ITSEA"
+                onClick={scrollTop}
               />
             </div>
           </NavLink>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <ul
+            className={click ? "nav-menu active" : "nav-menu"}
+            onClick={scrollTop}
+          >
             <li className="nav-item active">
               <NavLink
                 activeClassName="active-links"
@@ -86,6 +94,13 @@ const Navbar = () => {
                         onClick={closeMobileMenu}
                       >
                         Cultural
+                      </NavLink>
+                      <NavLink
+                        activeClassName="active-links"
+                        to="/past-teams"
+                        onClick={closeMobileMenu}
+                      >
+                        Past Team
                       </NavLink>
                     </div>
                   </Button>
