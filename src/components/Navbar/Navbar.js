@@ -39,7 +39,7 @@ const Navbar = () => {
               <img
                 style={{
                   borderRadius: "0.3em",
-                  height: "2.3rem",
+                  height: "2rem",
                   width: "7em",
                   position: "relative",
                   marginTop: "6px",

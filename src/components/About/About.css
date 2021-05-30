@@ -11,10 +11,25 @@
   padding: 1rem;
 }
 
+#headerTxt {
+  font-size: 2.4rem;
+  color: #dcceff;
+  padding: 0.5rem;
+  font-family: "Nunito";
+}
+
+#headerInfo {
+  font-size: 1.5rem;
+  color: #ffffff;
+  padding: 1rem;
+  font-family: "Poppins";
+}
+
 .taglineDiv {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   background: #1e2124;
   padding: 25px;
@@ -22,15 +37,13 @@
 
 #tagline {
   color: #f4efffe8;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-family: "Nunito", sans-serif;
-  padding: 15px;
-  text-align: left;
+  padding: 5px 95px;
+  text-align: center;
 }
 
 .tagline-icons {
-  display: flex;
-  justify-content: space-between;
   color: #dcceff;
   padding: 25px;
   font-size: 3.5rem;
@@ -215,8 +228,22 @@
 
   #tagline {
     font-size: 1rem;
-    padding: 8px;
+    padding: 5px 27px;
     text-align: center;
+  }
+
+  #headerTxt {
+    font-size: 2rem;
+    color: #dcceff;
+    padding: 0.5rem;
+    font-family: "Nunito";
+  }
+
+  #headerInfo {
+    font-size: 1rem;
+    color: #ffffff;
+    padding: 0.5rem;
+    font-family: "Poppins";
   }
 
   .taglineDiv {

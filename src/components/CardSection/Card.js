@@ -44,9 +44,9 @@ export const Card = () => {
           <div className="row1">
             {Object.keys(teamData).map(role => {
               if (role !== "members") {
-                return teamData[role].map(roleObject => {
+                return teamData[role].map((roleObject, index) => {
                   return (
-                    <div className="card1 card1-dark">
+                    <div key={index} className="card1 card1-dark">
                       <div className="photo">
                         <img
                           alt="profile"
@@ -93,9 +93,9 @@ export const Card = () => {
           <div className="row2">
             {Object.keys(teamData).map(role => {
               if (role === "members") {
-                return teamData[role].map(roleObject => {
+                return teamData[role].map((roleObject, index) => {
                   return (
-                    <div className="card1 card1-dark">
+                    <div key={index} className="card1 card1-dark">
                       <div className="photo">
                         <img
                           alt="profile"

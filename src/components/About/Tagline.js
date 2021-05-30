@@ -7,31 +7,40 @@ import { GiTechnoHeart } from "react-icons/gi";
 import { RiCommunityLine } from "react-icons/ri";
 
 const styles = {
-  color: "#FFC107",
+  color: "#c6afff",
   fontFamily: "Nunito",
   fontSize: "1.4em",
-  padding: "0.2em",
 };
 
 const Motive = () => {
   return (
-    <div className="taglineDiv">
-      <Typography variant="h3" className="about-dark" id="tagline">
-        <span style={styles}>ITESA</span>, aims to provide an exposure to a
-        community with various multi-talented personalities, meet them, build
-        connections, increase your network, interact with your seniors, juniors
-        and explore new opportunities
-      </Typography>
-      <div className="tagline-icons">
-        <FaLaptopCode />
+    <>
+      <div className="taglineDiv">
+        <Typography variant="h3" className="about-dark" id="tagline">
+          <Typography variant="h3" className="about-dark" id="headerTxt">
+            About ITESA
+          </Typography>
+          <span style={styles}>We</span>,
+          <span id="headerInfo">
+            aims to provide an exposure to a community with various
+            multi-talented personalities, meet them,
+            <span id="headerInfo">
+              build connections, increase your network, interact
+            </span>
+            with your seniors, juniors and explore new opportunities
+          </span>
+        </Typography>
+        <div className="tagline-icons">
+          <FaLaptopCode />
+        </div>
+        <div className="tagline-icons">
+          <GiTechnoHeart />
+        </div>
+        <div className="tagline-icons">
+          <RiCommunityLine />
+        </div>
       </div>
-      <div className="tagline-icons">
-        <GiTechnoHeart />
-      </div>
-      <div className="tagline-icons">
-        <RiCommunityLine />
-      </div>
-    </div>
+    </>
   );
 };
 
