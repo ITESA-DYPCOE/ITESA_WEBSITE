@@ -13,14 +13,14 @@
 
 #headerTxt {
   font-size: 2.4rem;
-  color: #dcceff;
+  color: #ffd9a0ef;
   padding: 0.5rem;
   font-family: "Nunito";
 }
 
 #headerInfo {
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #fff;
   padding: 1rem;
   font-family: "Poppins";
 }
@@ -44,14 +44,14 @@
 }
 
 .tagline-icons {
-  color: #dcceff;
+  color: #f1c178ef;
   padding: 25px;
   font-size: 3.5rem;
   margin: 5px;
 }
 
 .tagline-icons:hover {
-  color: #c7b0ffef;
+  color: #ffd9a0ef;
   cursor: pointer;
 }
 

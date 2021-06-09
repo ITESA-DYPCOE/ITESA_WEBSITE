@@ -7,9 +7,9 @@ import { GiTechnoHeart } from "react-icons/gi";
 import { RiCommunityLine } from "react-icons/ri";
 
 const styles = {
-  color: "#c6afff",
+  color: "#ffd9a0ef",
   fontFamily: "Nunito",
-  fontSize: "1.4em",
+  fontSize: "1.3em",
 };
 
 const Motive = () => {
@@ -22,7 +22,7 @@ const Motive = () => {
           </Typography>
           <span style={styles}>We</span>,
           <span id="headerInfo">
-            aims to provide an exposure to a community with various
+            aim to provide an exposure to a community with various
             multi-talented personalities, meet them,
             <span id="headerInfo">
               build connections, increase your network, interact
