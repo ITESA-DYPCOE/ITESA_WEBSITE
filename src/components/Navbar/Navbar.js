@@ -61,7 +61,7 @@ const Navbar = () => {
               <NavLink
                 activeClassName="active-links"
                 to="/"
-                className="nav-links "
+                className="nav-links"
                 onClick={closeMobileMenu}
                 exact={true}
               >

@@ -234,16 +234,12 @@
 
   #headerTxt {
     font-size: 2rem;
-    color: #dcceff;
     padding: 0.5rem;
-    font-family: "Nunito";
   }
 
   #headerInfo {
     font-size: 1rem;
-    color: #ffffff;
     padding: 0.5rem;
-    font-family: "Poppins";
   }
 
   .taglineDiv {
