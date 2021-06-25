@@ -13,6 +13,7 @@ import { Management } from "./components/Teams/Management/Management";
 import { Cultural } from "./components/Teams/Cultural/Cultural";
 import { PastTeams } from "./components/Teams/PastTeams/PastTeams";
 
+
 //pages
 import Home from "./components/Pages/Home/Home";
 import Contact from "./components/Pages/Contact-Us/Contact";
