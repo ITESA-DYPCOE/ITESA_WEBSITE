@@ -1,4 +1,5 @@
 # ITESA WESBITE 🔥
+![Img](https://i.imgur.com/8zluEKH.png)
 
 ## Tech Stack 🗃
 
