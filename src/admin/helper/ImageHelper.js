@@ -1,19 +1,20 @@
 import React from "react";
 import { API } from "../../backend";
+import "../../components/Pages/Events/css/Events.styles.css";
 
 const ImageHelper = ({ event }) => {
   const imageurl = event
     ? `${API}/event/image/${event._id}`
     : `https://res.cloudinary.com/sjdev/image/upload/v1621754342/ITESA-TEAM/Events-Images/175_cqqjcp.jpg`;
   return (
-    <div className="rounded border border-success p-2">
+    <>
       <img
+        id="img"
         src={imageurl}
-        alt="photo"
-        style={{ width: "100%", borderRadius: "15px" }}
-        className="mb-3 rounded"
+        alt="event-photo"
+        // style={{ width: "100%", borderRadius: "15px" }}
       />
-    </div>
+    </>
   );
 };
 

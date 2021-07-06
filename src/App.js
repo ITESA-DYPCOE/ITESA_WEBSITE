@@ -51,7 +51,7 @@ const App = () => {
           <Route path="/past-teams" component={PastTeams} />
           <Route path="/events" component={Events} />
           <Route path="/contact-us" component={Contact} />
-          <Route path="/admin/sign-up" component={Signup} />
+          <Route path="/admin/dashboard/sign-up" component={Signup} />
           <Route path="/admin/sign-in" component={SignIn} />
           <AdminRoute
             exact

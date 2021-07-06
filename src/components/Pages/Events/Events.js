@@ -14,6 +14,8 @@ import {
   getAllEvents,
   getAllCategories,
   getCate,
+  getAllLatestEvents,
+  getAllPastEvents,
 } from "../../../admin/helper/adminapicalls";
 
 const styles = {
@@ -22,15 +24,23 @@ const styles = {
 };
 
 export const Events = () => {
-  const [events, setEvents] = useState([]);
+  const [latestEvents, setLatestEvents] = useState([]);
+  const [pastEvents, setPastEvents] = useState([]);
   const [categories, setCategories] = useState([]);
 
   const preload = () => {
-    getAllEvents().then(data => {
+    getAllLatestEvents().then(data => {
       if (data.error) {
         console.log(data.error);
       } else {
-        setEvents(data);
+        setLatestEvents(data);
+      }
+    });
+    getAllPastEvents().then(data => {
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        setPastEvents(data);
       }
     });
     getAllCategories().then(data => {
@@ -46,8 +56,8 @@ export const Events = () => {
     preload();
   }, []);
 
-  console.log(events);
-  console.log(categories);
+  // console.log(events);
+  // console.log(categories);
 
   return (
     <div className="dark">
@@ -58,27 +68,34 @@ export const Events = () => {
         </Typography>
         <div className="dash dash-dark" style={styles}></div>
         <div className="row1">
-          {events.map(event => {
-            console.log(event);
-            let DATE = moment(event.date).format("YYYY-MM-DD");
-            console.log(categories);
+          {latestEvents.length === 0 ? (
+            <h1>No Events Found!</h1>
+          ) : (
+            <>
+              {latestEvents &&
+                latestEvents.map(event => {
+                  console.log(event);
+                  let DATE = moment(event.date).format("MMMM Do YYYY");
+                  console.log(categories);
+                  return (
+                    <>
+                      <EventCard
+                        event={event}
+                        img={event.image}
+                        eventTitle={event.name}
+                        eventDate={DATE}
+                        eventInfo={event.info}
+                        eventLink={"eventLink"}
+                        open={true}
+                        linkedinLink={event.linkedinURL}
+                        instagramLink={event.instagramURL}
+                      />
+                    </>
+                  );
+                })}
+            </>
+          )}
 
-            return (
-              <>
-                <EventCard
-                  event={event}
-                  img={event.image}
-                  eventTitle={event.name}
-                  eventDate={DATE}
-                  eventInfo={event.info}
-                  eventLink={"eventLink"}
-                  open={true}
-                  linkedinLink={event.linkedinURL}
-                  instagramLink={event.instagramURL}
-                />
-              </>
-            );
-          })}
           {/* {Object.keys(eventData).map(category => {
             if (category === "latest") {
               return eventData[category].map(categoryObject => {
@@ -108,7 +125,35 @@ export const Events = () => {
         </Typography>
         <div className="dash dash-dark" style={styles}></div>
         <div className="row1">
-          {Object.keys(eventData).map(category => {
+          {pastEvents.length === 0 ? (
+            <h1>No Events Found!</h1>
+          ) : (
+            <>
+              {pastEvents &&
+                pastEvents.map(event => {
+                  console.log(event);
+                  let DATE = moment(event.date).format("MMMM Do YYYY");
+                  console.log(categories);
+                  return (
+                    <>
+                      <EventCard
+                        event={event}
+                        img={event.image}
+                        eventTitle={event.name}
+                        eventDate={DATE}
+                        eventInfo={event.info}
+                        eventLink={"eventLink"}
+                        open={true}
+                        linkedinLink={event.linkedinURL}
+                        instagramLink={event.instagramURL}
+                      />
+                    </>
+                  );
+                })}
+            </>
+          )}
+
+          {/* {Object.keys(eventData).map(category => {
             if (category === "past") {
               return eventData[category].map(categoryObject => {
                 return (
@@ -126,7 +171,7 @@ export const Events = () => {
               });
             }
             return null;
-          })}
+          })} */}
         </div>
       </div>
     </div>

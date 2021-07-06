@@ -44,6 +44,26 @@ export const getAllEvents = () => {
     .catch(err => console.log(err));
 };
 
+export const getAllLatestEvents = () => {
+  return fetch(`${API}/latest/events`, {
+    method: "GET",
+  })
+    .then(res => {
+      return res.json();
+    })
+    .catch(err => console.log(err));
+};
+
+export const getAllPastEvents = () => {
+  return fetch(`${API}/past/events`, {
+    method: "GET",
+  })
+    .then(res => {
+      return res.json();
+    })
+    .catch(err => console.log(err));
+};
+
 //get all categories
 export const getAllCategories = () => {
   return fetch(`${API}/categories`, {

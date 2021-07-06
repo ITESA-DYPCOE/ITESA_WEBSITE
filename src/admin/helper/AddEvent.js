@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { isAuthenticated } from "../auth/helper/index";
 import { getAllCategories, createEvent } from "./adminapicalls";
 
@@ -11,7 +11,7 @@ import { RiUploadCloud2Line } from "react-icons/ri";
 import { IoArrowBackCircle } from "react-icons/all";
 import { TiTick } from "react-icons/ti";
 
-import DatePickerUI from "../dashboard/utils/DataPicker";
+// import DatePickerUI from "../dashboard/utils/DataPicker";
 
 const AddEvent = () => {
   const { admin, token } = isAuthenticated();
@@ -127,7 +127,8 @@ const AddEvent = () => {
         </div>
 
         <div className="form-group ">
-          <input
+          <textarea
+            style={{ margin: "0px 0px 15px", width: "248px", height: "248px" }}
             onChange={handleChange("info")}
             type="text"
             className="form-control"

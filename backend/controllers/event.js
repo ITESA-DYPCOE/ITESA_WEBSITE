@@ -35,15 +35,45 @@ exports.getEvent = (req, res) => {
 };
 
 exports.getAllEvents = (req, res) => {
-  Event.find().exec((err, events) => {
-    if (err || !events) {
-      return res.status(400).json({
-        error: "No Events found in DB",
-      });
-    }
-    // console.log(events.length);
-    res.json(events);
-  });
+  Event.find()
+    .sort({ date: 1 })
+    .exec((err, events) => {
+      if (err || !events) {
+        return res.status(400).json({
+          error: "No Events found in DB",
+        });
+      }
+      // console.log(events.length);
+      res.json(events);
+    });
+};
+
+exports.getAllLatestEvents = (req, res) => {
+  Event.find({ category: "60e01bcf7a8c310358a13af3" })
+    .sort({ date: 1 })
+    .exec((err, events) => {
+      if (err || !events) {
+        return res.status(400).json({
+          error: "No Events found in DB",
+        });
+      }
+      // console.log(events.length);
+      res.json(events);
+    });
+};
+
+exports.getAllPastEvents = (req, res) => {
+  Event.find({ category: "60e01bd87a8c310358a13af4" })
+    .sort({ date: 1 })
+    .exec((err, events) => {
+      if (err || !events) {
+        return res.status(400).json({
+          error: "No Events found in DB",
+        });
+      }
+      // console.log(events.length);
+      res.json(events);
+    });
 };
 
 exports.createEvent = (req, res) => {
@@ -80,11 +110,11 @@ exports.createEvent = (req, res) => {
       // console.log(
       //   file.image.type !== "image/jpg" || "image/jpeg" || "image/png"
       // );
-      if (file.image.type != ("image/jpeg" || "image/png")) {
-        return res.status(422).json({
-          error: "File type should be jpg or png!",
-        });
-      }
+      // if (file.image.type != ("image/jpeg" || "image/png")) {
+      //   return res.status(422).json({
+      //     error: "File type should be jpg or png!",
+      //   });
+      // }
 
       if (file.image.size > 3000000) {
         return res.status(400).json({

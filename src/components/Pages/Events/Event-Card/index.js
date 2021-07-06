@@ -16,7 +16,7 @@ const EventCard = props => {
             <p className="event-date">{props.eventDate}</p>
             <p className="event-info">{props.eventInfo}</p>
             <p className="event-info">{props.category}</p>
-            <a
+            {/* <a
               href={props.open === "true" ? props.eventLink : "*"}
               target="_blank"
               rel="noreferrer"
@@ -41,7 +41,7 @@ const EventCard = props => {
                   </>
                 )}
               </span>
-            </a>
+            </a> */}
             <span className="info-check">For more info check out here</span>
             <div className="social-linkss">
               <a

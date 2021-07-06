@@ -122,12 +122,12 @@ const SignIn = () => {
                       style={{
                         display: "flex",
                         justifyContent: "center",
-                        paddingTop: "10px",
+                        paddingTop: "20px",
                       }}
                     >
-                      <span>
+                      {/* <span>
                         Don't have an account ?
-                        <Link to="/admin/sign-up">
+                        <Link to="/admin/dashboard/sign-up">
                           <span
                             style={{
                               color: "#FFC107",
@@ -138,7 +138,7 @@ const SignIn = () => {
                             Signup here
                           </span>
                         </Link>
-                      </span>
+                      </span> */}
                     </div>
                   </form>
                 </div>
