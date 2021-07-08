@@ -162,43 +162,21 @@ const UpdateEvent = ({ match }) => {
         </div>
 
         <div className="form-group ">
-          <input
+          {/* <input
+            onChange={handleChange("info")}
+            type="text"
+            className="form-control"
+            placeholder="Event info"
+            value={info}
+          /> */}
+          <textarea
+            style={{ margin: "0px 0px 15px", width: "248px", height: "248px" }}
             onChange={handleChange("info")}
             type="text"
             className="form-control"
             placeholder="Event info"
             value={info}
           />
-        </div>
-        <div
-          className="form-group"
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <h5 style={{ marginBottom: "1em" }}>
-            Previously Selected Category :
-            <span
-              style={{ color: "#FF4D50", fontSize: "1.5em", padding: "0.5em" }}
-            >
-              {CATE}
-            </span>
-          </h5>
-          <select
-            onChange={handleChange("category")}
-            className="form-control"
-            placeholder="Category"
-          >
-            <option>Select</option>
-            {categories.map((cate, index) => (
-              <option key={index} value={cate._id}>
-                {cate.name}
-              </option>
-            ))}
-          </select>
         </div>
       </div>
       <div className="centered-container">
@@ -252,6 +230,40 @@ const UpdateEvent = ({ match }) => {
               value={date}
             />
           </div>
+          <div
+            className="form-group"
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <h5 style={{ marginBottom: "1em" }}>
+              Previously Selected Category :
+              <span
+                style={{
+                  color: "#FF4D50",
+                  fontSize: "1.5em",
+                  padding: "0.5em",
+                }}
+              >
+                {CATE}
+              </span>
+            </h5>
+            <select
+              onChange={handleChange("category")}
+              className="form-control"
+              placeholder="Category"
+            >
+              <option>Select</option>
+              {categories.map((cate, index) => (
+                <option key={index} value={cate._id}>
+                  {cate.name}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
 
@@ -274,6 +286,7 @@ const UpdateEvent = ({ match }) => {
             value={instagramURL}
           />
         </div>
+
         <button
           type="submit"
           onClick={onSubmit}
