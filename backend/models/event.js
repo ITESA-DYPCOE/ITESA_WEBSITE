@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
-const { ObjectId } = mongoose.Schema;
+// const { ObjectId } = mongoose.Schema;
 
 const eventSchema = new mongoose.Schema(
   {
-    category: {
-      type: ObjectId,
-      ref: "Category",
-      required: true,
-    },
+    // category: {
+    //   type: ObjectId,
+    //   ref: "Category",
+    //   required: true,
+    // },
     name: {
       type: String,
       trim: true,
@@ -19,7 +19,14 @@ const eventSchema = new mongoose.Schema(
     },
 
     date: {
-      type: Date,
+      startDate: {
+        type: Date,
+        default: Date.now(),
+      },
+      endDate: {
+        type: Date,
+        default: Date.now(),
+      },
     },
 
     info: {

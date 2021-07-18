@@ -13,6 +13,7 @@ import "../Teams/css/Team.styles.css";
 import Title from "../ImageSection/Title/Title";
 import Btn from "./Button/Btn";
 import ImageSection from "../ImageSection/";
+import Discord from "./Discord/Discord";
 
 const useStyles = makeStyles(() => ({
   details: {
@@ -151,6 +152,7 @@ export const Card = () => {
             })}
           </div>
           <Btn />
+          <Discord />
         </div>
       </div>
     </>

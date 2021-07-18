@@ -54,15 +54,14 @@ const Discord = () => {
                   Join ITESA Community on Discord
                 </h4>
                 <p className="para-styles" style={{ fontSize: "1rem" }}>
-                  Meet students and educators around the world excited about
-                  technology
+                  Meet students and educators excited about technology
                 </p>
               </div>
 
               <div className="linkToJoin" style={{ textAlign: "center" }}>
                 <a
                   className="discordLink"
-                  href="https://discord.gg/EsMBDYWF"
+                  href="https://discord.gg/WyTupBNX76"
                   target="_blank"
                 >
                   Join Now

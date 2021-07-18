@@ -34,49 +34,59 @@ exports.getEvent = (req, res) => {
   return res.json(req.event);
 };
 
-exports.getAllEvents = (req, res) => {
-  Event.find()
-    .sort({ date: 1 })
-    .exec((err, events) => {
-      if (err || !events) {
-        return res.status(400).json({
-          error: "No Events found in DB",
-        });
-      }
-      // console.log(events.length);
-      res.json(events);
+exports.getAllEvents = async (req, res) => {
+  try {
+    let today = new Date();
+    // console.log(today);
+
+    const upcomingEvent = await Event.find({
+      "date.endDate": { $gte: today.toDateString() },
+    }).sort({ date: -1 });
+    const pastEvent = await Event.find({
+      "date.endDate": { $lt: today.toDateString() },
+    }).sort({ date: -1 });
+    // console.log(upcomingEvent);
+    res.json({
+      upcomingEvent,
+      pastEvent,
     });
+  } catch (error) {
+    res.json({
+      error: "Err while fetching events!",
+    });
+  }
 };
 
-exports.getAllLatestEvents = (req, res) => {
-  Event.find({ category: "60e01bcf7a8c310358a13af3" })
-    .sort({ date: 1 })
-    .exec((err, events) => {
-      if (err || !events) {
-        return res.status(400).json({
-          error: "No Events found in DB",
-        });
-      }
-      // console.log(events.length);
-      res.json(events);
-    });
-};
+// exports.getAllLatestEvents = (req, res) => {
+//   Event.find({ category: "60e01bcf7a8c310358a13af3" })
+//     .sort({ date: 1 })
+//     .exec((err, events) => {
+//       if (err || !events) {
+//         return res.status(400).json({
+//           error: "No Events found in DB",
+//         });
+//       }
+//       // console.log(events.length);
+//       res.json(events);
+//     });
+// };
 
-exports.getAllPastEvents = (req, res) => {
-  Event.find({ category: "60e01bd87a8c310358a13af4" })
-    .sort({ date: 1 })
-    .exec((err, events) => {
-      if (err || !events) {
-        return res.status(400).json({
-          error: "No Events found in DB",
-        });
-      }
-      // console.log(events.length);
-      res.json(events);
-    });
-};
+// exports.getAllPastEvents = (req, res) => {
+//   Event.find({ category: "60e01bd87a8c310358a13af4" })
+//     .sort({ date: 1 })
+//     .exec((err, events) => {
+//       if (err || !events) {
+//         return res.status(400).json({
+//           error: "No Events found in DB",
+//         });
+//       }
+//       // console.log(events.length);
+//       res.json(events);
+//     });
+// };
 
 exports.createEvent = (req, res) => {
+  console.log(req.body);
   let form = new formidable.IncomingForm();
   form.keepExtensions = true;
 
@@ -86,21 +96,41 @@ exports.createEvent = (req, res) => {
         error: "problem with image",
       });
     }
+    console.log(fields);
+
     //destructure the fields
-    const { name, info, linkedinURL, instagramURL, category, date } = fields;
+    const {
+      name,
+      info,
+      linkedinURL,
+      instagramURL,
+      startDate,
+      endDate,
+    } = fields;
 
     // console.log(name, info, linkedinURL, instagramURL, category);
 
-    if (!name || !info || !linkedinURL || !instagramURL || !category || !date) {
+    if (
+      (!name || !info || !linkedinURL || !instagramURL || !startDate, !endDate)
+    ) {
       return res.status(400).json({
         error: "Please include all fields",
       });
     }
-
-    let event = new Event(fields);
+    let obj = {
+      name,
+      info,
+      linkedinURL,
+      instagramURL,
+      date: {
+        startDate,
+        endDate,
+      },
+    };
+    console.log(obj);
+    let event = new Event(obj);
 
     //handle file here
-
     if (file.image) {
       console.log(file.image.type == "image/jpeg");
       console.log(file.image.type);
@@ -125,6 +155,9 @@ exports.createEvent = (req, res) => {
       event.image.data = fs.readFileSync(file.image.path);
       event.image.contentType = file.image.type;
     }
+
+    console.log(event);
+
     // console.log(product);
 
     //save to the DB

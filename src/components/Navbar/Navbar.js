@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const { admin } = isAuthenticated();
 
-  console.log(admin);
+  // console.log(admin);
 
   const [click, setClick] = useState(false);
   const [navbarColor, setNavbarColor] = useState(false);

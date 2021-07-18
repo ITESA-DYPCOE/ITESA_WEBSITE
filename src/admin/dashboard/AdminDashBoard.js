@@ -57,7 +57,7 @@ const AdminDashBoard = () => {
                     Manage Events
                   </Link>
                 </li>
-                <li className="list-group-item">
+                {/* <li className="list-group-item">
                   <Link to="/admin/create/category" className="linkItem">
                     Create Event Category
                   </Link>
@@ -66,7 +66,7 @@ const AdminDashBoard = () => {
                   <Link to="/admin/manage/categories" className="linkItem">
                     Manage Event Category
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

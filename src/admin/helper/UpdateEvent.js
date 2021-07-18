@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
-  getAllCategories,
+  // getAllCategories,
   getEvent,
   updateEvent,
   getPhoto,
@@ -19,16 +19,17 @@ import { TiTick } from "react-icons/ti";
 
 const UpdateEvent = ({ match }) => {
   const { admin, token } = isAuthenticated();
-  const [CATE, setCATE] = useState("");
+  // const [CATE, setCATE] = useState("");
   const [values, setValues] = useState({
     name: "",
     info: "",
-    date: "",
+    startDate: "",
+    endDate: "",
     image: "",
     linkedinURL: "",
     instagramURL: "",
-    categories: [],
-    category: "",
+    // categories: [],
+    // category: "",
     loading: false,
     error: "",
     formData: "",
@@ -37,7 +38,8 @@ const UpdateEvent = ({ match }) => {
   const {
     name,
     info,
-    date,
+    startDate,
+    endDate,
     image,
     linkedinURL,
     instagramURL,
@@ -51,15 +53,16 @@ const UpdateEvent = ({ match }) => {
   const preload = eventId => {
     getEvent(eventId).then(data => {
       console.log(data.date);
-      let DATE = moment(data.date).format("YYYY-MM-DD");
+      let START_DATE = moment(data.date.startDate).format("YYYY-MM-DD");
+      let END_DATE = moment(data.date.endDate).format("YYYY-MM-DD");
       // console.log(DATE);
-      setCATE(data.category.name);
+      // setCATE(data.category.name);
       // console.log(CATE);
 
       if (data.error) {
         setValues({ ...values, error: data.error });
       } else {
-        preloadCategories();
+        // preloadCategories();
 
         // console.log(
         //   <Moment format="DD-MM-YYYY">2021-07-21T00:00:00.000Z</Moment>
@@ -69,12 +72,13 @@ const UpdateEvent = ({ match }) => {
           ...values,
           name: "",
           info: data.info,
-          date: DATE,
+          startDate: START_DATE,
+          endDate: END_DATE,
           // image: data.image,
           linkedinURL: data.linkedinURL,
           instagramURL: data.instagramURL,
           name: data.name,
-          category: data.category._id,
+          // category: data.category._id,
           formData: new FormData(),
         });
       }
@@ -92,18 +96,18 @@ const UpdateEvent = ({ match }) => {
     });
   };
 
-  const preloadCategories = () => {
-    getAllCategories().then(data => {
-      if (data.error) {
-        setValues({ ...values, error: data.error });
-      } else {
-        setValues({
-          categories: data,
-          formData: new FormData(),
-        });
-      }
-    });
-  };
+  // const preloadCategories = () => {
+  //   getAllCategories().then(data => {
+  //     if (data.error) {
+  //       setValues({ ...values, error: data.error });
+  //     } else {
+  //       setValues({
+  //         categories: data,
+  //         formData: new FormData(),
+  //       });
+  //     }
+  //   });
+  // };
 
   useEffect(() => {
     preload(match.params.eventId);
@@ -129,7 +133,7 @@ const UpdateEvent = ({ match }) => {
           linkedinURL: "",
           instagramURL: "",
         });
-        setCATE("");
+        // setCATE("");
       }
     });
   };
@@ -221,16 +225,27 @@ const UpdateEvent = ({ match }) => {
           </div>
         </span>
         <div className="mini-container">
+          <h4>Start Date</h4>
           <div className="form-group">
             <input
               className="form-control"
               onChange={handleChange("date")}
               type="date"
               required={true}
-              value={date}
+              value={startDate}
             />
           </div>
-          <div
+          <h4>End Date</h4>
+          <div className="form-group">
+            <input
+              className="form-control"
+              onChange={handleChange("date")}
+              type="date"
+              required={true}
+              value={endDate}
+            />
+          </div>
+          {/* <div
             className="form-group"
             style={{
               justifyContent: "center",
@@ -263,7 +278,7 @@ const UpdateEvent = ({ match }) => {
                 </option>
               ))}
             </select>
-          </div>
+          </div> */}
         </div>
       </div>
 

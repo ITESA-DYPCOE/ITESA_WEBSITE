@@ -14,7 +14,7 @@ import "../Signup/Signup.css";
 import makeToast from "../../components/utils/Toaster/Toaster";
 
 //react-router-dom
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 const SignIn = () => {
   // const history = useHistory();

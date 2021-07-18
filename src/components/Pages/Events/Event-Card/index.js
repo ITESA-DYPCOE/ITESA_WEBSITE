@@ -3,6 +3,8 @@ import "../css/Events.styles.css";
 import ImageHelper from "../../../../admin/helper/ImageHelper";
 
 const EventCard = props => {
+  // console.log(props.eventDate);
+
   return (
     <div>
       <div className="container">
@@ -13,7 +15,9 @@ const EventCard = props => {
           </div>
           <div className="back">
             <p className="event-title">{props.eventTitle}</p>
-            <p className="event-date">{props.eventDate}</p>
+            <p className="event-date">
+              {props.eventStartDate} - {props.eventEndDate}
+            </p>
             <p className="event-info">{props.eventInfo}</p>
             <p className="event-info">{props.category}</p>
             {/* <a

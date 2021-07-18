@@ -19,12 +19,13 @@ const AddEvent = () => {
   const [values, setValues] = useState({
     name: "",
     info: "",
-    date: "",
+    startDate: "",
+    endDate: "",
     image: "",
     linkedinURL: "",
     instagramURL: "",
-    categories: [],
-    category: "",
+    // categories: [],
+    // category: "",
     loading: false,
     error: "",
     formData: "",
@@ -33,42 +34,48 @@ const AddEvent = () => {
   const {
     name,
     info,
-    date,
+    // date,
+    startDate,
+    endDate,
     image,
     linkedinURL,
     instagramURL,
-    categories,
-    category,
+    // categories,
+    // category,
     loading,
     error,
     formData,
   } = values;
 
-  const preload = () => {
-    getAllCategories().then(data => {
-      console.log(data);
-      if (data.error) {
-        setValues({ ...values, error: data.error });
-      } else {
-        setValues({
-          ...values,
-          categories: data,
-          formData: new FormData(),
-        });
-        // console.log(categories);
-      }
-    });
-  };
+  // const preload = () => {
+  //   getAllCategories().then(data => {
+  //     console.log(data);
+  //     if (data.error) {
+  //       setValues({ ...values, error: data.error });
+  //     } else {
+  //       setValues({
+  //         ...values,
+  //         categories: data,
+  //         formData: new FormData(),
+  //       });
+  //       // console.log(categories);
+  //     }
+  //   });
+  // };
 
   useEffect(() => {
-    preload();
+    setValues({ ...values, formData: new FormData() });
   }, []);
 
   // console.log(image);
 
   const onSubmit = e => {
     e.preventDefault();
-    setValues({ ...values, error: "", loading: true });
+    setValues({
+      ...values,
+      error: "",
+      loading: true,
+    });
     console.log(formData);
     createEvent(admin._id, token, formData).then(data => {
       if (data.error) {
@@ -80,7 +87,8 @@ const AddEvent = () => {
           ...values,
           name: "",
           info: "",
-          date: "",
+          startDate: "",
+          endDate: "",
           image: "",
           linkedinURL: "",
           instagramURL: "",
@@ -103,7 +111,7 @@ const AddEvent = () => {
 
   // const warningMessage = () => makeToast("error", `${error}`);
 
-  console.log(date);
+  // console.log(date);
 
   const createEventForm = () => (
     <form className="form-container">
@@ -136,7 +144,7 @@ const AddEvent = () => {
             value={info}
           />
         </div>
-        <div className="form-group ">
+        {/* <div className="form-group ">
           <select
             onChange={handleChange("category")}
             className="form-control"
@@ -149,7 +157,7 @@ const AddEvent = () => {
               </option>
             ))}
           </select>
-        </div>
+        </div> */}
       </div>
       <div className="centered-container">
         <span
@@ -194,13 +202,24 @@ const AddEvent = () => {
           </div>
         </span>
         <div className="mini-container">
+          <h4>Start Date</h4>
           <div className="form-group">
             <input
               className="form-control"
-              onChange={handleChange("date")}
+              onChange={handleChange("startDate")}
               type="date"
               required={true}
-              value={date}
+              value={startDate}
+            />
+          </div>
+          <h4>End Date</h4>
+          <div className="form-group">
+            <input
+              className="form-control"
+              onChange={handleChange("endDate")}
+              type="date"
+              required={true}
+              value={endDate}
             />
           </div>
         </div>

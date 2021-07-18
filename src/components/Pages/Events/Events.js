@@ -8,15 +8,15 @@ import Typography from "@material-ui/core/Typography";
 import "./css/Events.styles.css";
 
 //data
-import eventData from "./data/events.json";
+// import eventData from "./data/events.json";
 
 import {
   getAllEvents,
-  getAllCategories,
-  getCate,
-  getAllLatestEvents,
-  getAllPastEvents,
+  // getAllCategories,
+  // getCate,
 } from "../../../admin/helper/adminapicalls";
+import makeToast from "../../utils/Toaster/Toaster";
+// import { CgLayoutGridSmall } from "react-icons/cg";
 
 const styles = {
   background: "#2b5876",
@@ -26,28 +26,26 @@ const styles = {
 export const Events = () => {
   const [latestEvents, setLatestEvents] = useState([]);
   const [pastEvents, setPastEvents] = useState([]);
-  const [categories, setCategories] = useState([]);
+  // const [sameDate, setSameDate] = useState("");
+  // const [categories, setCategories] = useState([]);
 
   const preload = () => {
-    getAllLatestEvents().then(data => {
+    // getAllCategories().then(data => {
+    //   if (data.error) {
+    //     console.log(data.error);
+    //   } else {
+    //     setCategories(data);
+    //   }
+    // });
+    getAllEvents().then(data => {
       if (data.error) {
-        console.log(data.error);
+        makeToast("error", data.error);
       } else {
-        setLatestEvents(data);
-      }
-    });
-    getAllPastEvents().then(data => {
-      if (data.error) {
-        console.log(data.error);
-      } else {
-        setPastEvents(data);
-      }
-    });
-    getAllCategories().then(data => {
-      if (data.error) {
-        console.log(data.error);
-      } else {
-        setCategories(data);
+        // setCategories(data);
+        setLatestEvents(data.upcomingEvent);
+        setPastEvents(data.pastEvent);
+        // console.log(data.upcomingEvent);
+        // console.log(data.pastEvent);
       }
     });
   };
@@ -75,15 +73,21 @@ export const Events = () => {
               {latestEvents &&
                 latestEvents.map(event => {
                   console.log(event);
-                  let DATE = moment(event.date).format("MMMM Do YYYY");
-                  console.log(categories);
+                  let START_DATE = moment(event.date.startDate).format(
+                    "MMMM Do YYYY"
+                  );
+                  let END_DATE = moment(event.date.endDate).format(
+                    "MMMM Do YYYY"
+                  );
+
                   return (
                     <>
                       <EventCard
                         event={event}
                         img={event.image}
                         eventTitle={event.name}
-                        eventDate={DATE}
+                        eventStartDate={START_DATE}
+                        eventEndDate={END_DATE}
                         eventInfo={event.info}
                         eventLink={"eventLink"}
                         open={true}
@@ -131,16 +135,22 @@ export const Events = () => {
             <>
               {pastEvents &&
                 pastEvents.map(event => {
-                  console.log(event);
-                  let DATE = moment(event.date).format("MMMM Do YYYY");
-                  console.log(categories);
+                  console.log("PAST EVENT", event);
+                  let START_DATE = moment(event.date.startDate).format(
+                    "MMMM Do YYYY"
+                  );
+                  let END_DATE = moment(event.date.endDate).format(
+                    "MMMM Do YYYY"
+                  );
+
                   return (
                     <>
                       <EventCard
                         event={event}
                         img={event.image}
                         eventTitle={event.name}
-                        eventDate={DATE}
+                        eventStartDate={START_DATE}
+                        eventEndDate={END_DATE}
                         eventInfo={event.info}
                         eventLink={"eventLink"}
                         open={true}

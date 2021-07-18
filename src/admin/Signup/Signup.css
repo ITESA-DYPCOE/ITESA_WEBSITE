@@ -431,6 +431,11 @@
     padding: 5px;
     margin: 5px;
   }
+
+  .makeItResponisve {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
 }
 .text-xs-center {
   text-align: center;
