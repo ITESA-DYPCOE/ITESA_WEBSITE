@@ -1,0 +1,67 @@
+.cardWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0px;
+  padding: 75px;
+  margin: 0 100px;
+  background-clip: border-box;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 8px;
+  box-shadow: 0px 3px 65px rgb(72 127 255 / 40%);
+  border-collapse: separate;
+}
+
+.imgWrapper {
+  position: absolute;
+  top: -50%;
+  right: 0px;
+  left: 0px;
+  text-align: center;
+}
+
+.para-styles {
+  color: rgb(28, 39, 43);
+  margin-bottom: 0px;
+  box-sizing: inherit;
+  display: block;
+  font-weight: 400;
+  line-height: 25px;
+  font-family: "Open Sans", "Segoe UI", Tahoma, sans-serif;
+  font-size: 16px;
+}
+
+.discordLink {
+  height: 24px;
+  color: rgb(40, 40, 40);
+  font-size: 16px;
+  font-weight: 700;
+  background-image: linear-gradient(
+    transparent 50%,
+    rgba(249, 157, 120, 0.5) 0px
+  );
+  padding-right: 4px;
+  padding-bottom: 2px;
+  background-position: 4px 2px;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  transition: all 0.18s ease 0s;
+  display: inline-block;
+}
+
+.discordLink:hover {
+  background-position: right -4px top 7px;
+  padding-right: 4px;
+  padding-bottom: 2px;
+  text-decoration: none;
+  background-image: linear-gradient(transparent 60%, rgb(249, 157, 120) 0px);
+  color: rgb(40, 40, 40);
+}
+
+@media screen and (max-width: 900px) {
+  .cardWrapper {
+    padding: 35px;
+    margin: 0px;
+  }
+}
