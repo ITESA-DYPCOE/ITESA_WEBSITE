@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useHistory } from "react-router-dom";
 
 import "./Navbar.css";
 import "../Navbar/Dropdown/Dropdown.css";
@@ -7,8 +7,18 @@ import "../Navbar/Dropdown/Dropdown.css";
 import Button from "../utils/Button/Button";
 
 import logo from "../utils/Logo/DARK_MODE-LOGO.png";
+import { isAuthenticated, signout } from "../../admin/auth/helper/index";
+
+//custom-toast
+import makeToast from "../../components/utils/Toaster/Toaster";
 
 const Navbar = () => {
+  const history = useHistory();
+
+  const { admin } = isAuthenticated();
+
+  // console.log(admin);
+
   const [click, setClick] = useState(false);
   const [navbarColor, setNavbarColor] = useState(false);
 
@@ -127,6 +137,58 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
+            {isAuthenticated() && isAuthenticated().admin.role === 0 && (
+              <li className="nav-item active">
+                <NavLink
+                  to="/unapproved/dashboard"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  <span className="badge badge-admin">Dashboard</span>
+                </NavLink>
+              </li>
+            )}
+            {isAuthenticated() && isAuthenticated().admin.role === 1 && (
+              <li className="nav-item active">
+                <NavLink
+                  to="/admin/dashboard"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  <span className="badge badge-admin">Admin Dashboard</span>
+                </NavLink>
+              </li>
+            )}
+            {isAuthenticated() ? (
+              ""
+            ) : (
+              <>
+                <li className="nav-item active">
+                  <NavLink
+                    to="/admin/sign-in"
+                    className="nav-links"
+                    onClick={closeMobileMenu}
+                  >
+                    <span className="badge badge-admin">admin ?</span>
+                  </NavLink>
+                </li>
+              </>
+            )}
+            {isAuthenticated() && (
+              <li
+                style={{ cursor: "pointer" }}
+                className="nav-item active"
+                onClick={() => {
+                  signout(() => {
+                    history.push("/");
+                    makeToast("success", "Signout Successfully!");
+                  });
+                }}
+              >
+                <span className="badge badge-admin">Signout</span>
+              </li>
+            )}
+
             <li className="nav-item active">
               <a
                 href="https://github.com/ITESA-DYPCOE/ITESA_WEBSITE"

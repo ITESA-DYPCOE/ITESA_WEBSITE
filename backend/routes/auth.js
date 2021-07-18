@@ -1,39 +1,48 @@
 const express = require("express");
 const router = express.Router();
+const { check } = require("express-validator");
+const { signout, signup, signin } = require("../controllers/auth");
 
-const User = require("../models/user");
+router.post(
+  "/signup",
+  [
+    check("name")
+      .isLength({ min: 3 })
+      .withMessage("Name should be min. 3 characters"),
+    check("email")
+      .normalizeEmail()
+      .isEmail()
+      .withMessage("Valid Email required"),
+    check("password")
+      .isLength({ min: 5 })
+      .withMessage("Password should be min. 5 characters")
+      .matches(/\d/)
+      .withMessage("Password must be a number"),
+    check("adminInfo")
+      .isLength({ min: 6 })
+      .withMessage("About admin info required!"),
+  ],
+  signup
+);
 
-router.get("/", (req, res) => {
-  res.send({ msg: "Hey, i am working" });
-});
+router.post(
+  "/signin",
+  [
+    check("email").isEmail().withMessage("Valid Email required"),
+    check("password")
+      .isLength({ min: 5 })
+      .withMessage("Password field required")
+      .matches(/\d/),
+    // .withMessage("Password must contain a number"),
+  ],
+  signin
+);
 
-router.post("/submit-query", async (req, res) => {
-  // res.send(req.body);
-  // console.log(req.body);
+router.get("/signout", signout);
 
-  const { name, email, subject, message } = req.body;
-
-  if (!name || !email || !subject || !message) {
-    return res.status(422).json({ err: "All fields required!" });
-  }
-
-  try {
-    const userQuery = new User({ name, email, subject, message });
-
-    const query = await userQuery.save();
-
-    if (query) {
-      res.status(200).json({
-        msg: "Sent Successfully..",
-      });
-    } else {
-      res.status(500).json({
-        msg: "Gotcha Err...",
-      });
-    }
-  } catch (err) {
-    console.log(err);
-  }
-});
+// router.get("/testroute", isSignedIn, (req, res) => {
+//     //res.send("a protected route");
+//     res.json(req.auth);
+// });
 
 module.exports = router;

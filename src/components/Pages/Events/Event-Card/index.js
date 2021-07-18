@@ -1,19 +1,26 @@
 import React from "react";
 import "../css/Events.styles.css";
+import ImageHelper from "../../../../admin/helper/ImageHelper";
 
 const EventCard = props => {
+  // console.log(props.eventDate);
+
   return (
     <div>
       <div className="container">
         <div className="flipper">
           <div className="front">
-            <img id="img" src={props.img} alt="event-img" />
+            {/* <img id="img" src={props.img} alt="event-img" /> */}
+            <ImageHelper event={props.event} />
           </div>
           <div className="back">
             <p className="event-title">{props.eventTitle}</p>
-            <p className="event-date">{props.eventDate}</p>
+            <p className="event-date">
+              {props.eventStartDate} - {props.eventEndDate}
+            </p>
             <p className="event-info">{props.eventInfo}</p>
-            <a
+            <p className="event-info">{props.category}</p>
+            {/* <a
               href={props.open === "true" ? props.eventLink : "*"}
               target="_blank"
               rel="noreferrer"
@@ -38,7 +45,7 @@ const EventCard = props => {
                   </>
                 )}
               </span>
-            </a>
+            </a> */}
             <span className="info-check">For more info check out here</span>
             <div className="social-linkss">
               <a

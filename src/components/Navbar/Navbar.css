@@ -78,7 +78,7 @@
 
 .nav-menu {
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(8, auto);
   grid-gap: 10px;
   list-style: none;
   text-align: center;
@@ -149,6 +149,32 @@
 .badge-warning {
   color: #212529;
   background-color: #ffc107;
+}
+
+.badge-admin {
+  color: #fff;
+  background-color: #ff7f07;
+  padding: 12px;
+  font-size: 1rem;
+  margin-bottom: 0em;
+}
+
+.badge-admin:hover {
+  color: #ff7f07;
+  background-color: #fff;
+}
+
+.badge-admin-dashboard {
+  color: #fff;
+  background-color: #ff7f07;
+  padding: 12px;
+  font-size: 1rem;
+  margin-bottom: 0em;
+}
+
+.badge-admin-dashboard:hover {
+  color: #ff7f07;
+  background-color: #fff;
 }
 
 @media screen and (max-width: 1600px) {
