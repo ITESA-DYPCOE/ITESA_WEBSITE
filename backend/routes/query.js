@@ -3,10 +3,6 @@ const router = express.Router();
 
 const Query = require("../models/query");
 
-router.get("/", (req, res) => {
-  res.send({ msg: "Hey, i am working" });
-});
-
 router.post("/submit-query", async (req, res) => {
   // res.send(req.body);
   // console.log(req.body);

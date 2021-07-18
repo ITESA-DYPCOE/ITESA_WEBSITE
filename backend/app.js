@@ -16,6 +16,10 @@ app.use(express.json());
 app.use(cors());
 
 //routes
+app.get("/", (req, res) => {
+  res.send({ msg: "Hey, i am working" });
+});
+
 app.use("/api", querysRoutes);
 app.use("/api", eventsRoutes);
 // app.use("/api", categoryRoutes);
@@ -41,3 +45,5 @@ const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log(`App is running.. at ${port}`);
 });
+
+//testing server :)
