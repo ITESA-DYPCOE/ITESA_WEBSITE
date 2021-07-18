@@ -8,7 +8,7 @@ const app = express();
 //my routes
 const querysRoutes = require("./routes/query");
 const eventsRoutes = require("./routes/event");
-const categoryRoutes = require("./routes/category");
+// const categoryRoutes = require("./routes/category");
 const authRoutes = require("./routes/auth");
 const adminRoutes = require("./routes/admin");
 
@@ -18,7 +18,7 @@ app.use(cors());
 //routes
 app.use("/api", querysRoutes);
 app.use("/api", eventsRoutes);
-app.use("/api", categoryRoutes);
+// app.use("/api", categoryRoutes);
 app.use("/api", authRoutes);
 app.use("/api", adminRoutes);
 

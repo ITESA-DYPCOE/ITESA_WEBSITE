@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+//api
+// import { API } from "../../../backend";
+
 //email-js
 import emailjs from "emailjs-com";
 
@@ -66,7 +69,7 @@ const ContactUs = () => {
     setFormErrors(errors);
   };
 
-  const URL = process.env.REACT_APP_BACKEND;
+  const URL = process.env.REACT_APP_BACKEND_URL;
   const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
   const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
   const USER_ID = process.env.REACT_APP_USER_ID;
