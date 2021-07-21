@@ -13,11 +13,11 @@ import { Management } from "./components/Teams/Management/Management";
 import { Cultural } from "./components/Teams/Cultural/Cultural";
 import { PastTeams } from "./components/Teams/PastTeams/PastTeams";
 
-
 //pages
 import Home from "./components/Pages/Home/Home";
 import Contact from "./components/Pages/Contact-Us/Contact";
 import { Events } from "./components/Pages/Events/Events";
+// import Faq from "./components/Faq/Faq";
 
 //admin routes
 import AdminRoute from "./admin/auth/helper/AdminRoute";
@@ -51,6 +51,7 @@ const App = () => {
           <Route path="/cultural-team" component={Cultural} />
           <Route path="/past-teams" component={PastTeams} />
           <Route path="/events" component={Events} />
+          {/* <Route path="/faqs" component={Faq} /> */}
           <Route path="/contact-us" component={Contact} />
           <Route path="/admin/dashboard/sign-up" component={Signup} />
           <Route path="/admin/sign-in" component={SignIn} />
