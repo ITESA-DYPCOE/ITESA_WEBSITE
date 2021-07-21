@@ -47,6 +47,7 @@ export const Events = () => {
   // };
 
   const preload = () => {
+    
     // getAllCategories().then(data => {
     //   if (data.error) {
     //     console.log(data.error);
@@ -57,18 +58,21 @@ export const Events = () => {
 
     getAllEvents().then((data) => {
       setLoading(true);
-      console.log("OUTSIDE LOADING IS", loading);
+      console.log("LOADING DATA.....value is ", loading);
 
       if (data.error) {
+        setLoading(false);
+        console.log(" ERROR LOADING IS", loading);
         makeToast("error", data.error);
       } else {
-        setLoading(false);
         // setCategories(data);
         setLatestEvents(data.upcomingEvent);
         setPastEvents(data.pastEvent);
         // console.log(data.upcomingEvent);
         // console.log(data.pastEvent);
-        console.log("No ERROR LOADING IS", loading);
+        console.log("data retrieved is ", data)
+        setLoading(false);
+
       }
     });
   };
@@ -84,12 +88,17 @@ export const Events = () => {
   return (
     <div className="dark">
       {loading ? (
+        <>
+        <h3>Loading</h3>
         <HashLoader
-          color="	#000080"
+          color= "white"
           loading={loading}
           css={override}
           size={150}
         />
+
+        </>
+
          ) : 
         <>
           <div className="event-about-dark"></div>
