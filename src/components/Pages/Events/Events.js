@@ -37,7 +37,8 @@ const styles = {
 export const Events = () => {
   const [latestEvents, setLatestEvents] = useState([]);
   const [pastEvents, setPastEvents] = useState([]);
-  let [loading, setLoading] = useState(true);
+  let [loading1, setLoading1] = useState(true);
+  let [loading2, setLoading2] = useState(true);
 
   // const [sameDate, setSameDate] = useState("");
   // const [categories, setCategories] = useState([]);
@@ -57,21 +58,24 @@ export const Events = () => {
     // });
 
     getAllEvents().then((data) => {
-      setLoading(true);
-      console.log("LOADING DATA.....value is ", loading);
+      setLoading1(true);
+      setLoading2(true);
+      // console.log("LOADING DATA.....value is ", loading1);
 
       if (data.error) {
-        setLoading(false);
-        console.log(" ERROR LOADING IS", loading);
+        setLoading1(false);
+        setLoading2(false);
+        // console.log(" ERROR LOADING IS", loading);
         makeToast("error", data.error);
       } else {
         // setCategories(data);
         setLatestEvents(data.upcomingEvent);
+        setLoading1(false);
         setPastEvents(data.pastEvent);
+        setLoading2(false);
+
         // console.log(data.upcomingEvent);
         // console.log(data.pastEvent);
-        console.log("data retrieved is ", data)
-        setLoading(false);
 
       }
     });
@@ -86,20 +90,7 @@ export const Events = () => {
   // console.log(categories);
 
   return (
-    <div className="dark">
-      {loading ? (
-        <>
-        <h3>Loading</h3>
-        <HashLoader
-          color= "white"
-          loading={loading}
-          css={override}
-          size={150}
-        />
-
-        </>
-
-         ) : 
+    
         <>
           <div className="event-about-dark"></div>
           <div className="events-section">
@@ -111,7 +102,23 @@ export const Events = () => {
               Latest Events
             </Typography>
             <div className="dash dash-dark" style={styles}></div>
-            <div className="row1">
+            <div className="dark">
+            {loading1 ? (
+              <>
+              <HashLoader
+                color= "white"
+                loading={loading1}
+                css={override}
+                size={100}
+                width={50}
+              />
+
+              </>
+
+              ) : 
+              <>
+
+                <div className="row1">
               {latestEvents.length === 0 ? (
                 <h1>No Events Found!</h1>
               ) : (
@@ -166,6 +173,8 @@ export const Events = () => {
               return null;
             })} */}
             </div>
+                </>
+            }
           </div>
 
           <div className="event-about-dark"></div>
@@ -178,6 +187,21 @@ export const Events = () => {
               Past Events Section
             </Typography>
             <div className="dash dash-dark" style={styles}></div>
+            {loading2 ? (
+              <>
+              <HashLoader
+                color= "white"
+                loading={loading2}
+                css={override}
+                size={100}
+                width={50}
+
+              />
+
+              </>
+
+              ) :
+<>
             <div className="row1">
               {pastEvents.length === 0 ? (
                 <h1>No Events Found!</h1>
@@ -233,10 +257,15 @@ export const Events = () => {
               return null;
             })} */}
             </div>
+            </>
+            
+            }
+
           </div>
-        </>
+       
       
-          }
+          
     </div>
+    </>
   
   )}
