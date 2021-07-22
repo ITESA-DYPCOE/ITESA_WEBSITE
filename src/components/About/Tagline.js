@@ -1,45 +1,76 @@
 import React from "react";
 import "./About.css";
-import Typography from "@material-ui/core/Typography";
-
-import { FaLaptopCode } from "react-icons/fa";
-import { GiTechnoHeart } from "react-icons/gi";
-import { RiCommunityLine } from "react-icons/ri";
-
-const styles = {
-  color: "#ffd9a0ef",
-  fontFamily: "Nunito",
-  fontSize: "1.3em",
-};
 
 const Motive = () => {
   return (
     <>
-      <div className="taglineDiv">
-        <Typography variant="h3" className="about-dark" id="tagline">
-          <Typography variant="h3" className="about-dark" id="headerTxt">
-            About ITESA
-          </Typography>
-          <span style={styles}>We</span>,
-          <span id="headerInfo">
-            aim to provide an exposure to a community with various
-            multi-talented personalities, meet them,
-            <span id="headerInfo">
-              build connections, increase your network, interact
-            </span>
-            with your seniors, juniors and explore new opportunities
-          </span>
-        </Typography>
-        <div className="tagline-icons">
-          <FaLaptopCode />
+      <section
+        style={{
+          backgroundColor: "#1C1E24",
+          padding: "90px 0 100px",
+          width: "100%",
+        }}
+      >
+        <div
+          className="container"
+          style={{
+            width: "100%",
+            padding: "0px 35px",
+            // maxWidth: "1440px !important",
+            margin: 0,
+            height: "200px",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginRight: "-15px",
+              marginLeft: "-15px",
+              flexWrap: "wrap",
+            }}
+          >
+            <div style={{ flex: "0 0 100%", maxWidth: "100%" }}>
+              <div className="cardWrapper " id="makeResp">
+                <div
+                  className="text-center"
+                  style={{
+                    color: "#fff",
+                    marginBottom: "16px !important",
+                    textAlign: "center",
+                  }}
+                >
+                  <h4 style={{ fontSize: "1.2rem" }}>
+                    Information technology Engineering Students Association
+                  </h4>
+                  <p
+                    className="info-styles typing"
+                    style={{ fontSize: "1rem" }}
+                  >
+                    We, aim to provide an exposure to a community with various
+                    multi-talented personalities, meet them,build connections,
+                    increase your network, interactwith your seniors, juniors
+                    and explore new opportunities
+                  </p>
+                  <span style={{ paddingRight: "1rem", fontSize: "1.5rem" }}>
+                    🤩🚀
+                  </span>
+                </div>
+
+                {/* <div className="linkToJoin" style={{ textAlign: "center" }}>
+                  <a
+                    className="discordLink"
+                    href="https://discord.gg/WyTupBNX76"
+                    target="_blank"
+                  >
+                    Join Now
+                  </a>
+                </div> */}
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="tagline-icons">
-          <GiTechnoHeart />
-        </div>
-        <div className="tagline-icons">
-          <RiCommunityLine />
-        </div>
-      </div>
+      </section>
     </>
   );
 };

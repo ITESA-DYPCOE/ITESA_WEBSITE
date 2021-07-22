@@ -17,13 +17,13 @@
   padding: 10px 20px;
   text-decoration: none;
   display: block;
-  font-size: 0.87rem;
+  font-size: 1rem;
 }
 
 .dropdown-content a:hover {
   border-radius: 0.27rem;
-  background-color: #343a40;
-  color: #ffc107;
+  background-color: rgba(34, 37, 44, 0.878);
+  color: #7af7d8;
 }
 
 .dropdown:hover .dropdown-content {

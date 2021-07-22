@@ -6,7 +6,7 @@
 .boxie {
   width: 100%;
   height: 160px;
-  background-color: #22262a;
+  background-color: #21242b;
   opacity: 0.95;
   padding: 1rem;
 }
@@ -17,32 +17,32 @@
   padding: 0.5rem;
   font-family: "Nunito";
 }
-
+/* 
 #headerInfo {
   font-size: 1.5rem;
   color: #fff;
   padding: 1rem;
   font-family: "Poppins";
-}
+} */
 
-.taglineDiv {
+/* .taglineDiv {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  background: #1e2124;
+  background: #1c1e24;
   padding: 25px;
-}
+} */
 
-#tagline {
+/* #tagline {
   color: #f4efffe8;
   font-size: 1.5rem;
   font-family: "Nunito", sans-serif;
   padding: 5px 95px;
   text-align: center;
-}
-
+} */
+/* 
 .tagline-icons {
   color: #f1c178ef;
   padding: 25px;
@@ -53,7 +53,7 @@
 .tagline-icons:hover {
   color: #ffd9a0ef;
   cursor: pointer;
-}
+} */
 
 .wave {
   width: 100%;
@@ -74,7 +74,7 @@
 }
 
 .section-dark {
-  background-color: #1e2124;
+  background-color: #1c1e24;
 }
 
 .boxie-child {
@@ -109,7 +109,7 @@
 
 .card-dark {
   color: whitesmoke;
-  background-color: #1e2124;
+  background-color: #1c1e24;
 }
 
 .box-heading {
@@ -195,6 +195,83 @@
 
 .box-heading-dark {
   color: #fff;
+}
+
+.cardWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0px;
+  padding: 60px;
+  margin: 0 400px;
+  background-clip: border-box;
+  background-color: #363d4a;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 8px;
+  /* box-shadow: 0px 3px 15px rgb(72 127 255 / 40%); */
+  border-collapse: separate;
+}
+
+.cardWrapper:hover {
+  background: linear-gradient(45deg, rgb(55, 62, 75) 0%, rgb(33, 35, 43) 90%);
+}
+
+.imgWrapper {
+  position: absolute;
+  top: -50%;
+  right: 0px;
+  left: 0px;
+  text-align: center;
+}
+
+.info-styles {
+  color: #7af7d8;
+  margin-bottom: 0px;
+  box-sizing: inherit;
+  display: block;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 25px;
+  font-family: "Ubuntu Mono", monospace;
+  /* font-size: 20px; */
+}
+
+.discordLink {
+  height: 24px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  background-image: linear-gradient(
+    transparent 50%,
+    rgba(248, 169, 49, 0.815) 0px
+  );
+  padding-right: 4px;
+  padding-bottom: 2px;
+  background-position: 4px 2px;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  transition: all 0.18s ease 0s;
+  display: inline-block;
+}
+
+.discordLink:hover {
+  background-position: right -4px top 7px;
+  padding-right: 4px;
+  padding-bottom: 2px;
+  text-decoration: none;
+  background-image: linear-gradient(transparent 60%, rgb(249, 157, 120) 0px);
+  color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+  .cardWrapper {
+    padding: 35px;
+    margin: 0px;
+  }
+  #makeResp {
+    margin-top: -50px;
+    padding: 15px 15px;
+  }
 }
 
 @media screen and (max-width: 900px) {

@@ -22,20 +22,21 @@ const useStyles = makeStyles({
     height: 65,
     borderRadius: 6,
     textTransform: "uppercase",
-    boxShadow: "0px 1px 15px 3px rgba(255, 105, 135, .3)",
+    // boxShadow: "0px 1px 4px 3px rgba(105, 208, 255, 0.3)",
     cursor: "pointer",
     color: "#fff",
     backgroundSize: "200%",
     transition: "0.4s",
     "&:hover": {
-      backgroundPosition: "right",
+      background:
+        "linear-gradient(45deg, rgb(55, 62, 75) 0%, rgb(33, 35, 43) 90%)",
     },
     fontFamily: "Poppins",
     letterSpacing: "1.3px",
     fontSize: "0.7rem",
   },
   btn1: {
-    backgroundImage: "linear-gradient(130deg, #323742, #36272d, #333E4B)",
+    background: "#363D4A",
   },
 });
 

@@ -7,7 +7,7 @@ const Discord = () => {
     <section
       style={{
         backgroundColor: "#1E2124",
-        padding: "160px 0 80px 0",
+        padding: "120px 0 80px 0",
         width: "100%",
       }}
     >
@@ -40,12 +40,16 @@ const Discord = () => {
                   marginBottom: "16px",
                 }}
               >
-                <img src={logo} alt="logo" />
+                <img
+                  src={logo}
+                  alt="logo"
+                  style={{ width: "145px", marginTop: "40px" }}
+                />
               </div>
               <div
                 className="text-center"
                 style={{
-                  color: "rgb(28, 39, 43)",
+                  color: "#fff",
                   marginBottom: "16px !important",
                   textAlign: "center",
                 }}
@@ -54,7 +58,7 @@ const Discord = () => {
                   Join ITESA Community on Discord
                 </h4>
                 <p className="para-styles" style={{ fontSize: "1rem" }}>
-                  Meet students and educators excited about technology
+                  Meet students and educators excited about technology🚀
                 </p>
               </div>
 

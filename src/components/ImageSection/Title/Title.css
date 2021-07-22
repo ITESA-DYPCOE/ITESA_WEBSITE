@@ -1,19 +1,19 @@
 .title-color {
-	color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .boxy {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 1em 25px;
-	background: linear-gradient(157deg, #232930 0%, #262e37 64%);
-	border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75em 35px;
+  background: linear-gradient(12deg, rgb(55, 62, 75) 0%, rgb(33, 35, 43) 80%);
+  border-radius: 6px;
 }
 
 @media screen and (max-width: 750px) {
-	#MuiTypography-h5 {
-		font-size: 1rem;
-		text-align: center;
-	}
+  #MuiTypography-h5 {
+    font-size: 1rem;
+    text-align: center;
+  }
 }

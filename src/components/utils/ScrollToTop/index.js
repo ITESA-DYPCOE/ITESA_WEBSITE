@@ -26,7 +26,7 @@ export const ScrollToTop = () => {
       size={70}
       style={{
         height: 50,
-        color: "#15CDFC",
+        color: "#8D9FFF",
         display: showScroll ? "flex" : "none",
       }}
     />
