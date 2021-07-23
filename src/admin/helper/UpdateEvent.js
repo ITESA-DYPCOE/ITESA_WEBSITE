@@ -53,8 +53,6 @@ const UpdateEvent = ({ match }) => {
   const preload = eventId => {
     getEvent(eventId).then(data => {
       console.log(data.date);
-      let START_DATE = moment(data.date.startDate).format("YYYY-MM-DD");
-      let END_DATE = moment(data.date.endDate).format("YYYY-MM-DD");
       // console.log(DATE);
       // setCATE(data.category.name);
       // console.log(CATE);
@@ -68,6 +66,8 @@ const UpdateEvent = ({ match }) => {
         //   <Moment format="DD-MM-YYYY">2021-07-21T00:00:00.000Z</Moment>
         // );
         console.log(data);
+        let START_DATE = moment(data.date.startDate).format("YYYY-MM-DD");
+        let END_DATE = moment(data.date.endDate).format("YYYY-MM-DD");
         setValues({
           ...values,
           name: "",
@@ -117,7 +117,7 @@ const UpdateEvent = ({ match }) => {
   const onSubmit = e => {
     e.preventDefault();
     setValues({ ...values, error: "", loading: true });
-
+    console.log(formData);
     updateEvent(match.params.eventId, admin._id, token, formData).then(data => {
       if (data.error) {
         setValues({ ...values, error: data.error });
@@ -128,7 +128,8 @@ const UpdateEvent = ({ match }) => {
           ...values,
           name: "",
           info: "",
-          date: "",
+          startDate: "",
+          endDate: "",
           image: "",
           linkedinURL: "",
           instagramURL: "",
@@ -143,6 +144,9 @@ const UpdateEvent = ({ match }) => {
     formData.set(name, value);
     setValues({ ...values, [name]: value });
   };
+
+  console.log(startDate);
+  console.log(endDate);
 
   const updateEventForm = () => (
     <form className="form-container">
@@ -229,7 +233,7 @@ const UpdateEvent = ({ match }) => {
           <div className="form-group">
             <input
               className="form-control"
-              onChange={handleChange("date")}
+              onChange={handleChange("startDate")}
               type="date"
               required={true}
               value={startDate}
@@ -239,7 +243,7 @@ const UpdateEvent = ({ match }) => {
           <div className="form-group">
             <input
               className="form-control"
-              onChange={handleChange("date")}
+              onChange={handleChange("endDate")}
               type="date"
               required={true}
               value={endDate}
