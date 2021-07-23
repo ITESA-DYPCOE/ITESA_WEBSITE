@@ -2,6 +2,8 @@ import React from "react";
 import "../css/Events.styles.css";
 import ImageHelper from "../../../../admin/helper/ImageHelper";
 
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+
 const EventCard = props => {
   // console.log(props.eventDate);
 
@@ -54,7 +56,10 @@ const EventCard = props => {
                 rel="noreferrer"
                 className="social-footer"
               >
-                <i className="fab fa-linkedin"></i>
+                <FaLinkedinIn
+                  className="fab fa-linkedin"
+                  style={{ fontSize: "1.5em" }}
+                />
               </a>
               <a
                 href={props.instagramLink}
@@ -62,7 +67,10 @@ const EventCard = props => {
                 rel="noreferrer"
                 className="social-footer"
               >
-                <i className="fab fa-instagram"></i>
+                <FaInstagram
+                  className="fab fa-instagram"
+                  style={{ fontSize: "1.5em" }}
+                />
               </a>
             </div>
           </div>

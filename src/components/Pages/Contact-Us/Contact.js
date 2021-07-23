@@ -231,7 +231,7 @@ const ContactUs = () => {
                         )}
                       </div>
                       <div>
-                        <Button className="submit-btn" type="submit">
+                        <Button id="submit-btn" type="submit">
                           Let's Talk!
                         </Button>
                       </div>

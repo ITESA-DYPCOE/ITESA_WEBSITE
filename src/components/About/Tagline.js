@@ -41,7 +41,7 @@ const Motive = () => {
                   }}
                 >
                   <h4 style={{ fontSize: "1.2rem" }}>
-                    Information technology Engineering Students Association
+                    Information Technology Engineering Students Association
                   </h4>
                   <p
                     className="info-styles typing"

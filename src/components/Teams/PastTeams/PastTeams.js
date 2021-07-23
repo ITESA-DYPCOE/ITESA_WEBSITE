@@ -5,6 +5,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 
+//react-icons
+import { FaLinkedinIn, FaGithubAlt } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+
 //data
 import pastTeamData from "./data/pastTeams.json";
 import "../css/Team.styles.css";
@@ -53,7 +57,10 @@ export const PastTeams = () => {
                           rel="noreferrer"
                           className="card-footer"
                         >
-                          <i className="fab fa-linkedin"></i>
+                          <FaLinkedinIn
+                            className="fab fa-linkedin"
+                            style={{ fontSize: "1.5em", marginTop: "-1px" }}
+                          />
                         </a>
                         <a
                           href={roleObject.email}
@@ -61,7 +68,10 @@ export const PastTeams = () => {
                           rel="noreferrer"
                           className="card-footer"
                         >
-                          <i className="far fa-envelope"></i>
+                          <HiOutlineMail
+                            className="fas fa-envelope"
+                            style={{ fontSize: "1.5em" }}
+                          />
                         </a>
                         <a
                           href={roleObject.github}
@@ -69,7 +79,10 @@ export const PastTeams = () => {
                           rel="noreferrer"
                           className="card-footer"
                         >
-                          <i className="fab fa-github"></i>
+                          <FaGithubAlt
+                            className="fab fa-github"
+                            style={{ fontSize: "1.5em" }}
+                          />
                         </a>
                       </div>
                     </div>
@@ -113,7 +126,10 @@ export const PastTeams = () => {
                           rel="noreferrer"
                           className="card-footer"
                         >
-                          <i className="fab fa-linkedin"></i>
+                          <FaLinkedinIn
+                            className="fab fa-linkedin"
+                            style={{ fontSize: "1.5em", marginTop: "-1px" }}
+                          />
                         </a>
                         <a
                           href={roleObject.email}
@@ -121,7 +137,10 @@ export const PastTeams = () => {
                           rel="noreferrer"
                           className="card-footer"
                         >
-                          <i className="far fa-envelope"></i>
+                          <HiOutlineMail
+                            className="fas fa-envelope"
+                            style={{ fontSize: "1.5em" }}
+                          />
                         </a>
                         <a
                           href={roleObject.github}
@@ -129,7 +148,10 @@ export const PastTeams = () => {
                           rel="noreferrer"
                           className="card-footer"
                         >
-                          <i className="fab fa-github"></i>
+                          <FaGithubAlt
+                            className="fab fa-github"
+                            style={{ fontSize: "1.5em" }}
+                          />
                         </a>
                       </div>
                     </div>

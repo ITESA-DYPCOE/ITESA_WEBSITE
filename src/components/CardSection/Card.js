@@ -124,7 +124,7 @@ export const Card = () => {
                           >
                             <FaLinkedinIn
                               className="fab fa-linkedin"
-                              style={{ fontSize: "1.5em" }}
+                              style={{ fontSize: "1.5em", marginTop: "-1px" }}
                             />
                           </a>
                           <a
