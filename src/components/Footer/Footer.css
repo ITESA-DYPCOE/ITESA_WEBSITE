@@ -2,19 +2,20 @@
   display: flex;
   flex-flow: row wrap;
   padding: 30px 50px 30px 50px;
-  color: #c2d6d7;
-  background-color: #1e2124;
+  color: #fff;
+  background-color: #1c1e24;
   border-top: 1px solid #e5e5e5;
 }
 
 .footer-dark {
-  background: linear-gradient(-157deg, #323a42 0%, #1e2124 64%);
+  background: #1c1e24;
   box-shadow: 0px -4px 3px rgba(72, 127, 255, 0.4);
 }
 .info {
-  font-size: 0.85rem;
+  font-size: 1rem;
   padding: 5px 0px;
-  color: #88b2d4;
+  color: #8697ad;
+  font-family: "Nunito";
 }
 
 .footer > * {
@@ -25,11 +26,12 @@
   margin-right: 1.25em;
   margin-bottom: 2em;
   font-size: 0.92rem;
+  padding: 50px 0px;
 }
 
 .footer-logo {
   font-weight: 600;
-  font-size: 1.7rem;
+  /* font-size: 1.7rem; */
   color: #fff;
 }
 
@@ -41,20 +43,24 @@
 
 .title {
   font-weight: 600;
-  font-size: 18px;
+  /* font-size: 20px; */
   color: #fff;
 }
 
 .footer a {
   font-style: normal;
-  color: #c2d6d7;
+  color: #fff;
 }
 .footer a:hover {
-  color: yellow;
+  color: #7af7d8;
 }
 .footer ul {
   list-style: none;
   padding-left: 0;
+}
+
+.social-box {
+  padding: 50px 0px;
 }
 
 .footer li {
@@ -74,12 +80,12 @@
   margin-right: 1.25em;
 }
 .ul-links a {
-  color: #c2d6d7;
-  font-size: 0.92rem;
+  color: #fff;
+  /* font-size: 0.92rem; */
 }
 
 .ul-links a:hover {
-  color: yellow;
+  color: #7af7d8;
 }
 
 .fa-linkedin,
@@ -94,39 +100,40 @@
 .fa-instagram-own {
   padding: 5px;
   color: white;
+  font-size: 2.2em;
 }
 
 .fa-linkedin-own:hover {
   color: #0088cc;
-  transform: scale(1.35);
+  /* transform: scale(1.35); */
   transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
   transition: all 0.4s ease-in-out;
 }
 
 .fa-slack-own:hover {
   color: #e03381;
-  transform: scale(1.35);
+  /* transform: scale(1.35); */
   transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
   transition: all 0.4s ease-in-out;
 }
 
 .fa-envelope-own:hover {
   color: #dfd36d;
-  transform: scale(1.35);
+  /* transform: scale(1.35); */
   transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
   transition: all 0.4s ease-in-out;
 }
 
 .fa-github-own:hover {
   color: #7af7d8;
-  transform: scale(1.35);
+  /* transform: scale(1.35); */
   transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
   transition: all 0.4s ease-in-out;
 }
 
 .fa-instagram-own:hover {
   color: #f7bd7a;
-  transform: scale(1.35);
+  /* transform: scale(1.35); */
   transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
   transition: all 0.4s ease-in-out;
 }
@@ -160,15 +167,16 @@
   text-align: center;
   letter-spacing: 1px;
   font-size: 0.91rem;
-  background: #121f3a;
+  background: #1c1e24;
 }
 
 .footer-text-dark {
-  background: linear-gradient(-157deg, #2a3036 0%, #1e2124 64%);
+  background: #1c1e24;
 }
 
 .item {
   margin-bottom: 1.5rem;
+  padding: 50px 0px;
 }
 
 /* Social Icons styles */
@@ -208,13 +216,13 @@
   text-align: center;
   font-size: 18px;
   letter-spacing: 2px;
-  margin-bottom: 0px;
-  margin-top: -15px;
+  /* margin-bottom: 0px; */
+  margin-top: -1px;
   font-family: "Nunito", sans-serif;
 }
 
 .creator-text-dark {
-  background: #1e2124;
+  background: #292c35;
 }
 
 @media screen and (min-width: 40.375em) {
@@ -226,8 +234,13 @@
     flex-grow: 2;
   }
 
+  /* .social-box {
+    padding: 0px;
+  } */
+
   .footer-addr {
     flex: 1 0px;
+    /* padding: 0px; */
   }
 
   .footer-nav {
@@ -239,12 +252,12 @@
   }
 
   a {
-    font-size: 0.73rem;
+    font-size: 1rem;
   }
 
-  .info {
+  /* .info {
     font-size: 0.78rem;
-  }
+  } */
 }
 
 @media screen and (max-width: 510px) {
@@ -272,6 +285,7 @@
   }
   .item {
     margin-bottom: 0.5rem;
+    padding: 0px;
   }
   .footer-logo {
     font-size: 1.3rem;
@@ -286,6 +300,9 @@
   .creator {
     font-size: 12px;
   }
+  /* .footer li {
+    width: 100%;
+  } */
 }
 
 @media screen and (max-width: 1000px) {

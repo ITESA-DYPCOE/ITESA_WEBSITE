@@ -5,7 +5,7 @@
 }
 
 .signup-section-dark {
-  background: linear-gradient(to right, #cfeaff 0%, #81aacc 94%);
+  background: linear-gradient(195deg, rgb(55, 62, 75) 0%, rgb(33, 35, 43) 90%);
 }
 
 .signup-parent {
@@ -58,7 +58,7 @@
 
 .signup-card {
   /* width: 75%; */
-  width: 450px;
+  width: 340px;
   height: auto;
   margin: 0% auto;
   padding-bottom: 20px;
@@ -92,8 +92,8 @@
 }
 
 .signup-header-text {
-  font-family: "Nunito";
-  padding: 15px 0;
+  /* font-family: "Nunito"; */
+  padding: 35px 0;
   margin-bottom: 0px;
   text-transform: capitalize;
   text-align: center;

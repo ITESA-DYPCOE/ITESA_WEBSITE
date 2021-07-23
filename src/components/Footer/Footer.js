@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { FaGithubAlt, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
 import "./Footer.css";
 
 // const styles = {
@@ -67,9 +68,12 @@ const Footer = () => {
               <li>
                 <Link to="/past-teams">Past Teams</Link>
               </li>
+              {/* <li>
+                <Link to="/faqs">FAQ</Link>
+              </li> */}
             </ul>
           </li>
-          <li>
+          <li className="social-box" style={{ width: "100%" }}>
             <h2 className="title">Social</h2>
             <ul className="ul-links">
               <p style={{ fontSize: "0.9rem" }}>
@@ -85,7 +89,10 @@ const Footer = () => {
                     rel="noopener noreferrer"
                   >
                     <div className="outer">
-                      <i className="fab fa-linkedin fa-lg fa-linkedin-own "></i>
+                      <FaLinkedinIn
+                        className="fab fa-linkedin"
+                        style={{ fontSize: "2.2em" }}
+                      />
                     </div>
                   </a>
                 </li>
@@ -96,7 +103,10 @@ const Footer = () => {
                     rel="noopener noreferrer"
                   >
                     <div className="outer">
-                      <i className="fas fa-envelope fa-lg fa-envelope-own"></i>
+                      <HiOutlineMail
+                        className="fas fa-envelope"
+                        style={{ fontSize: "2.2em" }}
+                      />
                     </div>
                   </a>
                 </li>
@@ -107,7 +117,10 @@ const Footer = () => {
                     rel="noopener noreferrer"
                   >
                     <div className="outer">
-                      <i className="fab fa-github fa-lg fa-github-own"></i>
+                      <FaGithubAlt
+                        className="fab fa-github"
+                        style={{ fontSize: "2.2em" }}
+                      />
                     </div>
                   </a>
                 </li>
@@ -118,7 +131,10 @@ const Footer = () => {
                     rel="noopener noreferrer"
                   >
                     <div className="outer">
-                      <i className="fab fa-instagram fa-lg fa-instagram-own"></i>
+                      <FaInstagram
+                        className="fab fa-instagram"
+                        style={{ fontSize: "2.2em" }}
+                      />
                     </div>
                   </a>
                 </li>
