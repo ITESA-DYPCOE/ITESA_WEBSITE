@@ -82,5 +82,15 @@
       "intro": "App Developer | Web Developer"
     }
   ],
-  "members": []
+  "members": [
+    {
+      "name": "Ruhika Bulani",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617353478/ITESA-TEAM/RuhikaBulani_h5aazb.jpg",
+      "linkedin": "https://www.linkedin.com/in/ruhika-bulani-430493189/",
+      "email": "mailto:ruhika406@gmail.com ",
+      "github": "https://github.com/Ruhika1417",
+      "description": "Management Team Member",
+      "intro": "App Developer"
+    }
+  ]
 }
