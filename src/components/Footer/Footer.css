@@ -92,6 +92,7 @@
 .fa-slack,
 .fa-envelope,
 .fa-github,
+.fa-discord,
 .fa-instagram,
 .fa-github-own,
 .fa-envelope-own,
@@ -138,12 +139,21 @@
   transition: all 0.4s ease-in-out;
 }
 
+.fa-discord:hover {
+  color: #8d9fff;
+  /* transform: scale(1.35); */
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+  transition: all 0.4s ease-in-out;
+}
+
 .footer-dash {
   text-align: center;
   padding-top: 2px;
   width: 90px;
   height: 2px;
   margin-top: -32px;
+  margin-right: 80px;
+  margin-left: 40px;
   margin-bottom: 12px;
   background: rgb(255, 0, 90);
   background: 
@@ -185,6 +195,11 @@
   /* corner radius */
   --w: 4px;
   /* width of the border */
+}
+
+.social {
+  display: flex;
+  flex: 50% 50%;
 }
 
 .col .social li {
@@ -240,7 +255,6 @@
 
   .footer-addr {
     flex: 1 0px;
-    /* padding: 0px; */
   }
 
   .footer-nav {
@@ -277,36 +291,46 @@
     transition: 0.5s;
     float: left;
   }
+
   .title {
     font-size: 1rem;
   }
+
   .ul-links a {
     font-size: 0.86rem;
   }
+
   .item {
     margin-bottom: 0.5rem;
     padding: 0px;
   }
+
   .footer-logo {
     font-size: 1.3rem;
     letter-spacing: 1px;
   }
+
   a {
     font-size: 0.78rem;
   }
+
   .info {
     font-size: 0.78rem;
   }
+
   .creator {
     font-size: 12px;
   }
+
   /* .footer li {
     width: 100%;
   } */
-}
 
-@media screen and (max-width: 1000px) {
-  .footer-text-dark {
-    background: linear-gradient(-157deg, #1e2124 0%, #1e2124 64%);
+  .footer-addr {
+    padding: 20px 0px;
+  }
+
+  .social-box {
+    padding: 20px 0px;
   }
 }

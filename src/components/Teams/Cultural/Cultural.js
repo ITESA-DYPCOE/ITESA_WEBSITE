@@ -88,7 +88,7 @@ export const Cultural = () => {
                     </div>
                     <div className={classes.details}>
                       <CardContent className={classes.content} id="content">
-                        <Typography component="h6" variant="h6" id=" #Mui-h6 ">
+                        <Typography component="h6" variant="h6" id="Mui-h6">
                           {roleObject.name}
                         </Typography>
                         <div>

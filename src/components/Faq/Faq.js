@@ -82,7 +82,9 @@ const Faq = () => {
                     </h3>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography style={{ color: "white" }}>
+                    <Typography
+                      style={{ color: "white", fontFamily: "Nunito" }}
+                    >
                       {item.answer}
                     </Typography>
                   </AccordionDetails>

@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaGithubAlt, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaGithubAlt,
+  FaInstagram,
+  FaLinkedinIn,
+  FaDiscord,
+} from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import "./Footer.css";
 
@@ -91,7 +96,7 @@ const Footer = () => {
                     <div className="outer">
                       <FaLinkedinIn
                         className="fab fa-linkedin"
-                        style={{ fontSize: "2.2em" }}
+                        style={{ fontSize: "2.2em", marginTop: "-3px" }}
                       />
                     </div>
                   </a>
@@ -133,6 +138,20 @@ const Footer = () => {
                     <div className="outer">
                       <FaInstagram
                         className="fab fa-instagram"
+                        style={{ fontSize: "2.2em" }}
+                      />
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://discord.com/invite/WyTupBNX76"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="outer">
+                      <FaDiscord
+                        className="fab fa-discord"
                         style={{ fontSize: "2.2em" }}
                       />
                     </div>

@@ -6,7 +6,6 @@ const Discord = () => {
   return (
     <section
       style={{
-        backgroundColor: "#1E2124",
         padding: "120px 0 80px 0",
         width: "100%",
       }}
