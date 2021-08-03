@@ -116,7 +116,7 @@ export const Events = () => {
             <>
               <div className="row1">
                 {latestEvents.length === 0 ? (
-                  <h1>No Events Found!</h1>
+                  <h1>Stay tuned !</h1>
                 ) : (
                   <>
                     {latestEvents &&

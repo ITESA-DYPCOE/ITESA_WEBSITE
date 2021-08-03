@@ -74,6 +74,14 @@ const Btn = () => {
             />
           </Button>
         </Link>
+        <Link to="/design-team" style={{ textDecoration: "none" }}>
+          <Button className={`${classes.btn} ${classes.btn1}`}>
+            Design Team
+            <BsBoxArrowRight
+              style={{ fontSize: "1.3rem", paddingLeft: "4px" }}
+            />
+          </Button>
+        </Link>
         <Link to="/past-teams" style={{ textDecoration: "none" }}>
           <Button className={`${classes.btn} ${classes.btn1}`}>
             Past Teams

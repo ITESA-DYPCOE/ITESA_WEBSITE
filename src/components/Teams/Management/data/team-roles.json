@@ -1,42 +1,14 @@
 {
   "management-head": [
     {
-      "name": "Neeraj Jawahirani",
-      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617699384/ITESA-TEAM/IMG_7792_dcyxvm.jpg",
-      "linkedin": "https://www.linkedin.com/in/neeraj-j-71841a12a",
-      "email": "mailto:neerajjawahirani@gmail.com ",
-      "github": "https://github.com/NeerajJ16",
-      "description": "Management Team Head",
-      "intro": "Web, Software | App Developer"
-    }
-  ],
-  "members": [
-    {
-      "name": "Ruhika Bulani",
-      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617353478/ITESA-TEAM/RuhikaBulani_h5aazb.jpg",
-      "linkedin": "https://www.linkedin.com/in/ruhika-bulani-430493189/",
-      "email": "mailto:ruhika406@gmail.com ",
-      "github": "https://github.com/Ruhika1417",
-      "description": "Management Team Member",
-      "intro": "App Developer"
-    },
-    {
       "name": "Ameya Kannurkar",
       "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617699185/ITESA-TEAM/Ameya_Kannurkar_xqqr1e.jpg",
       "linkedin": "https://www.linkedin.com/in/ameya-kannurkar-4033701a4",
       "email": "mailto:ameyakannurkar@gmail.com",
       "github": "https://github.com/9421821376",
-      "description": "Management Team Member",
+      "description": "Management Head",
       "intro": "Flutter Enthusiast"
-    },
-    {
-      "name": "Sharli Salonke",
-      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617705176/ITESA-TEAM/Sharli_Salokhe_yajirx.jpg",
-      "linkedin": "https://www.linkedin.com/in/sharli-salokhe-b70b451b2",
-      "email": "mailto:sharlisalokhe@gmail.com",
-      "github": "https://github.com/sharlisalokhe",
-      "description": "Management Team Member",
-      "intro": "Web Developer"
     }
-  ]
+  ],
+  "members": []
 }

@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer";
 import { Technical } from "./components/Teams/Technical/Technical";
 import { Management } from "./components/Teams/Management/Management";
 import { Cultural } from "./components/Teams/Cultural/Cultural";
+import { Design } from "./components/Teams/Design/Design";
 import { PastTeams } from "./components/Teams/PastTeams/PastTeams";
 
 //pages
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="/technical-team" component={Technical} />
           <Route path="/management-team" component={Management} />
           <Route path="/cultural-team" component={Cultural} />
+          <Route path="/design-team" component={Design} />
           <Route path="/past-teams" component={PastTeams} />
           <Route path="/events" component={Events} />
           {/* <Route path="/faqs" component={Faq} /> */}

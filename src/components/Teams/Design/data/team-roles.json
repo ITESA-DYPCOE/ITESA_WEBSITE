@@ -1,0 +1,23 @@
+{
+  "management-head": [
+    {
+      "name": "Sharli Salonke",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617705176/ITESA-TEAM/Sharli_Salokhe_yajirx.jpg",
+      "linkedin": "https://www.linkedin.com/in/sharli-salokhe-b70b451b2",
+      "email": "mailto:sharlisalokhe@gmail.com",
+      "github": "https://github.com/sharlisalokhe",
+      "description": "Documentation Head",
+      "intro": "Web Developer"
+    },
+    {
+      "name": "Shubham Ingawale",
+      "profile_pic": "",
+      "linkedin": "https://www.linkedin.com/in/sharli-salokhe-b70b451b2",
+      "email": "mailto:sharlisalokhe@gmail.com",
+      "github": "https://github.com/sharlisalokhe",
+      "description": "Design Head",
+      "intro": "Graphic Designer"
+    }
+  ],
+  "members": []
+}
