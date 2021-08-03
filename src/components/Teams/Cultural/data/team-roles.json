@@ -1,24 +1,24 @@
 {
-	"cultural-head": [
-		{
-			"name": "Samiksha Naik",
-			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617699766/ITESA-TEAM/Samiksha_pfib0x.jpg",
-			"linkedin": "https://www.linkedin.com/in/samiksha-naik-9a5b531a9",
-			"email": "mailto:samikshanaik8888@gmail.com ",
-			"github": "https://github.com/samiksha8888989",
-			"description": "Cultural Head",
-			"intro": "Web Developer "
-		}
-	],
-	"cultural-head0": [
-		{
-			"name": "Ipsita Jadhav",
-			"profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617699608/ITESA-TEAM/Ipsita_Jadhav_icmnom.jpg",
-			"linkedin": "https://www.linkedin.com/in/ipsita-jadhav-161255172/",
-			"email": "mailto:ipsitajadhav074@gmail.com",
-			"github": "asdfasdfs",
-			"description": "Cultural Head",
-			"intro": "App Developer | Web Developer"
-		}
-	]
+  "cultural-head": [
+    {
+      "name": "Rasika Mahure",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1617699012/ITESA-TEAM/Rasika_Mahure_aqh9no.jpg",
+      "linkedin": "https://www.linkedin.com/in/rasika-mahure-1537381aa/",
+      "email": "mailto:rasikamahure28@gmail.com",
+      "github": "https://github.com/Rasika-288",
+      "description": "Cultural Head",
+      "intro": "Web Developer"
+    }
+  ],
+  "cultural-head0": [
+    {
+      "name": "Saara Bansode",
+      "profile_pic": "",
+      "linkedin": "",
+      "email": "mailto:",
+      "github": "",
+      "description": "Cultural Head",
+      "intro": ""
+    }
+  ]
 }
