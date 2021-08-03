@@ -107,6 +107,13 @@ const Navbar = () => {
                       </NavLink>
                       <NavLink
                         activeClassName="active-links"
+                        to="/design-team"
+                        onClick={closeMobileMenu}
+                      >
+                        Design
+                      </NavLink>
+                      <NavLink
+                        activeClassName="active-links"
                         to="/past-teams"
                         onClick={closeMobileMenu}
                       >
