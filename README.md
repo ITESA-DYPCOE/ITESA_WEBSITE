@@ -86,6 +86,20 @@ The backend is live at [https://itesa-dypcoe.herokuapp.com/](https://itesa-dypco
 
 [![Discord](https://img.shields.io/badge/Connect-Discord-%235764F2)](https://discord.com/invite/WyTupBNX76)
 
+## Project Creator🚀
+
+<table>
+    <tr>
+        <td align="center">
+            <a href="https://github.com/ShubhamSj07">
+            <img src="https://res.cloudinary.com/sjdev/image/upload/v1617700207/ITESA-TEAM/SJ_kypboi.jpg" width="150" height="150" style="border-radius:50%" /> <br />
+            <b>Shubham Jadhav</b>
+            </a><br />
+            <p title="Developer">💻🐞</p>
+        </td>
+ </tr>
+ </table>
+
 ## Contributors 🌟
 
 Thanks goes to these wonderful people ✨✨:
