@@ -48,17 +48,19 @@ export const Design = () => {
                         src={roleObject.profile_pic}
                       />
                       <div className="team-social">
-                        <a
-                          href={roleObject.linkedin}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="card-footer"
-                        >
-                          <FaLinkedinIn
-                            className="fab fa-linkedin"
-                            style={{ fontSize: "1.5em", marginTop: "-1px" }}
-                          />
-                        </a>
+                        {roleObject.linkedin && (
+                          <a
+                            href={roleObject.linkedin}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="card-footer"
+                          >
+                            <FaLinkedinIn
+                              className="fab fa-linkedin"
+                              style={{ fontSize: "1.5em", marginTop: "-1px" }}
+                            />
+                          </a>
+                        )}
                         <a
                           href={roleObject.email}
                           target="_blank"
@@ -70,17 +72,19 @@ export const Design = () => {
                             style={{ fontSize: "1.5em" }}
                           />
                         </a>
-                        <a
-                          href={roleObject.github}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="card-footer"
-                        >
-                          <FaGithubAlt
-                            className="fab fa-github"
-                            style={{ fontSize: "1.5em" }}
-                          />
-                        </a>
+                        {roleObject.github && (
+                          <a
+                            href={roleObject.github}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="card-footer"
+                          >
+                            <FaGithubAlt
+                              className="fab fa-github"
+                              style={{ fontSize: "1.5em" }}
+                            />
+                          </a>
+                        )}
                       </div>
                     </div>
                     <div className={classes.details}>

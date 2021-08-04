@@ -13,12 +13,12 @@
   "cultural-head0": [
     {
       "name": "Saara Bansode",
-      "profile_pic": "",
-      "linkedin": "",
-      "email": "mailto:",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1628080123/ITESA-TEAM/Saara_bansode_yfbdki.jpg",
+      "linkedin": "https://www.linkedin.com/in/saara-bansode-5398791a7",
+      "email": "mailto:saarabansode@gmail.com",
       "github": "",
       "description": "Cultural Head",
-      "intro": ""
+      "intro": "Data Science Enthusiast"
     }
   ]
 }

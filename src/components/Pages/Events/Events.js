@@ -116,7 +116,15 @@ export const Events = () => {
             <>
               <div className="row1">
                 {latestEvents.length === 0 ? (
-                  <h1>Stay tuned !</h1>
+                  <div
+                    style={{
+                      background: "#2D313F",
+                      padding: "30px",
+                      borderRadius: "12px",
+                    }}
+                  >
+                    <h1>Stay tuned !</h1>
+                  </div>
                 ) : (
                   <>
                     {latestEvents &&

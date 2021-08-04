@@ -13,12 +13,12 @@
   "technical-head": [
     {
       "name": "Sumit Yadav",
-      "profile_pic": "",
-      "linkedin": "",
-      "email": "mailto:",
-      "github": "",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1628077186/ITESA-TEAM/Sumit_Yadav_kat8wi.jpg",
+      "linkedin": "https://www.linkedin.com/in/sumit-kumar-yadav",
+      "email": "mailto:sumityadav0376@gmail.com",
+      "github": "https://github.com/sumit-kumar-yadav",
       "description": "Technical Head",
-      "intro": ""
+      "intro": "Full Stack developer (MERN Stack)"
     }
   ],
   "members": []
