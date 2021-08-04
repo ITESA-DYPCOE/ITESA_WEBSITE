@@ -2,6 +2,9 @@
 <!-- [![All Contributors](https://img.shields.io/badge/all_contributors-bot-orange.svg?style=flat-square)](#contributors-) -->
 [![Issues](https://img.shields.io/github/issues/ITESA-DYPCOE/ITESA_WEBSITE)](#issues)
 [![forks](https://img.shields.io/github/forks/ITESA-DYPCOE/ITESA_WEBSITE)](#forks)
+![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
+
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://github.com/ITESA-DYPCOE/ITESA_WEBSITE/) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/ITESA-DYPCOE/ITESA_WEBSITE)
 
 
 <p align="center" ><img src="./src/assets/itesa-banner.png" width="100%"></p>
@@ -11,14 +14,10 @@
 ## Tech Stack 🗃
 
  <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-ExpressJS-grey?style=flat&logo=express&logoColor=white"> <img src="https://img.shields.io/badge/ReactJS%20-%2320232a.svg?logo=react" >   <img src="https://img.shields.io/badge/-NodeJS%20-%2320232a?style=flat&logo=node.js"> <img src="https://img.shields.io/badge/-Material%20UI-grey?style=flat&logo=materialui&logoColor=00B0FF"> 
- 
 
 ## How to contribute ? 🤔
+- First create an issue , let issue get assigned to you & after all send pull request🚀
 
-- Get started with the Contributon Guidelines mentioned [here](https://github.com/CrazySJ07/CrazySJ07/blob/main/CONTRIBUTING.md)
-
-
-##  Getting Started 👨‍💻
 ### Setup the repository to your local environment.
 
 1. `Fork` the repository  - Creates a replica of repository to your local environment.
