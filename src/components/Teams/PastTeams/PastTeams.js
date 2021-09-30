@@ -28,7 +28,7 @@ const styles = {
   backgroundImage: "linear-gradient(45deg, #535733 0%, #dfbd4e  84%",
 };
 
-export const PastTeams = () => {
+const PastTeams = () => {
   const classes = useStyles();
   return (
     <div className="dark">
@@ -180,3 +180,5 @@ export const PastTeams = () => {
     </div>
   );
 };
+
+export default PastTeams;

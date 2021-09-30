@@ -23,7 +23,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const Technical = () => {
+const Technical = () => {
   const classes = useStyles();
   return (
     <div className="dark">
@@ -34,9 +34,9 @@ export const Technical = () => {
         </Typography>
         <div className="dash dash-dark"></div>
         <div className="row1">
-          {Object.keys(teamData).map(role => {
+          {Object.keys(teamData).map((role) => {
             if (role !== "members") {
-              return teamData[role].map(roleObject => {
+              return teamData[role].map((roleObject) => {
                 return (
                   <div className="card1 card1-dark">
                     <div className="photo">
@@ -103,9 +103,9 @@ export const Technical = () => {
           })}
         </div>
         <div className="row2">
-          {Object.keys(teamData).map(role => {
+          {Object.keys(teamData).map((role) => {
             if (role === "members") {
-              return teamData[role].map(roleObject => {
+              return teamData[role].map((roleObject) => {
                 return (
                   <div className="card1 card1-dark">
                     <div className="photo">
@@ -175,3 +175,5 @@ export const Technical = () => {
     </div>
   );
 };
+
+export default Technical;

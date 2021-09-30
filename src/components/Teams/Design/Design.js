@@ -25,7 +25,7 @@ const styles = {
   background: "#2b5876",
   backgroundImage: "linear-gradient(45deg, #574d33 0%, #d3a84a 84%)",
 };
-export const Design = () => {
+const Design = () => {
   const classes = useStyles();
   return (
     <div className="dark">
@@ -36,9 +36,9 @@ export const Design = () => {
         </Typography>
         <div className="dash" style={styles}></div>
         <div className="row1">
-          {Object.keys(teamData).map(role => {
+          {Object.keys(teamData).map((role) => {
             if (role !== "members") {
-              return teamData[role].map(roleObject => {
+              return teamData[role].map((roleObject) => {
                 return (
                   <div className="card1 card1-dark">
                     <div className="photo">
@@ -109,9 +109,9 @@ export const Design = () => {
           })}
         </div>
         <div className="row2">
-          {Object.keys(teamData).map(role => {
+          {Object.keys(teamData).map((role) => {
             if (role === "members") {
-              return teamData[role].map(roleObject => {
+              return teamData[role].map((roleObject) => {
                 return (
                   <div className="card1 card1-dark">
                     <div className="photo">
@@ -181,3 +181,5 @@ export const Design = () => {
     </div>
   );
 };
+
+export default Design;

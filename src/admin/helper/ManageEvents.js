@@ -13,7 +13,7 @@ const ManageEvents = () => {
   const { admin, token } = isAuthenticated();
 
   const preload = () => {
-    getAllEvents().then(data => {
+    getAllEvents().then((data) => {
       if (data.error) {
         console.log(data.error);
       } else {
@@ -27,9 +27,9 @@ const ManageEvents = () => {
     preload();
   }, []);
 
-  const removeEvent = eventId => {
+  const removeEvent = (eventId) => {
     deleteEvent(admin._id, eventId, token)
-      .then(data => {
+      .then((data) => {
         if (data.error) {
           console.log(data.error);
         } else {
@@ -37,7 +37,7 @@ const ManageEvents = () => {
           preload();
         }
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -105,19 +105,24 @@ const ManageEvents = () => {
               Latest Events
             </h2>
             {latestEvents &&
-              latestEvents.map(event => {
+              latestEvents.map((event) => {
                 return (
                   <>
                     <div
                       style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        // flexDirection: "column",
+                        display: "grid",
                         padding: "35px",
+                        gridTemplateColumns: "1fr 1fr",
                       }}
                     >
-                      <div style={{ padding: "20px" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          padding: "20px",
+                        }}
+                      >
                         <h3
                           style={{
                             color: "#FF4D50",
@@ -136,20 +141,22 @@ const ManageEvents = () => {
                 <span className="">Update</span>
               </Link>
             </div> */}
-                      <div>
-                        <Link to={`/admin/update/event/${event._id}`}>
-                          <button className="btn-outline-success">
-                            Update
+                      <div style={{ display: "flex" }}>
+                        <div>
+                          <Link to={`/admin/update/event/${event._id}`}>
+                            <button className="btn-outline-success">
+                              Update
+                            </button>
+                          </Link>
+                        </div>
+                        <div>
+                          <button
+                            onClick={() => removeEvent(event._id)}
+                            className="btn-outline-success"
+                          >
+                            Delete
                           </button>
-                        </Link>
-                      </div>
-                      <div>
-                        <button
-                          onClick={() => removeEvent(event._id)}
-                          className="btn-outline-success"
-                        >
-                          Delete
-                        </button>
+                        </div>
                       </div>
                     </div>
                   </>
@@ -175,19 +182,24 @@ const ManageEvents = () => {
             Past Events
           </h2>
           {pastEvents &&
-            pastEvents.map(event => {
+            pastEvents.map((event) => {
               return (
                 <>
                   <div
                     style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      // flexDirection: "column",
+                      display: "grid",
                       padding: "35px",
+                      gridTemplateColumns: "1fr 1fr",
                     }}
                   >
-                    <div style={{ padding: "20px" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        padding: "20px",
+                      }}
+                    >
                       <h3
                         style={{
                           color: "#FF4D50",
@@ -206,18 +218,22 @@ const ManageEvents = () => {
                 <span className="">Update</span>
               </Link>
             </div> */}
-                    <div>
-                      <Link to={`/admin/update/event/${event._id}`}>
-                        <button className="btn-outline-success">Update</button>
-                      </Link>
-                    </div>
-                    <div>
-                      <button
-                        onClick={() => removeEvent(event._id)}
-                        className="btn-outline-success"
-                      >
-                        Delete
-                      </button>
+                    <div style={{ display: "flex" }}>
+                      <div>
+                        <Link to={`/admin/update/event/${event._id}`}>
+                          <button className="btn-outline-success">
+                            Update
+                          </button>
+                        </Link>
+                      </div>
+                      <div>
+                        <button
+                          onClick={() => removeEvent(event._id)}
+                          className="btn-outline-success"
+                        >
+                          Delete
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </>
