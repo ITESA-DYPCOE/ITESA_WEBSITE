@@ -38,7 +38,7 @@ const PastTeams = () => {
           ITESA TEAM 2020-2021
         </Typography>
         <div className="dash dash-dark" style={styles}></div>
-        <div className="row1">
+        <div className="pastTeam_row1">
           {Object.keys(pastTeamData).map((role) => {
             if (role === "heads") {
               return pastTeamData[role].map((roleObject) => {
@@ -107,7 +107,7 @@ const PastTeams = () => {
             return null;
           })}
         </div>
-        <div className="row2">
+        <div className="pastTeam_row2">
           {Object.keys(pastTeamData).map((role) => {
             if (role === "members") {
               return pastTeamData[role].map((roleObject) => {
