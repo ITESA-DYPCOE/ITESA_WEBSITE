@@ -59,17 +59,13 @@ p {
   font-family: "Nunito";
 }
 
-.row1,
-.row2 {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+.pastTeam_row1,
+.pastTeam_row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   margin-bottom: 2rem;
-}
-
-.row1 > * {
-  flex: 49% 49%;
+  gap: 16px;
 }
 
 .cover {
