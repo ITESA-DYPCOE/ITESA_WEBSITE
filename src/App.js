@@ -1,102 +1,135 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 //react-router-dom
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
 
+//Loader
+import { BoltLoader } from "react-awesome-loaders";
+
 //components
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-import { Technical } from "./components/Teams/Technical/Technical";
-import { Management } from "./components/Teams/Management/Management";
-import { Cultural } from "./components/Teams/Cultural/Cultural";
-import { Design } from "./components/Teams/Design/Design";
-import { PastTeams } from "./components/Teams/PastTeams/PastTeams";
+const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
+const Footer = React.lazy(() => import("./components/Footer/Footer"));
+const Technical = React.lazy(() =>
+  import("./components/Teams/Technical/Technical")
+);
+const Management = React.lazy(() =>
+  import("./components/Teams/Management/Management")
+);
+const Cultural = React.lazy(() =>
+  import("./components/Teams/Cultural/Cultural")
+);
+const Design = React.lazy(() => import("./components/Teams/Design/Design"));
+const PastTeams = React.lazy(() =>
+  import("./components/Teams/PastTeams/PastTeams")
+);
 
 //pages
-import Home from "./components/Pages/Home/Home";
-import Contact from "./components/Pages/Contact-Us/Contact";
-import { Events } from "./components/Pages/Events/Events";
+const Home = React.lazy(() => import("./components/Pages/Home/Home"));
+const Contact = React.lazy(() =>
+  import("./components/Pages/Contact-Us/Contact")
+);
+const Events = React.lazy(() => import("./components/Pages/Events/Events"));
 // import Faq from "./components/Faq/Faq";
 
 //admin routes
-import AdminRoute from "./admin/auth/helper/AdminRoute";
-import PrivateRoute from "./admin/auth/helper/PrivateRoute";
-import Signup from "./admin/Signup/Signup";
-import SignIn from "./admin/Signin/Signin";
-import AdminDashBoard from "./admin/dashboard/AdminDashBoard";
-import UnApprovedAdminDashBoard from "./admin/dashboard/UnApprovedAdminDashBoard";
+const AdminRoute = React.lazy(() => import("./admin/auth/helper/AdminRoute"));
+const PrivateRoute = React.lazy(() =>
+  import("./admin/auth/helper/PrivateRoute")
+);
+const Signup = React.lazy(() => import("./admin/Signup/Signup"));
+const SignIn = React.lazy(() => import("./admin/Signin/Signin"));
+const AdminDashBoard = React.lazy(() =>
+  import("./admin/dashboard/AdminDashBoard")
+);
+const UnApprovedAdminDashBoard = React.lazy(() =>
+  import("./admin/dashboard/UnApprovedAdminDashBoard")
+);
 
 //admin components
-import AddEvent from "./admin/helper/AddEvent";
-import AddCategory from "./admin/helper/AddCategory";
-import ManageEvents from "./admin/helper/ManageEvents";
-import ManageCategories from "./admin/helper/ManageCategories";
-import UpdateEvent from "./admin/helper/UpdateEvent";
-import UpdateCate from "./admin/helper/UpdateCate";
+const AddEvent = React.lazy(() => import("./admin/helper/AddEvent"));
+const AddCategory = React.lazy(() => import("./admin/helper/AddCategory"));
+const ManageEvents = React.lazy(() => import("./admin/helper/ManageEvents"));
+const ManageCategories = React.lazy(() =>
+  import("./admin/helper/ManageCategories")
+);
+const UpdateEvent = React.lazy(() => import("./admin/helper/UpdateEvent"));
+const UpdateCate = React.lazy(() => import("./admin/helper/UpdateCate"));
 
 //utils
-import PageNotFound from "./components/utils/404ErrPage/PageNotFound";
-import { ScrollToTop } from "./components/utils/ScrollToTop";
+const PageNotFound = React.lazy(() =>
+  import("./components/utils/404ErrPage/PageNotFound")
+);
+const ScrollToTop = React.lazy(() => import("./components/utils/ScrollToTop"));
 
 const App = () => {
   return (
     <>
       <Router>
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/technical-team" component={Technical} />
-          <Route path="/management-team" component={Management} />
-          <Route path="/cultural-team" component={Cultural} />
-          <Route path="/design-team" component={Design} />
-          <Route path="/past-teams" component={PastTeams} />
-          <Route path="/events" component={Events} />
-          {/* <Route path="/faqs" component={Faq} /> */}
-          <Route path="/contact-us" component={Contact} />
-          <Route path="/admin/dashboard/sign-up" component={Signup} />
-          <Route path="/admin/sign-in" component={SignIn} />
-          <AdminRoute
-            exact
-            path="/admin/dashboard"
-            component={AdminDashBoard}
-          />
-          <AdminRoute exact path="/admin/create/event" component={AddEvent} />
-          <AdminRoute
-            exact
-            path="/admin/update/event/:eventId"
-            component={UpdateEvent}
-          />
-          <AdminRoute
-            exact
-            path="/admin/update/category/:cateId"
-            component={UpdateCate}
-          />
-          <AdminRoute
-            exact
-            path="/admin/create/category"
-            component={AddCategory}
-          />
-          <AdminRoute
-            exact
-            path="/admin/manage/events"
-            component={ManageEvents}
-          />
-          <AdminRoute
-            exact
-            path="/admin/manage/categories"
-            component={ManageCategories}
-          />
-          <PrivateRoute
-            exact
-            path="/unapproved/dashboard"
-            component={UnApprovedAdminDashBoard}
-          />
-          <Route path="*" component={PageNotFound} />
-        </Switch>
-        <ScrollToTop />
-        <Footer />
+        <Suspense
+          fallback={
+            <BoltLoader
+              className={"loaderbolt"}
+              boltColor={"#BA7CEE"}
+              backgroundBlurColor={"#E0E7FF"}
+            />
+          }
+        >
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/technical-team" component={Technical} />
+            <Route path="/management-team" component={Management} />
+            <Route path="/cultural-team" component={Cultural} />
+            <Route path="/design-team" component={Design} />
+            <Route path="/past-teams" component={PastTeams} />
+            <Route path="/events" component={Events} />
+            {/* <Route path="/faqs" component={Faq} /> */}
+            <Route path="/contact-us" component={Contact} />
+            <Route path="/admin/dashboard/sign-up" component={Signup} />
+            <Route path="/admin/sign-in" component={SignIn} />
+            <AdminRoute
+              exact
+              path="/admin/dashboard"
+              component={AdminDashBoard}
+            />
+            <AdminRoute exact path="/admin/create/event" component={AddEvent} />
+            <AdminRoute
+              exact
+              path="/admin/update/event/:eventId"
+              component={UpdateEvent}
+            />
+            <AdminRoute
+              exact
+              path="/admin/update/category/:cateId"
+              component={UpdateCate}
+            />
+            <AdminRoute
+              exact
+              path="/admin/create/category"
+              component={AddCategory}
+            />
+            <AdminRoute
+              exact
+              path="/admin/manage/events"
+              component={ManageEvents}
+            />
+            <AdminRoute
+              exact
+              path="/admin/manage/categories"
+              component={ManageCategories}
+            />
+            <PrivateRoute
+              exact
+              path="/unapproved/dashboard"
+              component={UnApprovedAdminDashBoard}
+            />
+            <Route path="*" component={PageNotFound} />
+          </Switch>
+          <ScrollToTop />
+          <Footer />
+        </Suspense>
       </Router>
     </>
   );

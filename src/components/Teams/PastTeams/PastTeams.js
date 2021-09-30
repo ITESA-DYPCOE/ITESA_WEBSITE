@@ -28,7 +28,7 @@ const styles = {
   backgroundImage: "linear-gradient(45deg, #535733 0%, #dfbd4e  84%",
 };
 
-export const PastTeams = () => {
+const PastTeams = () => {
   const classes = useStyles();
   return (
     <div className="dark">
@@ -39,9 +39,9 @@ export const PastTeams = () => {
         </Typography>
         <div className="dash dash-dark" style={styles}></div>
         <div className="row1">
-          {Object.keys(pastTeamData).map(role => {
+          {Object.keys(pastTeamData).map((role) => {
             if (role === "heads") {
-              return pastTeamData[role].map(roleObject => {
+              return pastTeamData[role].map((roleObject) => {
                 return (
                   <div className="card1 card1-dark">
                     <div className="photo">
@@ -108,9 +108,9 @@ export const PastTeams = () => {
           })}
         </div>
         <div className="row2">
-          {Object.keys(pastTeamData).map(role => {
+          {Object.keys(pastTeamData).map((role) => {
             if (role === "members") {
-              return pastTeamData[role].map(roleObject => {
+              return pastTeamData[role].map((roleObject) => {
                 return (
                   <div className="card1 card1-dark">
                     <div className="photo">
@@ -180,3 +180,5 @@ export const PastTeams = () => {
     </div>
   );
 };
+
+export default PastTeams;
