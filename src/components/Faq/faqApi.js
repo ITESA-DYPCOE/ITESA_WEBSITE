@@ -22,5 +22,10 @@ export const questions = [
     question: "Are there any fees charged ?",
     answer:
       "Do you think we can charge you for this? This is 21st century where you don't need to pay anything for knowledge (it's all over the internet for free 🙂. So, don't worry, we won't charge you for any of our events (unless it's specifically mentioned).",
-  },
+  },{
+    panel: "panel5",
+    question: "What can I expect from ITESA ?",
+    answer:
+      "You will have a ton of events both technical and non technical to look forward to and if you do really well you could get some swags too!!",
+  }
 ];
