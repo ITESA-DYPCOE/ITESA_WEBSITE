@@ -35,7 +35,7 @@ const styles = {
   backgroundImage: "linear-gradient(45deg, #574133 0%, #ff8b07 84%)",
 };
 
-export const Events = () => {
+const Events = () => {
   const [latestEvents, setLatestEvents] = useState([]);
   const [pastEvents, setPastEvents] = useState([]);
   let [loading1, setLoading1] = useState(true);
@@ -57,7 +57,7 @@ export const Events = () => {
     //   }
     // });
 
-    getAllEvents().then(data => {
+    getAllEvents().then((data) => {
       setLoading1(true);
       setLoading2(true);
       // console.log("LOADING DATA.....value is ", loading1);
@@ -128,7 +128,7 @@ export const Events = () => {
                 ) : (
                   <>
                     {latestEvents &&
-                      latestEvents.map(event => {
+                      latestEvents.map((event) => {
                         console.log(event);
                         let START_DATE = moment(event.date.startDate).format(
                           "MMMM Do YYYY"
@@ -210,7 +210,7 @@ export const Events = () => {
                 ) : (
                   <>
                     {pastEvents &&
-                      pastEvents.map(event => {
+                      pastEvents.map((event) => {
                         console.log("PAST EVENT", event);
                         let START_DATE = moment(event.date.startDate).format(
                           "MMMM Do YYYY"
@@ -266,3 +266,5 @@ export const Events = () => {
     </>
   );
 };
+
+export default Events;
