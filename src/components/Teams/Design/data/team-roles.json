@@ -17,5 +17,24 @@
       "intro": "Content Creator & Digital Marketer"
     }
   ],
-  "members": []
+  "members": [
+    {
+      "name": "Saurab barde",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1635049462/ITESA-TEAM/Saurabh_Barde_gwzmgn.jpg",
+      "linkedin": "https://www.linkedin.com/in/sharli-salokhe-b70b451b2",
+      "email": "mailto:sharlisalokhe@gmail.com",
+      "github": "https://github.com/sharlisalokhe",
+      "description": "Design Team Member",
+      "intro": "Web Developer"
+    },
+    {
+      "name": "Dnyandeep Chaudhari",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1635050774/ITESA-TEAM/Dnyandeep_Chaudhari_gvzfgo.jpg",
+      "linkedin": "https://www.linkedin.com/in/dnyandeep-chaudhari-7ab12321a",
+      "email": "mailto:im.dnyandeep@gmail.com",
+      "github": "https://github.com/dnyandeepchaudhari",
+      "description": "Design Team Member",
+      "intro": "Web Developer"
+    }
+  ]
 }

@@ -225,14 +225,13 @@
 }
 
 .info-styles {
-  color: #7af7d8;
+  color: #b4bfff;
   margin-bottom: 0px;
   box-sizing: inherit;
   display: block;
   font-weight: 800;
   letter-spacing: 1px;
   line-height: 25px;
-  font-family: "Ubuntu Mono", monospace;
   /* font-size: 20px; */
 }
 

@@ -10,5 +10,24 @@
       "intro": "Flutter Enthusiast"
     }
   ],
-  "members": []
+  "members": [
+    {
+      "name": "Abhishek Bhone",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1635049461/ITESA-TEAM/Abhishek_Bhone_qmtibs.jpg",
+      "linkedin": "https://www.linkedin.com/in/abhishek-bhone-a3755721a",
+      "email": "mailto:abhishekbhone1306@gmail.com",
+      "github": "https://github.com/AbhishekBhone/Abhishek.git",
+      "description": "Management Team Member",
+      "intro": "Data Science Enthusiast"
+    },
+    {
+      "name": "Krishna Kadu",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1635049461/ITESA-TEAM/KrishnaKadu1_ldvhlc.jpg",
+      "linkedin": "http://linkedin.com/in/krishna-kadu-67313621a",
+      "email": "mailto:krish2kadu@gmail.com",
+      "github": "https://github.com/KaiserKadu",
+      "description": "Management Team Member",
+      "intro": "Tech-savvy Data Analyst"
+    }
+  ]
 }

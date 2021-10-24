@@ -20,5 +20,25 @@
       "description": "Cultural Head",
       "intro": "Data Science Enthusiast"
     }
+  ],
+  "members": [
+    {
+      "name": "Kanchan Dhoot",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1635049461/ITESA-TEAM/Kanchan_Dhoot_ih094z.jpg",
+      "linkedin": "https://www.linkedin.com/in/kanchan-dhoot-110962219",
+      "email": "mailto:kanchandhoot3@gmail.com",
+      "github": "https://github.com/KanchanDhoot22",
+      "description": "Cultural Team Member",
+      "intro": "Python developer /Web developer/Data Analyst "
+    },
+    {
+      "name": "Aditya kadam",
+      "profile_pic": "https://res.cloudinary.com/sjdev/image/upload/v1635049461/ITESA-TEAM/Adityakadam_gw9fcz.jpg",
+      "linkedin": "https://www.linkedin.com/in/aditya-kadam-581991215",
+      "email": "mailto:adityakadam650@gmail.com",
+      "github": "",
+      "description": "Cultural Team Member",
+      "intro": "Web developer"
+    }
   ]
 }

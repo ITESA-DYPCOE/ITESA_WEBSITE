@@ -15,10 +15,6 @@ import makeToast from "../../components/utils/Toaster/Toaster";
 const Navbar = () => {
   const history = useHistory();
 
-  const { admin } = isAuthenticated();
-
-  // console.log(admin);
-
   const [click, setClick] = useState(false);
   const [navbarColor, setNavbarColor] = useState(false);
 
