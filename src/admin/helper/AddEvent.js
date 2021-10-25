@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { isAuthenticated } from "../auth/helper/index";
-import { getAllCategories, createEvent } from "./adminapicalls";
-
-//custom-toast
-import makeToast from "../../components/utils/Toaster/Toaster";
-
+import { createEvent } from "./adminapicalls";
+//react-toast
+import { toast } from "material-react-toastify";
 //react-icons
 import { RiUploadCloud2Line } from "react-icons/ri";
 import { IoArrowBackCircle } from "react-icons/all";
 import { TiTick } from "react-icons/ti";
 
-// import DatePickerUI from "../dashboard/utils/DataPicker";
-
 const AddEvent = () => {
   const { admin, token } = isAuthenticated();
-  // console.log(admin);
   const [values, setValues] = useState({
     name: "",
     info: "",
@@ -24,8 +19,6 @@ const AddEvent = () => {
     image: "",
     linkedinURL: "",
     instagramURL: "",
-    // categories: [],
-    // category: "",
     loading: false,
     error: "",
     formData: "",
@@ -34,40 +27,18 @@ const AddEvent = () => {
   const {
     name,
     info,
-    // date,
     startDate,
     endDate,
     image,
     linkedinURL,
     instagramURL,
-    // categories,
-    // category,
-    loading,
-    error,
+
     formData,
   } = values;
 
-  // const preload = () => {
-  //   getAllCategories().then(data => {
-  //     console.log(data);
-  //     if (data.error) {
-  //       setValues({ ...values, error: data.error });
-  //     } else {
-  //       setValues({
-  //         ...values,
-  //         categories: data,
-  //         formData: new FormData(),
-  //       });
-  //       // console.log(categories);
-  //     }
-  //   });
-  // };
-
   useEffect(() => {
     setValues({ ...values, formData: new FormData() });
-  }, []);
-
-  // console.log(image);
+  }, [values]);
 
   const onSubmit = e => {
     e.preventDefault();
@@ -79,9 +50,8 @@ const AddEvent = () => {
     console.log(formData);
     createEvent(admin._id, token, formData).then(data => {
       if (data.error) {
-        // console.log("DATA : ", data);
         setValues({ ...values, error: data.error });
-        makeToast("error", data.error);
+        toast.error("error", data.error);
       } else {
         setValues({
           ...values,
@@ -92,9 +62,8 @@ const AddEvent = () => {
           image: "",
           linkedinURL: "",
           instagramURL: "",
-          // loading: false,
         });
-        makeToast("success", `Event created successfully!`);
+        toast.success("success", `Event created successfully!`);
       }
     });
   };
@@ -105,13 +74,6 @@ const AddEvent = () => {
     formData.set(name, value);
     setValues({ ...values, [name]: value });
   };
-
-  // const successMessage = () =>
-  //   makeToast("success", `${image} uploaded successfully!`);
-
-  // const warningMessage = () => makeToast("error", `${error}`);
-
-  // console.log(date);
 
   const createEventForm = () => (
     <form className="form-container">
@@ -144,20 +106,6 @@ const AddEvent = () => {
             value={info}
           />
         </div>
-        {/* <div className="form-group ">
-          <select
-            onChange={handleChange("category")}
-            className="form-control"
-            placeholder="Category"
-          >
-            <option>Select</option>
-            {categories.map((cate, index) => (
-              <option key={index} value={cate._id}>
-                {cate.name}
-              </option>
-            ))}
-          </select>
-        </div> */}
       </div>
       <div className="centered-container">
         <span
@@ -256,8 +204,6 @@ const AddEvent = () => {
   );
   return (
     <>
-      {/* {warningMessage()} */}
-
       <div className="row bg-secondary text-white rounded">
         <div className="col-md-8 offset-md-2">{createEventForm()}</div>
       </div>

@@ -2,13 +2,9 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-
-//react-icons
 import { FaLinkedinIn, FaGithubAlt } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
-
 import teamData from "./data/team-roles.json";
-
 import "../css/Team.styles.css";
 
 const useStyles = makeStyles(() => ({
@@ -25,6 +21,7 @@ const styles = {
   background: "#2b5876",
   backgroundImage: "linear-gradient(45deg, #574d33 0%, #d3a84a 84%)",
 };
+
 const Management = () => {
   const classes = useStyles();
   return (
@@ -36,9 +33,9 @@ const Management = () => {
         </Typography>
         <div className="dash" style={styles}></div>
         <div className="row1">
-          {Object.keys(teamData).map((role) => {
+          {Object.keys(teamData).map(role => {
             if (role !== "members") {
-              return teamData[role].map((roleObject) => {
+              return teamData[role].map(roleObject => {
                 return (
                   <div className="card1 card1-dark">
                     <div className="photo">
@@ -105,9 +102,9 @@ const Management = () => {
           })}
         </div>
         <div className="row2">
-          {Object.keys(teamData).map((role) => {
+          {Object.keys(teamData).map(role => {
             if (role === "members") {
-              return teamData[role].map((roleObject) => {
+              return teamData[role].map(roleObject => {
                 return (
                   <div className="card1 card1-dark">
                     <div className="photo">

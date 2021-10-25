@@ -1,21 +1,14 @@
 import React from "react";
-// import { Button } from "reactstrap";
-import "./style.css";
-//react-router-dom
 import { Link } from "react-router-dom";
-
-//img
-import img from "../../assets/admin-image.png";
-
 import { isAuthenticated } from "../auth/helper";
+import img from "../../assets/admin-image.png";
+import "./style.css";
 
 const AdminDashBoard = () => {
   const {
     admin: { name, email },
   } = isAuthenticated();
 
-  const data = isAuthenticated();
-  console.log(data);
   return (
     <>
       <div className="admin-section admin-section-dark">
@@ -57,16 +50,6 @@ const AdminDashBoard = () => {
                     Manage Events
                   </Link>
                 </li>
-                {/* <li className="list-group-item">
-                  <Link to="/admin/create/category" className="linkItem">
-                    Create Event Category
-                  </Link>
-                </li>
-                <li className="list-group-item">
-                  <Link to="/admin/manage/categories" className="linkItem">
-                    Manage Event Category
-                  </Link>
-                </li> */}
               </ul>
             </div>
           </div>

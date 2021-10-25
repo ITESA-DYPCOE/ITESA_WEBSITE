@@ -1,6 +1,5 @@
 import React from "react";
 import Tagline from "../About/Tagline";
-
 import img from "./assets/College-Photo.jpg";
 import "./style.css";
 

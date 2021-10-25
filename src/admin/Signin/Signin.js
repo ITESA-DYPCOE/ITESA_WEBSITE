@@ -1,34 +1,17 @@
 import React, { useState } from "react";
-
-//api call
+import { Redirect } from "react-router-dom";
 import { signin, authenticate, isAuthenticated } from "../auth/helper/index";
-
-//reactstrap
-import { Button } from "reactstrap";
+import { toast } from "material-react-toastify";
 import "../Signup/Signup.css";
 
-//img
-// import img from "../../assets/system-administrator-removebg-preview.png";
-
-//custom-toast
-import makeToast from "../../components/utils/Toaster/Toaster";
-
-//react-router-dom
-import { Redirect } from "react-router-dom";
-
 const SignIn = () => {
-  // const history = useHistory();
-
   const { admin } = isAuthenticated();
-  console.log(admin);
-
   const [formData, setFormData] = useState({
     email: "",
     password: "",
     error: "",
     didRedirect: false,
   });
-
   const { email, password, didRedirect } = formData;
 
   const handleChange = name => e => {
@@ -37,15 +20,14 @@ const SignIn = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    // console.log("inside");
     signin({ email, password })
       .then(data => {
         console.log("DATA : ", data);
         if (data.error) {
           setFormData({ ...formData, error: data.error });
-          makeToast("error", data.error);
+          toast.error("error", data.error);
         } else {
-          makeToast("success", "Admin Successfully Signed in!");
+          toast.success("success", "Admin Successfully Signed in!");
           setFormData({
             email: "",
             password: "",
@@ -56,7 +38,7 @@ const SignIn = () => {
           });
         }
       })
-      .catch(err => makeToast("error", err));
+      .catch(err => toast.error("error", err));
   };
 
   const performRedirect = () => {
@@ -76,9 +58,6 @@ const SignIn = () => {
     <>
       <div className="signup-section signup-section-dark">
         <div className="signup-parent">
-          {/* <div className="signup-child child1">
-            <img src={img} alt="" className="signup-image" />
-          </div> */}
           <div className="signup-child child2">
             <React.Fragment>
               <div className="signup-card signup-card-dark">
@@ -110,13 +89,13 @@ const SignIn = () => {
                       <i className="fas fa-pencil-alt"></i>
                     </div>
                     <div>
-                      <Button
+                      <button
                         className="submit-btn"
                         type="submit"
                         onClick={handleSubmit}
                       >
                         Submit
-                      </Button>
+                      </button>
                     </div>
                     <div
                       style={{
@@ -124,22 +103,7 @@ const SignIn = () => {
                         justifyContent: "center",
                         paddingTop: "20px",
                       }}
-                    >
-                      {/* <span>
-                        Don't have an account ?
-                        <Link to="/admin/dashboard/sign-up">
-                          <span
-                            style={{
-                              color: "#FFC107",
-                              paddingLeft: "0.5em",
-                              textDecoration: "none",
-                            }}
-                          >
-                            Signup here
-                          </span>
-                        </Link>
-                      </span> */}
-                    </div>
+                    ></div>
                   </form>
                 </div>
               </div>

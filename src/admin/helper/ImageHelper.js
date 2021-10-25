@@ -8,12 +8,7 @@ const ImageHelper = ({ event }) => {
     : `https://res.cloudinary.com/sjdev/image/upload/v1621754342/ITESA-TEAM/Events-Images/175_cqqjcp.jpg`;
   return (
     <>
-      <img
-        id="img"
-        src={imageurl}
-        alt="event-photo"
-        // style={{ width: "100%", borderRadius: "15px" }}
-      />
+      <img id="img" src={imageurl} alt="itesa-event-photos" />
     </>
   );
 };

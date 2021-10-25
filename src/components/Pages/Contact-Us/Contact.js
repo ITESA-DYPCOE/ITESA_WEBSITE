@@ -1,24 +1,9 @@
 import React, { useState } from "react";
-
-//api
-// import { API } from "../../../backend";
-
-//email-js
-import emailjs from "emailjs-com";
-
-//reactstrap
-import { Button } from "reactstrap";
-import "./Contact.css";
-
-//img
-import img from "./assets/contact-us-img.jpg";
-
-//joi-browser for form-validations
 import Joi from "joi-browser";
-
-//react-toast
-import { ToastContainer, toast } from "material-react-toastify";
-import "material-react-toastify/dist/ReactToastify.css";
+import emailjs from "emailjs-com";
+import { toast } from "material-react-toastify";
+import img from "./assets/contact-us-img.jpg";
+import "./Contact.css";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -131,9 +116,6 @@ const ContactUs = () => {
 
   return (
     <>
-      <div className="toast">
-        <ToastContainer position="bottom-center" />
-      </div>
       <div className="contact-section contact-section-dark">
         <div className="contact-parent">
           <div className="contact-child child1">
@@ -231,9 +213,9 @@ const ContactUs = () => {
                         )}
                       </div>
                       <div>
-                        <Button id="submit-btn" type="submit">
+                        <button id="submit-btn" type="submit">
                           Let's Talk!
-                        </Button>
+                        </button>
                       </div>
                     </form>
                   </div>

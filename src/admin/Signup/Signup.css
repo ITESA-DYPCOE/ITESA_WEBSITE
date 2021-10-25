@@ -243,6 +243,8 @@
 .submit-btn {
   display: flex;
   justify-content: center;
+  border: none;
+  outline: none;
   align-items: center;
   width: 50%;
   margin: 0 auto;

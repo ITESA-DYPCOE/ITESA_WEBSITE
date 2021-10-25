@@ -1,8 +1,7 @@
 import React from "react";
-import "../../../App.css";
-
 import { Card } from "../../CardSection/Card";
 import { About } from "../../About/About";
+import "../../../App.css";
 
 const Home = () => {
   return (

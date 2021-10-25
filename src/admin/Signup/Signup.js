@@ -1,24 +1,11 @@
 import React, { useState } from "react";
-
-//api call
-import { signup } from "../auth/helper/index";
-
-//reactstrap
-import { Button } from "reactstrap";
-import "./Signup.css";
-
-//img
-// import img from "../../assets/system-administrator-removebg-preview.png";
-
-//custom-toast
-import makeToast from "../../components/utils/Toaster/Toaster";
-
-//react-router-dom
 import { Link, useHistory } from "react-router-dom";
+import { signup } from "../auth/helper/index";
+import { toast } from "material-react-toastify";
+import "./Signup.css";
 
 const SignUp = () => {
   const history = useHistory();
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,7 +13,6 @@ const SignUp = () => {
     adminInfo: "",
     error: "",
   });
-
   const { name, email, password, adminInfo } = formData;
 
   const handleChange = name => e => {
@@ -35,15 +21,14 @@ const SignUp = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    // console.log("inside");
     signup({ name, email, password, adminInfo })
       .then(data => {
         console.log("DATA : ", data);
         if (data.error) {
           setFormData({ ...formData, error: data.error });
-          makeToast("error", data.error);
+          toast.error("error", data.error);
         } else {
-          makeToast("success", "Successfully Signed up!");
+          toast.success("success", "Successfully Signed up!");
           setFormData({
             name: "",
             email: "",
@@ -51,20 +36,16 @@ const SignUp = () => {
             adminInfo: "",
             error: "",
           });
-
           history.push("/admin/dashboard");
         }
       })
-      .catch(err => makeToast("error", err));
+      .catch(err => toast.error("error", err));
   };
 
   return (
     <>
       <div className="signup-section signup-section-dark">
         <div className="signup-parent">
-          {/* <div className="signup-child child1">
-            <img src={img} alt="" className="signup-image" />
-          </div> */}
           <div className="signup-child child2">
             <React.Fragment>
               <div className="signup-card signup-card-dark">
@@ -120,13 +101,13 @@ const SignUp = () => {
                       <i className="fas fa-comment-dots"></i>
                     </div>
                     <div>
-                      <Button
+                      <button
                         className="submit-btn"
                         type="submit"
                         onClick={handleSubmit}
                       >
                         Submit
-                      </Button>
+                      </button>
                     </div>
                     <div
                       style={{

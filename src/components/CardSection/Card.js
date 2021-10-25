@@ -1,24 +1,16 @@
 import React from "react";
-
-//react-icons
-import { FaFacebook, FaLinkedinIn, FaGithubAlt } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
-
-//@material-ui
 import { makeStyles } from "@material-ui/core/styles";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-
-//data
-import teamData from "./data/team-roles.json";
-import "../Teams/css/Team.styles.css";
-
-//components
+import { FaFacebook, FaLinkedinIn, FaGithubAlt } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
 import Title from "../ImageSection/Title/Title";
 import Btn from "./Button/Btn";
 import ImageSection from "../ImageSection/";
 import Discord from "./Discord/Discord";
 import Faq from "../Faq/Faq";
+import teamData from "./data/team-roles.json";
+import "../Teams/css/Team.styles.css";
 
 const useStyles = makeStyles(() => ({
   details: {
@@ -44,9 +36,6 @@ export const Card = () => {
         <ImageSection />
         <div className="team">
           <Title coreteaminfo="Faculty" />
-          {/* <Typography variant="h3" className="about-dark" id="MuiTypography-h3">
-            Faculty
-          </Typography> */}
           <div className="dash" style={styles}></div>
           <div className="row1">
             {Object.keys(teamData).map(role => {

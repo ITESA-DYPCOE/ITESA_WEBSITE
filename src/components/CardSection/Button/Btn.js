@@ -1,13 +1,7 @@
 import React from "react";
-
-//@material-ui
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-
-//react-router-dom
 import { Link } from "react-router-dom";
-
-//react-icon
 import { BsBoxArrowRight } from "react-icons/bs";
 
 const useStyles = makeStyles({
@@ -22,7 +16,6 @@ const useStyles = makeStyles({
     height: 65,
     borderRadius: 6,
     textTransform: "uppercase",
-    // boxShadow: "0px 1px 4px 3px rgba(105, 208, 255, 0.3)",
     cursor: "pointer",
     color: "#fff",
     backgroundSize: "200%",
@@ -42,7 +35,6 @@ const useStyles = makeStyles({
 
 const Btn = () => {
   const classes = useStyles();
-
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

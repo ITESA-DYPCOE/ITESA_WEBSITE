@@ -12,11 +12,9 @@ const ScrollToTop = () => {
       setShowScroll(false);
     }
   };
-
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
   window.addEventListener("scroll", checkScrollTop);
 
   return (

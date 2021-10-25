@@ -5,8 +5,9 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import "./Faq.css";
 import { questions } from "./faqApi";
+import "./Faq.css";
+
 const useStyles = makeStyles(theme => ({
   root: {
     width: "65%",
@@ -36,12 +37,10 @@ const useStyles = makeStyles(theme => ({
 const Faq = () => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
-
   const handleChange = panel => (e, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
 
-  //   console.log(questions);
   return (
     <div>
       <div className="faq">
@@ -59,6 +58,7 @@ const Faq = () => {
             return (
               <>
                 <Accordion
+                  key={item.id}
                   className={`accord-dark ${classes.accord}`}
                   expanded={expanded === item.panel}
                   onChange={handleChange(`${item.panel}`)}

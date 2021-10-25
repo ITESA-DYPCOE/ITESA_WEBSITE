@@ -9,12 +9,6 @@ import {
 import { HiOutlineMail } from "react-icons/hi";
 import "./Footer.css";
 
-// const styles = {
-//   textDecoration: "none",
-//   paddingLeft: "0.5em",
-//   color: "#fac87b",
-// };
-
 const Footer = () => {
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -73,9 +67,6 @@ const Footer = () => {
               <li>
                 <Link to="/past-teams">Past Teams</Link>
               </li>
-              {/* <li>
-                <Link to="/faqs">FAQ</Link>
-              </li> */}
             </ul>
           </li>
           <li className="social-box" style={{ width: "100%" }}>

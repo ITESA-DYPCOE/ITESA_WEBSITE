@@ -15,7 +15,6 @@ const Discord = () => {
         style={{
           width: "100%",
           padding: "0px 35px",
-          // maxWidth: "1440px !important",
           margin: 0,
         }}
       >
@@ -66,6 +65,7 @@ const Discord = () => {
                   className="discordLink"
                   href="https://discord.gg/WyTupBNX76"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Join Now
                 </a>

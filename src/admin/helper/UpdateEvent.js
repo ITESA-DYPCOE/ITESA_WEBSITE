@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import {
-  // getAllCategories,
-  getEvent,
-  updateEvent,
-  getPhoto,
-} from "./adminapicalls";
-import { isAuthenticated } from "../auth/helper/index";
 import moment from "moment";
-
-//custom-toast
-import makeToast from "../../components/utils/Toaster/Toaster";
-
-//react-icons
+import { Link, useParams } from "react-router-dom";
 import { RiUploadCloud2Line } from "react-icons/ri";
 import { IoArrowBackCircle } from "react-icons/all";
 import { TiTick } from "react-icons/ti";
+import { toast } from "material-react-toastify";
+import { isAuthenticated } from "../auth/helper/index";
+import { getEvent, updateEvent } from "./adminapicalls";
 
 const UpdateEvent = ({ match }) => {
+  const eventId = useParams();
+
   const { admin, token } = isAuthenticated();
-  // const [CATE, setCATE] = useState("");
   const [values, setValues] = useState({
     name: "",
     info: "",
@@ -28,8 +20,6 @@ const UpdateEvent = ({ match }) => {
     image: "",
     linkedinURL: "",
     instagramURL: "",
-    // categories: [],
-    // category: "",
     loading: false,
     error: "",
     formData: "",
@@ -43,87 +33,45 @@ const UpdateEvent = ({ match }) => {
     image,
     linkedinURL,
     instagramURL,
-    categories,
-    category,
-    loading,
-    error,
     formData,
   } = values;
 
   const preload = eventId => {
     getEvent(eventId).then(data => {
       console.log(data.date);
-      // console.log(DATE);
-      // setCATE(data.category.name);
-      // console.log(CATE);
-
       if (data.error) {
         setValues({ ...values, error: data.error });
       } else {
-        // preloadCategories();
-
-        // console.log(
-        //   <Moment format="DD-MM-YYYY">2021-07-21T00:00:00.000Z</Moment>
-        // );
         console.log(data);
         let START_DATE = moment(data.date.startDate).format("YYYY-MM-DD");
         let END_DATE = moment(data.date.endDate).format("YYYY-MM-DD");
         setValues({
           ...values,
-          name: "",
           info: data.info,
           startDate: START_DATE,
           endDate: END_DATE,
-          // image: data.image,
           linkedinURL: data.linkedinURL,
           instagramURL: data.instagramURL,
           name: data.name,
-          // category: data.category._id,
           formData: new FormData(),
         });
       }
     });
   };
 
-  const preloadImage = eventId => {
-    getPhoto(eventId).then(data => {
-      console.log(eventId);
-      // if (data.error) {
-      //   return makeToast("error", data.error);
-      // }
-      console.log(data);
-      setValues({ ...values, image: data });
-    });
-  };
-
-  // const preloadCategories = () => {
-  //   getAllCategories().then(data => {
-  //     if (data.error) {
-  //       setValues({ ...values, error: data.error });
-  //     } else {
-  //       setValues({
-  //         categories: data,
-  //         formData: new FormData(),
-  //       });
-  //     }
-  //   });
-  // };
-
   useEffect(() => {
-    preload(match.params.eventId);
-    // preloadImage(match.params.eventId);
+    preload(eventId);
   }, []);
 
   const onSubmit = e => {
     e.preventDefault();
     setValues({ ...values, error: "", loading: true });
-    console.log(formData);
     updateEvent(match.params.eventId, admin._id, token, formData).then(data => {
       if (data.error) {
         setValues({ ...values, error: data.error });
-        makeToast("error", data.error);
+        toast.error("error", data.error);
       } else {
-        makeToast("success", "Event Updated Successfully!");
+        toast.success("success", "Event Updated Successfully!");
         setValues({
           ...values,
           name: "",
@@ -134,7 +82,6 @@ const UpdateEvent = ({ match }) => {
           linkedinURL: "",
           instagramURL: "",
         });
-        // setCATE("");
       }
     });
   };
@@ -144,9 +91,6 @@ const UpdateEvent = ({ match }) => {
     formData.set(name, value);
     setValues({ ...values, [name]: value });
   };
-
-  console.log(startDate);
-  console.log(endDate);
 
   const updateEventForm = () => (
     <form className="form-container">
@@ -168,15 +112,7 @@ const UpdateEvent = ({ match }) => {
             value={name}
           />
         </div>
-
         <div className="form-group ">
-          {/* <input
-            onChange={handleChange("info")}
-            type="text"
-            className="form-control"
-            placeholder="Event info"
-            value={info}
-          /> */}
           <textarea
             style={{ margin: "0px 0px 15px", width: "248px", height: "248px" }}
             onChange={handleChange("info")}
@@ -249,43 +185,8 @@ const UpdateEvent = ({ match }) => {
               value={endDate}
             />
           </div>
-          {/* <div
-            className="form-group"
-            style={{
-              justifyContent: "center",
-              alignItems: "center",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <h5 style={{ marginBottom: "1em" }}>
-              Previously Selected Category :
-              <span
-                style={{
-                  color: "#FF4D50",
-                  fontSize: "1.5em",
-                  padding: "0.5em",
-                }}
-              >
-                {CATE}
-              </span>
-            </h5>
-            <select
-              onChange={handleChange("category")}
-              className="form-control"
-              placeholder="Category"
-            >
-              <option>Select</option>
-              {categories.map((cate, index) => (
-                <option key={index} value={cate._id}>
-                  {cate.name}
-                </option>
-              ))}
-            </select>
-          </div> */}
         </div>
       </div>
-
       <div className="mini-container">
         <div className="form-group ">
           <input
@@ -305,7 +206,6 @@ const UpdateEvent = ({ match }) => {
             value={instagramURL}
           />
         </div>
-
         <button
           type="submit"
           onClick={onSubmit}

@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import { NavLink, Link, useHistory } from "react-router-dom";
-
-import "./Navbar.css";
-import "../Navbar/Dropdown/Dropdown.css";
-
-import Button from "../utils/Button/Button";
-
-import logo from "../utils/Logo/DARK_MODE-LOGO.png";
 import { isAuthenticated, signout } from "../../admin/auth/helper/index";
-
-//custom-toast
-import makeToast from "../../components/utils/Toaster/Toaster";
+import Button from "../utils/Button/Button";
+import logo from "../utils/Logo/DARK_MODE-LOGO.png";
+import { toast } from "material-react-toastify";
+import "../Navbar/Dropdown/Dropdown.css";
+import "./Navbar.css";
 
 const Navbar = () => {
   const history = useHistory();
@@ -26,7 +21,6 @@ const Navbar = () => {
   };
 
   const changeNavbarColor = () => {
-    // console.log(window.screenY);
     if (window.scrollY >= 80) {
       setNavbarColor(true);
     } else {
@@ -184,7 +178,7 @@ const Navbar = () => {
                 onClick={() => {
                   signout(() => {
                     history.push("/");
-                    makeToast("success", "Signout Successfully!");
+                    toast.success("success", "Signout Successfully!");
                   });
                 }}
               >

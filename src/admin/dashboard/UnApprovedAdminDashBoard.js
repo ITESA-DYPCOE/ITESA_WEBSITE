@@ -1,13 +1,9 @@
 import React from "react";
-
 import { isAuthenticated } from "../auth/helper";
-
-//img
 import img from "../../assets/Wavy_Bus-25_Single-07-removebg-preview.png";
-
 import "./style.css";
 
-function UnApprovedAdminDashBoard() {
+const UnApprovedAdminDashBoard = () => {
   const {
     admin: { name, email },
   } = isAuthenticated();
@@ -52,20 +48,10 @@ function UnApprovedAdminDashBoard() {
               </div>
             </React.Fragment>
           </div>
-          {/* <div className="admin-child child-sec-1">
-            <li className="list-group-item">
-              <span style={{ color: "red" }}>
-                <span className="badge badge-danger">
-                  <span style={{ color: "green" }}>Note : </span> you must be
-                  approved by super admin
-                </span>
-              </span>
-            </li>
-          </div> */}
         </div>
       </div>
     </>
   );
-}
+};
 
 export default UnApprovedAdminDashBoard;

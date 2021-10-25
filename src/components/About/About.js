@@ -2,7 +2,7 @@ import React from "react";
 import img from "./Techie.png";
 import "./About.css";
 
-export function About() {
+export const About = () => {
   return (
     <>
       <div className="section section-dark">
@@ -42,4 +42,4 @@ export function About() {
       </div>
     </>
   );
-}
+};

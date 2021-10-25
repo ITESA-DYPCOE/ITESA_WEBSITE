@@ -1,15 +1,9 @@
 import React from "react";
-
-//@material-ui
 import { makeStyles } from "@material-ui/core/styles";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-
-//react-icons
 import { FaLinkedinIn, FaGithubAlt } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
-
-//data
 import teamData from "./data/team-roles.json";
 import "../css/Team.styles.css";
 
@@ -25,6 +19,7 @@ const useStyles = makeStyles(() => ({
 
 const Technical = () => {
   const classes = useStyles();
+
   return (
     <div className="dark">
       <div className="about-dark"></div>
@@ -34,9 +29,9 @@ const Technical = () => {
         </Typography>
         <div className="dash dash-dark"></div>
         <div className="row1">
-          {Object.keys(teamData).map((role) => {
+          {Object.keys(teamData).map(role => {
             if (role !== "members") {
-              return teamData[role].map((roleObject) => {
+              return teamData[role].map(roleObject => {
                 return (
                   <div className="card1 card1-dark">
                     <div className="photo">
@@ -103,9 +98,9 @@ const Technical = () => {
           })}
         </div>
         <div className="row2">
-          {Object.keys(teamData).map((role) => {
+          {Object.keys(teamData).map(role => {
             if (role === "members") {
-              return teamData[role].map((roleObject) => {
+              return teamData[role].map(roleObject => {
                 return (
                   <div className="card1 card1-dark">
                     <div className="photo">

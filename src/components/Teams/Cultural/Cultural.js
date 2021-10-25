@@ -1,15 +1,9 @@
 import React from "react";
-
-//@material-ui
 import { makeStyles } from "@material-ui/core/styles";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-
-//react-icons
 import { FaLinkedinIn, FaGithubAlt } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
-
-//data
 import teamData from "./data/team-roles.json";
 import "../css/Team.styles.css";
 

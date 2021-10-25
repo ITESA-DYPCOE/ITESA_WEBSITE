@@ -16,7 +16,6 @@ const Motive = () => {
           style={{
             width: "100%",
             padding: "0px 35px",
-            // maxWidth: "1440px !important",
             margin: 0,
             height: "200px",
           }}
@@ -56,16 +55,6 @@ const Motive = () => {
                     🤩🚀
                   </span>
                 </div>
-
-                {/* <div className="linkToJoin" style={{ textAlign: "center" }}>
-                  <a
-                    className="discordLink"
-                    href="https://discord.gg/WyTupBNX76"
-                    target="_blank"
-                  >
-                    Join Now
-                  </a>
-                </div> */}
               </div>
             </div>
           </div>

@@ -1,6 +1,4 @@
-// import axios from "axios";
 import { API } from "../../../backend";
-
 export const signup = user => {
   return fetch(`${API}/signup`, {
     method: "POST",
@@ -17,19 +15,6 @@ export const signup = user => {
       console.log(err);
     });
 };
-
-// export const signup = async user => {
-//   const config = {
-//     headers: {
-//       Accept: "application/json",
-//       "Content-Type": "application/json",
-//     },
-//   };
-//   const res = await axios.post(`${API}signup`, user, config);
-//   console.log(res);
-//   return res.data;
-// };
-
 export const signin = user => {
   return fetch(`${API}/signin`, {
     method: "POST",
@@ -44,7 +29,6 @@ export const signin = user => {
     })
     .catch(err => console.log(err));
 };
-
 //associated with signin method , which sets users token in users browser
 export const authenticate = (data, next) => {
   if (typeof window !== "undefined") {
@@ -52,14 +36,12 @@ export const authenticate = (data, next) => {
     next();
   }
 };
-
 //in window obj, we are storing all the jwt token,etc.
 //before actually hitting route, we clear token and then signout..
 export const signout = next => {
   if (typeof window !== "undefined") {
     localStorage.removeItem("jwt");
     next();
-
     return fetch(`${API}/signout`, {
       method: "GET",
     })
@@ -67,7 +49,6 @@ export const signout = next => {
       .catch(err => console.log(err));
   }
 };
-
 //to validate wheather user is signed in or not
 export const isAuthenticated = () => {
   if (typeof window == "undefined") {

@@ -2,18 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { isAuthenticated } from "../auth/helper/index";
 import { deleteEvent, getAllEvents } from "./adminapicalls";
-
 import { IoArrowBackCircle } from "react-icons/all";
-import makeToast from "../../components/utils/Toaster/Toaster";
+import { toast } from "material-react-toastify";
 
 const ManageEvents = () => {
+  const { admin, token } = isAuthenticated();
   const [latestEvents, setLatestEvents] = useState([]);
   const [pastEvents, setPastEvents] = useState([]);
 
-  const { admin, token } = isAuthenticated();
-
   const preload = () => {
-    getAllEvents().then((data) => {
+    getAllEvents().then(data => {
       if (data.error) {
         console.log(data.error);
       } else {
@@ -27,17 +25,17 @@ const ManageEvents = () => {
     preload();
   }, []);
 
-  const removeEvent = (eventId) => {
+  const removeEvent = eventId => {
     deleteEvent(admin._id, eventId, token)
-      .then((data) => {
+      .then(data => {
         if (data.error) {
           console.log(data.error);
         } else {
-          makeToast("success", "Removed Successfully!");
+          toast.success("success", "Removed Successfully!");
           preload();
         }
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
   };
 
   return (
@@ -80,8 +78,6 @@ const ManageEvents = () => {
           padding: "50px",
           display: "flex",
           justifyContent: "center",
-          // alignItems: "center",
-          // flexDirection: "column",
           background: "linear-gradient(to right, #ffdd77 0%, #ffdf7e 94%)",
         }}
         className="makeItResponisve"
@@ -105,7 +101,7 @@ const ManageEvents = () => {
               Latest Events
             </h2>
             {latestEvents &&
-              latestEvents.map((event) => {
+              latestEvents.map(event => {
                 return (
                   <>
                     <div
@@ -133,14 +129,6 @@ const ManageEvents = () => {
                           {event.name}
                         </h3>
                       </div>
-                      {/* <div className="col-4">
-              <Link
-                className="btn btn-success"
-                to={`/admin/product/update/productId`}
-              >
-                <span className="">Update</span>
-              </Link>
-            </div> */}
                       <div style={{ display: "flex" }}>
                         <div>
                           <Link to={`/admin/update/event/${event._id}`}>
@@ -182,7 +170,7 @@ const ManageEvents = () => {
             Past Events
           </h2>
           {pastEvents &&
-            pastEvents.map((event) => {
+            pastEvents.map(event => {
               return (
                 <>
                   <div
@@ -210,14 +198,6 @@ const ManageEvents = () => {
                         {event.name}
                       </h3>
                     </div>
-                    {/* <div className="col-4">
-              <Link
-                className="btn btn-success"
-                to={`/admin/product/update/productId`}
-              >
-                <span className="">Update</span>
-              </Link>
-            </div> */}
                     <div style={{ display: "flex" }}>
                       <div>
                         <Link to={`/admin/update/event/${event._id}`}>
