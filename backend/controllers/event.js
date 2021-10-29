@@ -1,174 +1,116 @@
-const Event = require("../models/event");
+const admin = require("firebase-admin");
+const db = admin.firestore();
 const formidable = require("formidable");
-const fs = require("fs");
-const _ = require("lodash");
-
-// exports.createEvent = (req, res) => {
-//   const event = new Event(req.body);
-//   event.save((err, event) => {
-//     if (err) {
-//       return res.status(400).json({
-//         error: "Failed to create Event!",
-//       });
-//     }
-//     res.json({ event });
-//   });
-// };
+const { nanoid } = require("nanoid");
 
 exports.getEventById = (req, res, next, id) => {
-  Event.findById(id)
-    .populate("category")
-    .exec((err, event) => {
-      if (err) {
-        return res.status(400).json({
-          error: "Event not found!",
-        });
-      }
-      req.event = event;
+  db.collection("events")
+    .doc(id)
+    .get()
+    .then(event => {
+      let { title, description, imageURL, links, date, eventId } = event.data();
+      const { instagram, linkedin } = links;
+      const { startDate, endDate } = date;
+
+      req.event = {
+        eventId,
+        title,
+        description,
+        imageURL,
+        links: {
+          instagram,
+          linkedin,
+        },
+        date: {
+          startDate,
+          endDate,
+        },
+      };
+      // console.log("Document data:", event.data());
+      // console.log("event", req.event);
       next();
+    })
+    .catch(err => {
+      return res.status(400).json({
+        msg: "No Event Found in DB",
+      });
     });
 };
-
-exports.getEvent = (req, res) => {
-  req.event.image = undefined;
-  return res.json(req.event);
-};
-
-exports.getAllEvents = async (req, res) => {
-  try {
-    let today = new Date();
-    // console.log(today);
-
-    const upcomingEvent = await Event.find({
-      "date.endDate": { $gte: today.toDateString() },
-    }).sort({ date: -1 });
-    const pastEvent = await Event.find({
-      "date.endDate": { $lt: today.toDateString() },
-    }).sort({ date: -1 });
-    // console.log(upcomingEvent);
-    res.json({
-      upcomingEvent,
-      pastEvent,
-    });
-  } catch (error) {
-    res.json({
-      error: "Err while fetching events!",
-    });
-  }
-};
-
-// exports.getAllLatestEvents = (req, res) => {
-//   Event.find({ category: "60e01bcf7a8c310358a13af3" })
-//     .sort({ date: 1 })
-//     .exec((err, events) => {
-//       if (err || !events) {
-//         return res.status(400).json({
-//           error: "No Events found in DB",
-//         });
-//       }
-//       // console.log(events.length);
-//       res.json(events);
-//     });
-// };
-
-// exports.getAllPastEvents = (req, res) => {
-//   Event.find({ category: "60e01bd87a8c310358a13af4" })
-//     .sort({ date: 1 })
-//     .exec((err, events) => {
-//       if (err || !events) {
-//         return res.status(400).json({
-//           error: "No Events found in DB",
-//         });
-//       }
-//       // console.log(events.length);
-//       res.json(events);
-//     });
-// };
 
 exports.createEvent = (req, res) => {
-  console.log(req.body);
   let form = new formidable.IncomingForm();
+
   form.keepExtensions = true;
 
   form.parse(req, (err, fields, file) => {
     if (err) {
       return res.status(400).json({
-        error: "problem with image",
+        error: err,
+        msg: "Please validate FormData!",
       });
     }
-    console.log(fields);
 
-    //destructure the fields
     const {
-      name,
-      info,
-      linkedinURL,
+      title,
+      description,
       instagramURL,
+      linkedinURL,
       startDate,
       endDate,
+      imageURL,
     } = fields;
+    // const { imageURL } = file;
 
-    // console.log(name, info, linkedinURL, instagramURL, category);
+    console.log({ fields });
 
     if (
-      (!name || !info || !linkedinURL || !instagramURL || !startDate, !endDate)
+      !title ||
+      !description ||
+      !instagramURL ||
+      !linkedinURL ||
+      !startDate ||
+      !endDate
     ) {
       return res.status(400).json({
-        error: "Please include all fields",
+        msg: "Please validate FormData!!",
       });
     }
-    let obj = {
-      name,
-      info,
-      linkedinURL,
-      instagramURL,
+
+    if (!imageURL) {
+      return res.status(400).json({
+        msg: "Event Photo is required!",
+      });
+    }
+
+    let eventNanoId = nanoid();
+    let event = {
+      eventId: eventNanoId,
+      title,
+      description,
+      imageURL: imageURL,
+      links: {
+        instagram: instagramURL,
+        linkedin: linkedinURL,
+      },
       date: {
         startDate,
         endDate,
       },
     };
-    console.log(obj);
-    let event = new Event(obj);
 
-    //handle file here
-    if (file.image) {
-      console.log(file.image.type == "image/jpeg");
-      console.log(file.image.type);
-      const jpg = "image/jpg";
-      const jpeg = "image/jpeg";
-      const png = "image/png";
-      // console.log(
-      //   file.image.type !== "image/jpg" || "image/jpeg" || "image/png"
-      // );
-      // if (file.image.type != ("image/jpeg" || "image/png")) {
-      //   return res.status(422).json({
-      //     error: "File type should be jpg or png!",
-      //   });
-      // }
-
-      if (file.image.size > 3000000) {
+    db.collection("events")
+      .doc(eventNanoId)
+      .set(event)
+      .then(result => {
+        console.log({ result });
+        return res.json(event);
+      })
+      .catch(err => {
         return res.status(400).json({
-          error: "File size too big!",
+          error: err,
+          msg: "Not able to save event in DB",
         });
-      }
-
-      event.image.data = fs.readFileSync(file.image.path);
-      event.image.contentType = file.image.type;
-    }
-
-    console.log(event);
-
-    // console.log(product);
-
-    //save to the DB
-    event.save((err, event) => {
-      if (err) {
-        res.status(400).json({
-          error: "Saving Event in DB failed",
-        });
-      }
-      res.json(event);
-    });
+      });
   });
 };
 
@@ -179,64 +121,111 @@ exports.updateEvent = (req, res) => {
   form.parse(req, (err, fields, file) => {
     if (err) {
       return res.status(400).json({
-        error: "problem with image",
+        error: err,
+        msg: "Please validate FormData!",
+      });
+    }
+    console.log("update", fields);
+
+    const {
+      title,
+      description,
+      instagramURL,
+      linkedinURL,
+      startDate,
+      endDate,
+      imageURL,
+    } = fields;
+    // const { imageURL } = file;
+
+    if (
+      !title ||
+      !description ||
+      !instagramURL ||
+      !linkedinURL ||
+      !startDate ||
+      !endDate
+    ) {
+      return res.status(400).json({
+        msg: "Please validate FormData!",
       });
     }
 
-    let event = req.event;
-    console.log(event);
-    event - _.extend(event, fields);
-
-    if (file.image) {
-      // console.log(typeof file.image.type);
-      // if (file.image.type === ("image/jpeg" || "image/png")) {
-      //   return res.status(422).json({
-      //     error: "File type should be jpg or png!",
-      //   });
-      // }
-
-      if (file.image.size > 3000000) {
-        return res.status(400).json({
-          error: "File size too big!",
-        });
-      }
-      event.image.data = fs.readFileSync(file.image.path);
-      event.image.contentType = file.image.type;
+    if (!imageURL) {
+      return res.status(400).json({
+        msg: "Event Photo required!",
+      });
     }
-    // console.log(event);
 
-    //save to the DB
-    event.save((err, event) => {
-      if (err) {
-        res.status(400).json({
-          error: "Updation of Event in DB failed",
+    let updatedEvent = {
+      title,
+      description,
+      imageURL: imageURL.toString(),
+      links: {
+        instagram: instagramURL,
+        linkedin: linkedinURL,
+      },
+      date: {
+        startDate,
+        endDate,
+      },
+    };
+
+    db.collection("events")
+      .doc(req.event.eventId)
+      .update(updatedEvent)
+      .then(result => {
+        console.log(result);
+        return res.json({
+          eventId: req.event.eventId,
+          ...updatedEvent,
         });
-      }
-      res.json(event);
-    });
+      })
+      .catch(error => {
+        return res.status(400).json({
+          error,
+          msg: "Not able to update event in DB",
+        });
+      });
   });
 };
 
 exports.removeEvent = (req, res) => {
-  const event = req.event;
-
-  event.remove((err, event) => {
-    if (err) {
-      return res.status(400).json({
-        error: "Failed to delete Event",
+  db.collection("events")
+    .doc(req.event.eventId)
+    .delete()
+    .then(result => {
+      console.log(result);
+      return res.json({
+        msg: "Event deleted successfully!!",
       });
-    }
-    res.json({
-      message: "Successfull deleted!",
+    })
+    .catch(error => {
+      return res.status(400).json({
+        error,
+        msg: "Failed to delete the Event!!",
+      });
     });
-  });
 };
 
-//middleware
-exports.image = (req, res, next) => {
-  if (req.event.image.data) {
-    res.set("Content-Type", req.event.image.contentType);
-    return res.send(req.event.image.data);
+exports.getEvent = (req, res) => {
+  if (req.event) {
+    return res.json(req.event);
+  } else {
+    return res.status(400).json({
+      msg: "No Event Found in DB",
+    });
   }
-  next();
+};
+
+exports.getAllEvents = async (req, res) => {
+  const eventsCollection = await db.collection("events");
+  eventsCollection.get().then(eventDoc => {
+    let events = [];
+    eventDoc.forEach(event => {
+      events.push({ ...event.data() });
+    });
+    console.log(events);
+    return res.json({ events });
+  });
 };

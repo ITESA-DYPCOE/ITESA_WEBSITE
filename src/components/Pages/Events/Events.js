@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Typography from "@material-ui/core/Typography";
 import { BoltLoader } from "react-awesome-loaders";
-import moment from "moment";
 import { getAllEvents } from "../../../admin/helper/adminapicalls";
 import { toast } from "material-react-toastify";
 import EventCard from "./Event-Card/index";
@@ -18,17 +17,25 @@ const Events = () => {
   const [loading, setLoading] = useState(true);
 
   const preload = () => {
-    getAllEvents().then(data => {
-      setLoading(true);
+    let today = new Date();
 
+    getAllEvents().then(data => {
+      // console.log({ data });
+      data.events.map(event => {
+        if (event.date.endDate >= today.toISOString()) {
+          setLatestEvents([...latestEvents, event]);
+        }
+        if (event.date.endDate < today.toISOString()) {
+          setPastEvents([...pastEvents, event]);
+        }
+      });
+
+      setLoading(true);
       if (data.error) {
         setLoading(false);
         toast.error("error", data.error);
-      } else {
-        setLatestEvents(data.upcomingEvent);
-        setPastEvents(data.pastEvent);
-        setLoading(false);
       }
+      setLoading(false);
     });
   };
 
@@ -70,19 +77,12 @@ const Events = () => {
                   <>
                     {latestEvents &&
                       latestEvents.map(event => {
-                        let START_DATE = moment(event.date.startDate).format(
-                          "MMMM Do YYYY"
-                        );
-                        let END_DATE = moment(event.date.endDate).format(
-                          "MMMM Do YYYY"
-                        );
+                        let eventDate = new Date(
+                          event.date.startDate
+                        ).toDateString();
                         return (
                           <>
-                            <EventCard
-                              event={event}
-                              eventStartDate={START_DATE}
-                              eventEndDate={END_DATE}
-                            />
+                            <EventCard event={event} eventDate={eventDate} />
                           </>
                         );
                       })}
@@ -111,24 +111,17 @@ const Events = () => {
             <>
               <div className="row1">
                 {pastEvents.length === 0 ? (
-                  <h1>No Events Found!</h1>
+                  <h1 style={{ color: "#fff" }}>No Events Found!</h1>
                 ) : (
                   <>
                     {pastEvents &&
                       pastEvents.map(event => {
-                        let START_DATE = moment(event.date.startDate).format(
-                          "MMMM Do YYYY"
-                        );
-                        let END_DATE = moment(event.date.endDate).format(
-                          "MMMM Do YYYY"
-                        );
+                        let eventDate = new Date(
+                          event.date.startDate
+                        ).toDateString();
                         return (
                           <>
-                            <EventCard
-                              event={event}
-                              eventStartDate={START_DATE}
-                              eventEndDate={END_DATE}
-                            />
+                            <EventCard event={event} eventDate={eventDate} />
                           </>
                         );
                       })}

@@ -1,4 +1,7 @@
+/* eslint-disable default-case */
 import React, { useEffect, useState } from "react";
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import { storage } from "../../firebase/config";
 import { Link } from "react-router-dom";
 import { isAuthenticated } from "../auth/helper/index";
 import { createEvent } from "./adminapicalls";
@@ -10,35 +13,37 @@ import { IoArrowBackCircle } from "react-icons/all";
 import { TiTick } from "react-icons/ti";
 
 const AddEvent = () => {
-  const { admin, token } = isAuthenticated();
+  const { adminId, token } = isAuthenticated();
+  const [downloadUrl, setDownloadUrl] = useState(null);
   const [values, setValues] = useState({
-    name: "",
-    info: "",
+    title: "",
+    description: "",
     startDate: "",
     endDate: "",
-    image: "",
+    imageURL: "",
     linkedinURL: "",
     instagramURL: "",
     loading: false,
     error: "",
-    formData: "",
+    // formData: "",
   });
 
   const {
-    name,
-    info,
+    title,
+    imageURL,
     startDate,
     endDate,
-    image,
+    description,
     linkedinURL,
     instagramURL,
-
-    formData,
+    // formData,
   } = values;
 
-  useEffect(() => {
-    setValues({ ...values, formData: new FormData() });
-  }, [values]);
+  function getFormData(object) {
+    const formData = new FormData();
+    Object.keys(object).forEach(key => formData.append(key, object[key]));
+    return formData;
+  }
 
   const onSubmit = e => {
     e.preventDefault();
@@ -46,33 +51,85 @@ const AddEvent = () => {
       ...values,
       error: "",
       loading: true,
+      // formData: new FormData(),
     });
+
+    const eventData = {
+      title,
+      description,
+      startDate,
+      endDate,
+      imageURL,
+      linkedinURL,
+      instagramURL,
+    };
+    // console.log(eventData);
+
+    const formData = getFormData(eventData);
     console.log(formData);
-    createEvent(admin._id, token, formData).then(data => {
-      if (data.error) {
+
+    createEvent(adminId, token, formData).then(data => {
+      console.log(data);
+      if (data.msg) {
         setValues({ ...values, error: data.error });
-        toast.error("error", data.error);
+        toast.error(data.msg);
       } else {
         setValues({
           ...values,
           name: "",
-          info: "",
+          description: "",
           startDate: "",
           endDate: "",
-          image: "",
+          imageURL: "",
           linkedinURL: "",
           instagramURL: "",
         });
-        toast.success("success", `Event created successfully!`);
+        toast.success(`Event created successfully!`);
       }
     });
   };
 
-  const handleChange = name => e => {
-    const value = name === "image" ? e.target.files[0] : e.target.value;
+  const imagePicker = async e => {
+    try {
+      let id = new Date().toISOString();
+      const storageRef = ref(storage, "images/" + id);
+      console.log(e.target.files[0]);
+      console.log(id);
 
-    formData.set(name, value);
-    setValues({ ...values, [name]: value });
+      const uploadTask = uploadBytesResumable(storageRef, e.target.files[0]);
+      uploadTask.on(
+        "state_changed",
+        snapshot => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
+          switch (snapshot.state) {
+            case "paused":
+              console.log("Upload is paused");
+              break;
+            case "running":
+              console.log("Upload is running");
+              break;
+          }
+        },
+        error => {
+          console.log("error vroo!");
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then(downloadURL => {
+            setDownloadUrl(downloadURL);
+            console.log("File available at", downloadURL);
+            setValues({ ...values, imageURL: downloadURL });
+          });
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleChange = name => e => {
+    setValues({ ...values, [name]: e.target.value });
   };
 
   const createEventForm = () => (
@@ -88,22 +145,22 @@ const AddEvent = () => {
         <div className="form-group " style={{ marginTop: "15px" }}>
           <input
             type="text"
-            onChange={handleChange("name")}
-            name="name"
+            onChange={handleChange("title")}
+            name="title"
             className="form-control"
             placeholder="Event name"
-            value={name}
+            value={title}
           />
         </div>
 
         <div className="form-group ">
           <textarea
             style={{ margin: "0px 0px 15px", width: "248px", height: "248px" }}
-            onChange={handleChange("info")}
+            onChange={handleChange("description")}
             type="text"
             className="form-control"
-            placeholder="Event info"
-            value={info}
+            placeholder="Event description"
+            value={description}
           />
         </div>
       </div>
@@ -125,16 +182,17 @@ const AddEvent = () => {
                   visibility: "hidden",
                   width: "0px",
                 }}
-                onChange={handleChange("image")}
                 type="file"
-                name="image"
-                accept="image"
+                name="imageURL"
+                accept="image/*"
+                multiple={false}
+                onChange={e => imagePicker(e)}
               />
 
-              {image ? (
+              {imageURL ? (
                 <>
                   <span style={{ fontSize: "0.75rem" }}>
-                    `{image.name} --image uploaded!`
+                    Image uploaded successfully!
                   </span>
                   <TiTick
                     className="upload-icon"

@@ -134,7 +134,7 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
-            {isAuthenticated() && isAuthenticated().admin.role === 0 && (
+            {isAuthenticated() && isAuthenticated().role === 0 && (
               <li className="nav-item active">
                 <NavLink
                   to="/unapproved/dashboard"
@@ -145,7 +145,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
             )}
-            {isAuthenticated() && isAuthenticated().admin.role === 1 && (
+            {isAuthenticated() && isAuthenticated().role === 1 && (
               <li className="nav-item active">
                 <NavLink
                   to="/admin/dashboard"
@@ -177,8 +177,9 @@ const Navbar = () => {
                 className="nav-item active"
                 onClick={() => {
                   signout(() => {
+                    // localStorage.removeItem("user");
                     history.push("/");
-                    toast.success("success", "Signout Successfully!");
+                    toast.warning("Signout Successfully!");
                   });
                 }}
               >

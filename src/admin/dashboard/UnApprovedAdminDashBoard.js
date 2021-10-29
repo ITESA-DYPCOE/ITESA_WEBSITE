@@ -4,9 +4,7 @@ import img from "../../assets/Wavy_Bus-25_Single-07-removebg-preview.png";
 import "./style.css";
 
 const UnApprovedAdminDashBoard = () => {
-  const {
-    admin: { name, email },
-  } = isAuthenticated();
+  const user = isAuthenticated();
 
   return (
     <>
@@ -24,13 +22,18 @@ const UnApprovedAdminDashBoard = () => {
                 <ul className="list-group">
                   <li className="list-group-item">
                     <span style={{ color: "red" }}>
-                      Name : <span className="badge badge-warning">{name}</span>
+                      Name :{" "}
+                      <span className="badge badge-warning">
+                        {user.name ? user?.name : "Unapproved Admin"}
+                      </span>
                     </span>
                   </li>
                   <li className="list-group-item">
                     <span style={{ color: "red" }}>
-                      Email :
-                      <span className="badge badge-warning">{email}</span>
+                      {user.phoneNumber ? "Phone No." : "Email"}
+                      <span className="badge badge-warning">
+                        {user.phoneNumber ? user.phoneNumber : user?.email}
+                      </span>
                     </span>
                   </li>
                   <li className="list-group-item">

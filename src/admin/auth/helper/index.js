@@ -29,18 +29,19 @@ export const signin = user => {
     })
     .catch(err => console.log(err));
 };
-//associated with signin method , which sets users token in users browser
-export const authenticate = (data, next) => {
+
+export const authenticate = (data, token, next) => {
   if (typeof window !== "undefined") {
-    localStorage.setItem("jwt", JSON.stringify(data));
+    data.token = token;
+    console.log(data);
+    localStorage.setItem("user", JSON.stringify(data));
     next();
   }
 };
-//in window obj, we are storing all the jwt token,etc.
-//before actually hitting route, we clear token and then signout..
+
 export const signout = next => {
   if (typeof window !== "undefined") {
-    localStorage.removeItem("jwt");
+    localStorage.removeItem("user");
     next();
     return fetch(`${API}/signout`, {
       method: "GET",
@@ -49,13 +50,13 @@ export const signout = next => {
       .catch(err => console.log(err));
   }
 };
-//to validate wheather user is signed in or not
+
 export const isAuthenticated = () => {
   if (typeof window == "undefined") {
     return false;
   }
-  if (localStorage.getItem("jwt")) {
-    return JSON.parse(localStorage.getItem("jwt"));
+  if (localStorage.getItem("user")) {
+    return JSON.parse(localStorage.getItem("user"));
   } else {
     return false;
   }

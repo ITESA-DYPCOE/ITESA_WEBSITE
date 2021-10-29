@@ -6,11 +6,8 @@ const {
   getEventById,
   getAllEvents,
   getEvent,
-  image,
   updateEvent,
   removeEvent,
-  // getAllLatestEvents,
-  // getAllPastEvents,
 } = require("../controllers/event");
 const { isSignedIn, isAuthenticated, isAdmin } = require("../controllers/auth");
 
@@ -24,12 +21,6 @@ router.param("eventId", getEventById);
 router.get("/event/:eventId", getEvent);
 router.get("/events", getAllEvents);
 
-// router.get("/latest/events", getAllLatestEvents);
-// router.get("/past/events", getAllPastEvents);
-
-//image route
-router.get("/event/image/:eventId", image);
-
 //create event route
 router.post(
   "/event/create/:adminId",
@@ -40,7 +31,7 @@ router.post(
 );
 
 //update event route
-router.put(
+router.patch(
   "/event/:eventId/:adminId",
   isSignedIn,
   isAuthenticated,

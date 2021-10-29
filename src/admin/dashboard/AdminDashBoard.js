@@ -5,9 +5,7 @@ import img from "../../assets/admin-image.png";
 import "./style.css";
 
 const AdminDashBoard = () => {
-  const {
-    admin: { name, email },
-  } = isAuthenticated();
+  const { name, email } = isAuthenticated();
 
   return (
     <>
@@ -23,7 +21,10 @@ const AdminDashBoard = () => {
                 <ul className="list-group">
                   <li className="list-group-item">
                     <span style={{ color: "red" }}>
-                      Name : <span className="badge badge-warning">{name}</span>
+                      Name :{" "}
+                      <span className="badge badge-warning">
+                        {name ? name : "Admin"}
+                      </span>
                     </span>
                   </li>
                   <li className="list-group-item">

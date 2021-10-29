@@ -1,90 +1,41 @@
-const Admin = require("../models/admin");
-const { validationResult } = require("express-validator");
-const jwt = require("jsonwebtoken");
-const expressJwt = require("express-jwt");
+const admin = require("firebase-admin");
+const db = admin.firestore();
 
-exports.signup = (req, res) => {
-  const errors = validationResult(req);
-
-  if (!errors.isEmpty()) {
-    return res.status(422).json({
-      error: errors.array()[0].msg,
-      params: errors.array()[0].param,
+exports.isSignedIn = (req, res, next) => {
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.split(" ")[0] === "Bearer"
+  ) {
+    let authToken = req.headers.authorization.split(" ")[1];
+    admin
+      .auth()
+      .verifyIdToken(authToken)
+      .then(decodedToken => {
+        // console.log({ decodedToken });
+        req.auth = decodedToken;
+        next();
+      })
+      .catch(error => {
+        return res.status(400).json({
+          error,
+          msg: "Admin Authentication failed!!",
+        });
+      });
+  } else {
+    return res.status(400).json({
+      msg: "No AuthToken found!",
     });
   }
-
-  const admin = new Admin(req.body);
-  admin.save((err, admin) => {
-    if (err) {
-      return res.status(400).json({
-        err: "NOT able to save admin in DB",
-      });
-    }
-    res.json({
-      id: admin._id,
-      name: admin.name,
-      email: admin.email,
-      adminInfo: admin.adminInfo,
-    });
-  });
 };
 
-exports.signin = (req, res) => {
-  const errors = validationResult(req);
-  const { email, password } = req.body;
-
-  if (!errors.isEmpty()) {
-    return res.status(422).json({
-      error: errors.array()[0].msg,
-    });
-  }
-
-  Admin.findOne({ email }, (err, admin) => {
-    if (err || !admin) {
-      return res.status(400).json({
-        error: "Admin email does not exists",
-      });
-    }
-
-    if (!admin.authenticate(password)) {
-      return res.status(401).json({
-        error: "Email & Password do not match",
-      });
-    }
-
-    //create token
-    const token = jwt.sign({ _id: admin.id }, process.env.SECRET);
-
-    //put token in cookie
-    res.cookie("token", token, { expire: new Date() + 9999 });
-
-    //send res to front-end
-    const { _id, name, email, role } = admin;
-    return res.json({ token, admin: { _id, name, email, role } });
-  });
-};
-
-exports.signout = (req, res) => {
-  res.clearCookie("token");
-  res.json({
-    message: "admin signout sucessfully...",
-  });
-};
-
-//protected routes
-exports.isSignedIn = expressJwt({
-  secret: process.env.SECRET,
-  userProperty: "auth",
-  algorithms: ["sha1", "RS256", "HS256"],
-});
-
-//custom-middlewares
 exports.isAuthenticated = (req, res, next) => {
-  // console.log(req.auth);
-  let checker = req.profile && req.auth && req.profile._id == req.auth._id;
+  // console.log("auth", req.auth);
+  // console.log("profile", req.profile);
+
+  let checker = req.profile && req.auth && req.profile.adminId == req.auth.uid;
   if (!checker) {
     return res.status(403).json({
-      error: "ACCESS DENIED!",
+      error: "Access Denied!!",
     });
   }
   next();
@@ -99,13 +50,140 @@ exports.isAdmin = (req, res, next) => {
   next();
 };
 
-// exports.isUpdatingRoleAllowed = (req, res, next) => {
-//   console.log(req.auth);
-//   let checker = req.profile && req.profile.role === 2;
-//   if (!checker) {
-//     return res.status(403).json({
-//       error: "ACCESS DENIED!",
-//     });
-//   }
-//   next();
-// };
+exports.authenticateAdmin = (req, res) => {
+  // auth type is "phone" | "google" | "email"
+  const { token, authProvider, isFirstUser } = req.body;
+  // console.log(isFirstUser);
+  // console.log(req.body);
+  admin
+    .auth()
+    .verifyIdToken(token)
+    .then(decodedToken => {
+      // console.log(decodedToken);
+      const uid = decodedToken.uid;
+      if (authProvider === "phone") {
+        db.collection("admins")
+          .doc(uid)
+          .set({
+            adminId: uid,
+            phoneNumber: decodedToken.phone_number,
+            role: 0,
+            authProvider,
+          })
+          .then(result => {
+            // console.log(result);
+            res.json({
+              msg: "Admin added to DB, pls authorize the role!",
+              admin: {
+                adminId: uid,
+                phoneNumber: decodedToken.phone_number,
+                role: 0,
+                authProvider,
+              },
+            });
+          })
+          .catch(err => {
+            // console.log(err);
+            return res.status(400).json({
+              msg: "Not able to create Admin in DB",
+              error: err,
+            });
+          });
+      } else if (authProvider === "google") {
+        if (isFirstUser) {
+          db.collection("admins")
+            .doc(uid)
+            .set({
+              adminId: uid,
+              name: decodedToken.name,
+              email: decodedToken.email,
+              emailVerified: decodedToken.email_verified,
+              picture: decodedToken.picture,
+              role: 0,
+              authProvider,
+            })
+            .then(result => {
+              // console.log({ result });
+              res.json({
+                msg: "Admin added to DB, pls authorize the role!",
+                admin: {
+                  adminId: uid,
+                  email: decodedToken.email,
+                  role: 0,
+                  authProvider,
+                },
+              });
+            })
+            .catch(err => {
+              // console.log(err);
+              return res.status(400).json({
+                msg: "Not able to create Admin in DB",
+                error: err,
+              });
+            });
+        } else {
+          db.collection("admins")
+            .doc(uid)
+            .get()
+            .then(admin => {
+              const { adminId, email, role, authProvider } = admin.data();
+              console.log(adminId, email, role, authProvider);
+              res.json({
+                msg: "Signin success!!",
+                admin: {
+                  adminId,
+                  email,
+                  role,
+                  authProvider,
+                },
+              });
+            })
+            .catch(err => {
+              // console.log(err);
+              return res.status(400).json({
+                msg: "Failed to signin, please try again!",
+                error: err,
+              });
+            });
+        }
+      } else if ("email") {
+        db.collection("admins")
+          .doc(uid)
+          .set({
+            adminId: uid,
+            email: decodedToken.email,
+            emailVerified: decodedToken.email_verified,
+            role: 0,
+            authProvider,
+          })
+          .then(result => {
+            res.json({
+              msg: "Admin added to DB, pls authorize the role!",
+              admin: {
+                adminId: uid,
+                email: decodedToken.email,
+                role: 0,
+                authProvider,
+              },
+            });
+          })
+          .catch(err => {
+            // console.log(err);
+            return res.status(400).json({
+              msg: "Not able to create Admin in DB",
+              error: err,
+            });
+          });
+      } else {
+        return res.status(400).json({
+          msg: "Admin not found!",
+        });
+      }
+    })
+    .catch(error => {
+      return res.status(400).json({
+        error,
+        msg: "Admin not verified!!",
+      });
+    });
+};

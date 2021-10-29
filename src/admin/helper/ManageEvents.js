@@ -5,18 +5,26 @@ import { deleteEvent, getAllEvents } from "./adminapicalls";
 import { IoArrowBackCircle } from "react-icons/all";
 import { toast } from "material-react-toastify";
 
-const ManageEvents = () => {
-  const { admin, token } = isAuthenticated();
+const ManageEvents = props => {
+  const { adminId, token } = isAuthenticated();
   const [latestEvents, setLatestEvents] = useState([]);
   const [pastEvents, setPastEvents] = useState([]);
 
   const preload = () => {
+    let today = new Date();
+
     getAllEvents().then(data => {
-      if (data.error) {
-        console.log(data.error);
+      if (data.msg) {
+        return console.log(data.msg);
       } else {
-        setLatestEvents(data.upcomingEvent);
-        setPastEvents(data.pastEvent);
+        data.events.map(event => {
+          if (event.date.endDate >= today.toISOString()) {
+            setLatestEvents([...latestEvents, event]);
+          }
+          if (event.date.endDate < today.toISOString()) {
+            setPastEvents([...pastEvents, event]);
+          }
+        });
       }
     });
   };
@@ -26,13 +34,13 @@ const ManageEvents = () => {
   }, []);
 
   const removeEvent = eventId => {
-    deleteEvent(admin._id, eventId, token)
+    deleteEvent(adminId, eventId, token)
       .then(data => {
         if (data.error) {
           console.log(data.error);
         } else {
-          toast.success("success", "Removed Successfully!");
-          preload();
+          toast.success("Removed Successfully!");
+          props.history.push("/admin/dashboard");
         }
       })
       .catch(err => console.log(err));
@@ -126,12 +134,12 @@ const ManageEvents = () => {
                             fontSize: "1.2rem",
                           }}
                         >
-                          {event.name}
+                          {event.title}
                         </h3>
                       </div>
                       <div style={{ display: "flex" }}>
                         <div>
-                          <Link to={`/admin/update/event/${event._id}`}>
+                          <Link to={`/admin/update/event/${event.eventId}`}>
                             <button className="btn-outline-success">
                               Update
                             </button>
@@ -139,7 +147,7 @@ const ManageEvents = () => {
                         </div>
                         <div>
                           <button
-                            onClick={() => removeEvent(event._id)}
+                            onClick={() => removeEvent(event.eventId)}
                             className="btn-outline-success"
                           >
                             Delete
@@ -195,12 +203,12 @@ const ManageEvents = () => {
                           fontSize: "1.2rem",
                         }}
                       >
-                        {event.name}
+                        {event.title}
                       </h3>
                     </div>
                     <div style={{ display: "flex" }}>
                       <div>
-                        <Link to={`/admin/update/event/${event._id}`}>
+                        <Link to={`/admin/update/event/${event.eventId}`}>
                           <button className="btn-outline-success">
                             Update
                           </button>
@@ -208,7 +216,7 @@ const ManageEvents = () => {
                       </div>
                       <div>
                         <button
-                          onClick={() => removeEvent(event._id)}
+                          onClick={() => removeEvent(event.eventId)}
                           className="btn-outline-success"
                         >
                           Delete

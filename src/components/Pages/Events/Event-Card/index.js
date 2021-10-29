@@ -14,16 +14,13 @@ const EventCard = props => {
             <ImageHelper event={event} />
           </div>
           <div className="back">
-            <p className="event-title">{event.eventTitle}</p>
-            <p className="event-date">
-              {props.eventStartDate} - {props.eventEndDate}
-            </p>
-            <p className="event-info">{event.eventInfo}</p>
-            <p className="event-info">{event.category}</p>
+            <p className="event-title">{event.title}</p>
+            <p className="event-date">{props.eventDate}</p>
+            <p className="event-info">{event.description}</p>
             <span className="info-check">For more info check out here</span>
             <div className="social-linkss">
               <a
-                href={event.linkedinLink}
+                href={event.links.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 className="social-footer"
@@ -34,7 +31,7 @@ const EventCard = props => {
                 />
               </a>
               <a
-                href={event.instagramLink}
+                href={event.links.instagram}
                 target="_blank"
                 rel="noreferrer"
                 className="social-footer"

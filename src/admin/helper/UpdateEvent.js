@@ -1,5 +1,12 @@
+/* eslint-disable default-case */
 import React, { useState, useEffect } from "react";
-import moment from "moment";
+import {
+  ref,
+  getDownloadURL,
+  uploadBytesResumable,
+  // deleteObject,
+} from "firebase/storage";
+import { storage } from "../../firebase/config";
 import { Link, useParams } from "react-router-dom";
 import { RiUploadCloud2Line } from "react-icons/ri";
 import { IoArrowBackCircle } from "react-icons/all";
@@ -9,15 +16,15 @@ import { isAuthenticated } from "../auth/helper/index";
 import { getEvent, updateEvent } from "./adminapicalls";
 
 const UpdateEvent = ({ match }) => {
-  const eventId = useParams();
+  const { eventId } = useParams();
 
-  const { admin, token } = isAuthenticated();
+  const { adminId, token } = isAuthenticated();
   const [values, setValues] = useState({
-    name: "",
-    info: "",
+    description: "",
+    title: "",
     startDate: "",
     endDate: "",
-    image: "",
+    imageURLURL: "",
     linkedinURL: "",
     instagramURL: "",
     loading: false,
@@ -26,11 +33,11 @@ const UpdateEvent = ({ match }) => {
   });
 
   const {
-    name,
-    info,
+    description,
+    title,
     startDate,
     endDate,
-    image,
+    imageURL,
     linkedinURL,
     instagramURL,
     formData,
@@ -38,21 +45,26 @@ const UpdateEvent = ({ match }) => {
 
   const preload = eventId => {
     getEvent(eventId).then(data => {
-      console.log(data.date);
-      if (data.error) {
-        setValues({ ...values, error: data.error });
+      if (data.msg) {
+        setValues({ ...values, error: data.msg });
       } else {
-        console.log(data);
-        let START_DATE = moment(data.date.startDate).format("YYYY-MM-DD");
-        let END_DATE = moment(data.date.endDate).format("YYYY-MM-DD");
+        // console.log(data);
+        let START_DATE = new Date(data.date.startDate)
+          .toISOString()
+          .slice(0, 10);
+        let END_DATE = new Date(data.date.endDate).toISOString().slice(0, 10);
+
+        const { instagram, linkedin } = data.links;
+        // console.log(data.imageURL);
         setValues({
           ...values,
-          info: data.info,
+          title: data.title,
+          imageURL: data.imageURL,
           startDate: START_DATE,
           endDate: END_DATE,
-          linkedinURL: data.linkedinURL,
-          instagramURL: data.instagramURL,
-          name: data.name,
+          linkedinURL: linkedin,
+          instagramURL: instagram,
+          description: data.description,
           formData: new FormData(),
         });
       }
@@ -63,22 +75,41 @@ const UpdateEvent = ({ match }) => {
     preload(eventId);
   }, []);
 
+  function getFormData(object) {
+    const formData = new FormData();
+    Object.keys(object).forEach(key => formData.append(key, object[key]));
+    return formData;
+  }
+
   const onSubmit = e => {
     e.preventDefault();
     setValues({ ...values, error: "", loading: true });
-    updateEvent(match.params.eventId, admin._id, token, formData).then(data => {
+
+    const eventData = {
+      title,
+      description,
+      startDate,
+      endDate,
+      imageURL,
+      linkedinURL,
+      instagramURL,
+    };
+
+    const formData = getFormData(eventData);
+
+    updateEvent(eventId, adminId, token, formData).then(data => {
       if (data.error) {
         setValues({ ...values, error: data.error });
         toast.error("error", data.error);
       } else {
-        toast.success("success", "Event Updated Successfully!");
+        toast.success("Event Updated Successfully!");
         setValues({
           ...values,
-          name: "",
-          info: "",
+          description: "",
+          title: "",
           startDate: "",
           endDate: "",
-          image: "",
+          imageURL: "",
           linkedinURL: "",
           instagramURL: "",
         });
@@ -86,10 +117,50 @@ const UpdateEvent = ({ match }) => {
     });
   };
 
-  const handleChange = name => event => {
-    const value = name === "image" ? event.target.files[0] : event.target.value;
-    formData.set(name, value);
-    setValues({ ...values, [name]: value });
+  const imagePicker = async e => {
+    try {
+      let id = new Date().toISOString();
+      const storageRef = ref(storage, "images/" + id);
+      console.log(storageRef);
+      //   deleteObject(storageRef).then(() => {
+      //      // File deleted successfully
+      //   }).catch((error) => {
+      //   // Uh-oh, an error occurred!
+      // });
+
+      const uploadTask = uploadBytesResumable(storageRef, e.target.files[0]);
+      uploadTask.on(
+        "state_changed",
+        snapshot => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
+          switch (snapshot.state) {
+            case "paused":
+              console.log("Upload is paused");
+              break;
+            case "running":
+              console.log("Upload is running");
+              break;
+          }
+        },
+        error => {
+          console.log("error vroo!");
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then(downloadURL => {
+            // console.log("File available at", downloadURL);
+            setValues({ ...values, imageURL: downloadURL });
+          });
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleChange = name => e => {
+    setValues({ ...values, [name]: e.target.value });
   };
 
   const updateEventForm = () => (
@@ -105,21 +176,21 @@ const UpdateEvent = ({ match }) => {
         <div className="form-group " style={{ marginTop: "15px" }}>
           <input
             type="text"
-            onChange={handleChange("name")}
-            name="name"
+            onChange={handleChange("title")}
+            name="title"
             className="form-control"
-            placeholder="Event name"
-            value={name}
+            placeholder="Event title"
+            value={title}
           />
         </div>
         <div className="form-group ">
           <textarea
             style={{ margin: "0px 0px 15px", width: "248px", height: "248px" }}
-            onChange={handleChange("info")}
+            onChange={handleChange("description")}
             type="text"
             className="form-control"
-            placeholder="Event info"
-            value={info}
+            placeholder="Event description"
+            value={description}
           />
         </div>
       </div>
@@ -141,15 +212,16 @@ const UpdateEvent = ({ match }) => {
                   visibility: "hidden",
                   width: "0px",
                 }}
-                onChange={handleChange("image")}
                 type="file"
-                name="image"
-                accept="image"
+                name="imageURL"
+                accept="image/*"
+                multiple={false}
+                onChange={e => imagePicker(e)}
               />
-              {image ? (
+              {imageURL ? (
                 <>
                   <span style={{ fontSize: "0.75rem" }}>
-                    `{image.name} --image uploaded!`
+                    `{imageURL.name} --imageURL uploaded!`
                   </span>
                   <TiTick
                     className="upload-icon"

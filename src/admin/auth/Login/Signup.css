@@ -1,5 +1,5 @@
 .signup-section {
-  padding: 0 20px;
+  padding: 5rem 1rem;
   display: flex;
   justify-content: center;
 }
@@ -110,7 +110,7 @@
 }
 
 .inside-signup {
-  width: 85%;
+  width: 75%;
   margin: 0 auto;
 }
 

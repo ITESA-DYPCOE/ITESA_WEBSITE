@@ -16,8 +16,9 @@ import Events from "./components/Pages/Events/Events";
 //admin routes
 import AdminRoute from "./admin/auth/helper/AdminRoute";
 import PrivateRoute from "./admin/auth/helper/PrivateRoute";
-import Signup from "./admin/Signup/Signup";
-import SignIn from "./admin/Signin/Signin";
+import Signup from "./admin/auth/Login/Signup";
+import SignIn from "./admin/auth/Login/Signin";
+import LoginWithPhone from "./admin/auth/Login/LoginWithPhone";
 import AdminDashBoard from "./admin/dashboard/AdminDashBoard";
 import UnApprovedAdminDashBoard from "./admin/dashboard/UnApprovedAdminDashBoard";
 //admin components
@@ -35,7 +36,7 @@ const App = () => {
     <>
       <Router>
         <div className="toast">
-          <ToastContainer position="bottom-center" />
+          <ToastContainer position="top-right" />
         </div>
         <Navbar />
         <Switch>
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="/contact-us" component={Contact} />
           <Route path="/admin/dashboard/sign-up" component={Signup} />
           <Route path="/admin/sign-in" component={SignIn} />
+          <Route path="/admin/phonelogin" component={LoginWithPhone} />
           <AdminRoute
             exact
             path="/admin/dashboard"

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { signup } from "../auth/helper/index";
+import { signup } from "../helper/index";
 import { toast } from "material-react-toastify";
 import "./Signup.css";
 
