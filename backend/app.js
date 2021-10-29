@@ -42,4 +42,3 @@ app.listen(port, () => {
   console.log(`ITESA BACKEND UP🚀 at ${port}`);
 });
 
-//testing server :)
