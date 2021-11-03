@@ -14,18 +14,18 @@ const ManageEvents = props => {
     let today = new Date();
 
     getAllEvents().then(data => {
-      if (data.msg) {
-        return console.log(data.msg);
-      } else {
-        data.events.map(event => {
-          if (event.date.endDate >= today.toISOString()) {
-            setLatestEvents([...latestEvents, event]);
-          }
-          if (event.date.endDate < today.toISOString()) {
-            setPastEvents([...pastEvents, event]);
-          }
-        });
-      }
+      data.events.map(event => {
+        let eventDate = new Date(event.date.endDate).toISOString();
+        console.log(eventDate);
+        if (eventDate >= today.toISOString()) {
+          // console.log({ event });
+          setLatestEvents(prevState => [...prevState, event]);
+        }
+        if (eventDate < today.toISOString()) {
+          // console.log({ event });
+          setPastEvents(prevState => [...prevState, event]);
+        }
+      });
     });
   };
 

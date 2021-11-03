@@ -225,7 +225,7 @@ exports.getAllEvents = async (req, res) => {
     eventDoc.forEach(event => {
       events.push({ ...event.data() });
     });
-    console.log(events);
+    // console.log(events);
     return res.json({ events });
   });
 };

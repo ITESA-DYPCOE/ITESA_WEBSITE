@@ -20,13 +20,17 @@ const Events = () => {
     let today = new Date();
 
     getAllEvents().then(data => {
-      // console.log({ data });
+      console.log({ data });
       data.events.map(event => {
-        if (event.date.endDate >= today.toISOString()) {
-          setLatestEvents([...latestEvents, event]);
+        let eventDate = new Date(event.date.endDate).toISOString();
+        console.log(eventDate);
+        if (eventDate >= today.toISOString()) {
+          // console.log({ event });
+          setLatestEvents(prevState => [...prevState, event]);
         }
-        if (event.date.endDate < today.toISOString()) {
-          setPastEvents([...pastEvents, event]);
+        if (eventDate < today.toISOString()) {
+          // console.log({ event });
+          setPastEvents(prevState => [...prevState, event]);
         }
       });
 
