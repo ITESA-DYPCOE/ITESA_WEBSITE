@@ -219,7 +219,9 @@ exports.getEvent = (req, res) => {
 };
 
 exports.getAllEvents = async (req, res) => {
-  const eventsCollection = await db.collection("events");
+  const eventsCollection = await db
+    .collection("events")
+    .orderBy("date.endDate", "desc");
   eventsCollection.get().then(eventDoc => {
     let events = [];
     eventDoc.forEach(event => {

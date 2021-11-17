@@ -24,7 +24,6 @@ const useStyles = makeStyles({
       background:
         "linear-gradient(45deg, rgb(55, 62, 75) 0%, rgb(33, 35, 43) 90%)",
     },
-    fontFamily: "Poppins",
     letterSpacing: "1.3px",
     fontSize: "0.7rem",
   },
